@@ -1,0 +1,75 @@
+\begin{table}[htbp]
+\centering
+\caption{Returns around News by Event Category}
+\label{tab:tabA_drift}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports returns around news for categories in the displayed event groups, 2004--2025. Jump is the return to the first eligible open, from the preceding close or, for news published during the trading session (09:30--16:00), from that session's open. Day 1 is the subsequent open-to-open return; Days 1--10 sums ten such returns. Returns are in basis points, in excess of the mean return of all headlines on the same trading day, and averaged equally across trading days. The sample includes headlines with an observed Jump and a complete ten-day return path. The Headlines column counts each category's headlines, and the table shows categories with at least 20,000 of them. Panel B reports decile long-short portfolios sorted on category and embedding forecasts. Newey--West $t$-statistics use 5 lags for Jump and Day 1 and 10 for Days 1--10.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\textit{Panel A: Event categories}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.47\textheight}
+\begin{tabular}{llccccccc}
+\toprule
+\multicolumn{3}{c}{} & \multicolumn{2}{c}{Jump} & \multicolumn{2}{c}{Day 1} & \multicolumn{2}{c}{Days 1--10} \\
+\cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+Group & Category & Headlines & bp & $t$ & bp & $t$ & bp & $t$ \\
+\midrule
+analyst-ratings & analyst-ratings-change-positive & \phantom{0}67,738 & \phantom{$-$}231.4 & \phantom{$-$}70.18 & \phantom{$-$}21.6 & \phantom{$-$}12.13 & \phantom{$-$}26.5 & \phantom{$-$}5.32 \\
+ & analyst-ratings-change-neutral & 167,439 & \phantom{00}$-$5.8 & \phantom{0}$-$1.05 & \phantom{$-$0}5.4 & \phantom{$-$0}1.04 & \phantom{$-$0}8.8 & \phantom{$-$}0.86 \\
+ & analyst-ratings-change-negative & \phantom{0}75,990 & $-$291.2 & $-$56.43 & $-$25.4 & $-$11.71 & $-$22.3 & $-$3.77 \\
+ & analyst-ratings-set-positive & \phantom{0}44,689 & \phantom{$-$}111.9 & \phantom{$-$}44.37 & \phantom{$-$}23.4 & \phantom{$-$0}9.20 & \phantom{$-$}28.8 & \phantom{$-$}3.31 \\
+ & analyst-ratings-set-neutral & \phantom{0}27,064 & \phantom{0}$-$32.6 & $-$15.47 & $-$23.7 & \phantom{0}$-$8.81 & $-$50.0 & $-$5.81 \\
+\midrule
+dividends & dividend-up & \phantom{0}31,539 & \phantom{$-$0}35.7 & \phantom{$-$}13.18 & \phantom{$-$}21.4 & \phantom{$-$0}7.35 & \phantom{$-$}27.6 & \phantom{$-$}3.35 \\
+ & dividend & \phantom{0}76,873 & \phantom{$-$00}9.5 & \phantom{$-$0}6.31 & \phantom{$-$0}7.8 & \phantom{$-$0}5.67 & \phantom{$-$0}6.0 & \phantom{$-$}1.11 \\
+\midrule
+earnings & earnings-positive & 123,247 & \phantom{$-$0}36.7 & \phantom{$-$0}8.12 & \phantom{0}$-$1.5 & \phantom{0}$-$0.41 & \phantom{$-$0}3.3 & \phantom{$-$}0.44 \\
+ & earnings-up & \phantom{0}80,584 & \phantom{$-$0}92.7 & \phantom{$-$}18.13 & $-$13.4 & \phantom{0}$-$3.40 & $-$19.5 & $-$2.38 \\
+ & earnings & 252,165 & \phantom{0}$-$13.0 & \phantom{0}$-$5.91 & \phantom{$-$0}2.4 & \phantom{$-$0}1.37 & \phantom{$-$0}1.3 & \phantom{$-$}0.31 \\
+ & earnings-down & \phantom{0}36,012 & $-$136.4 & $-$20.07 & \phantom{0}$-$5.5 & \phantom{0}$-$1.06 & \phantom{$-$0}2.1 & \phantom{$-$}0.19 \\
+ & earnings-negative & \phantom{0}49,157 & $-$104.9 & $-$14.59 & $-$39.5 & \phantom{0}$-$6.22 & $-$49.7 & $-$3.45 \\
+ & earnings-per-share-positive & 188,193 & \phantom{$-$0}27.8 & \phantom{$-$0}6.80 & \phantom{0}$-$1.3 & \phantom{0}$-$0.40 & \phantom{$-$0}1.3 & \phantom{$-$}0.20 \\
+ & earnings-per-share-up & \phantom{0}35,665 & \phantom{$-$0}84.5 & \phantom{$-$}12.59 & $-$10.1 & \phantom{0}$-$1.84 & \phantom{$-$0}8.0 & \phantom{$-$}0.77 \\
+ & earnings-per-share-negative & \phantom{0}49,728 & $-$121.9 & $-$15.89 & $-$30.3 & \phantom{0}$-$4.45 & $-$50.9 & $-$3.56 \\
+ & earnings-per-share-guidance & \phantom{0}83,767 & \phantom{0}$-$41.2 & \phantom{0}$-$7.43 & \phantom{$-$0}6.5 & \phantom{$-$0}1.70 & \phantom{$-$}14.9 & \phantom{$-$}2.15 \\
+\midrule
+insider-trading & insider-buy & 328,262 & \phantom{$-$0}24.7 & \phantom{$-$}20.72 & \phantom{$-$}19.8 & \phantom{$-$}17.21 & \phantom{$-$}30.7 & \phantom{$-$}8.05 \\
+ & insider-sell & 477,205 & \phantom{0}$-$14.4 & $-$13.66 & \phantom{0}$-$8.2 & \phantom{0}$-$8.51 & $-$15.8 & $-$3.45 \\
+ & insider-gift & \phantom{0}41,463 & \phantom{00}$-$7.8 & \phantom{0}$-$5.04 & \phantom{0}$-$0.9 & \phantom{0}$-$0.52 & \phantom{$-$0}0.9 & \phantom{$-$}0.12 \\
+ & insider-sell-registration & 290,177 & \phantom{0}$-$10.0 & \phantom{0}$-$7.78 & \phantom{0}$-$7.2 & \phantom{0}$-$6.61 & $-$15.9 & $-$3.12 \\
+ & insider-surrender & 254,101 & \phantom{0}$-$12.0 & $-$10.05 & \phantom{0}$-$4.6 & \phantom{0}$-$3.09 & \phantom{0}$-$1.9 & $-$0.38 \\
+\midrule
+labor-issues & board-member-appointment & \phantom{0}32,496 & \phantom{00}$-$3.8 & \phantom{0}$-$1.68 & \phantom{$-$0}3.8 & \phantom{$-$0}1.48 & \phantom{0}$-$7.0 & $-$0.88 \\
+ & executive-appointment & 104,700 & \phantom{0}$-$12.7 & \phantom{0}$-$7.09 & \phantom{0}$-$7.2 & \phantom{0}$-$4.47 & $-$22.0 & $-$4.89 \\
+\midrule
+price-targets & price-target-upgrade & 123,369 & \phantom{$-$0}97.9 & \phantom{$-$}21.29 & \phantom{$-$0}8.1 & \phantom{$-$0}2.81 & \phantom{$-$}20.3 & \phantom{$-$}2.12 \\
+ & price-target-downgrade & \phantom{0}89,592 & $-$180.1 & $-$23.66 & $-$16.5 & \phantom{0}$-$3.86 & $-$28.2 & $-$2.39 \\
+ & price-target-set & \phantom{0}35,022 & \phantom{$-$0}66.6 & \phantom{$-$}15.75 & \phantom{$-$0}3.8 & \phantom{$-$0}1.28 & \phantom{$-$0}7.0 & \phantom{$-$}0.65 \\
+\midrule
+revenues & revenue-up & \phantom{0}76,225 & \phantom{$-$0}39.0 & \phantom{$-$0}8.34 & $-$15.2 & \phantom{0}$-$4.08 & $-$27.0 & $-$3.50 \\
+ & revenue-down & \phantom{0}20,020 & $-$101.8 & $-$15.62 & $-$13.6 & \phantom{0}$-$2.49 & $-$14.9 & $-$1.30 \\
+ & revenue-guidance-up & \phantom{0}25,371 & \phantom{$-$0}89.8 & \phantom{$-$}13.02 & \phantom{$-$0}7.1 & \phantom{$-$0}1.49 & \phantom{0}$-$9.3 & $-$1.00 \\
+ & revenue-guidance & \phantom{0}67,881 & \phantom{0}$-$59.6 & \phantom{0}$-$7.92 & \phantom{$-$0}3.3 & \phantom{$-$0}0.70 & \phantom{$-$0}2.4 & \phantom{$-$}0.30 \\
+ & revenues & 170,535 & \phantom{0}$-$12.9 & \phantom{0}$-$3.07 & $-$12.9 & \phantom{0}$-$3.96 & $-$14.0 & $-$2.10 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel B: Decile long-short portfolios}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.08\textheight}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{Jump} & \multicolumn{2}{c}{Day 1} & \multicolumn{2}{c}{Days 1--10} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+Signal & bp & $t$ & bp & $t$ & bp & $t$ \\
+\midrule
+Category mean (8-yr) & 107.4 & 40.95 & 37.0 & 27.43 & 49.7 & 10.19 \\
+RoBERTa forecast & \phantom{0}76.9 & 45.65 & 27.0 & 21.71 & 37.8 & \phantom{0}6.48 \\
+Llama-2 forecast & \phantom{0}68.4 & 34.69 & 30.1 & 21.55 & 52.4 & \phantom{0}7.98 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

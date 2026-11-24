@@ -1,0 +1,493 @@
+{
+ "script": "2_spectrum.py",
+ "args": {
+  "model": "Llama-2-13b-hf",
+  "years": "",
+  "perturb": true
+ },
+ "sample": "single-company stories with a RavenPack event category, CKX 5-day text de-duplication, next o2o return available (daily samples; firm-months need none), cap >= NYSE 5th percentile",
+ "universe_pct": 5,
+ "spec": {
+  "ridge": {
+   "ridge_grid": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0,
+    10000.0,
+    100000.0,
+    1000000.0,
+    10000000.0,
+    100000000.0
+   ],
+   "penalty": "c / dimension per observation",
+   "standardize": false,
+   "y_clip": 0.5,
+   "first_year": 2000,
+   "train_years": 6,
+   "val_years": 2,
+   "min_names": 20
+  },
+  "monthly": {
+   "ridge_target_clip": [
+    -0.9,
+    5
+   ],
+   "min_month_stocks": 50,
+   "msrr_grid": [
+    0.01,
+    0.03162277660168379,
+    0.1,
+    0.31622776601683794,
+    1.0,
+    3.1622776601683795,
+    10.0,
+    31.622776601683793,
+    100.0,
+    316.22776601683796,
+    1000.0,
+    3162.2776601683795,
+    10000.0
+   ],
+   "msrr_init": 12
+  },
+  "paper": {
+   "test_years": [
+    2004,
+    2025
+   ],
+   "category_mean_shrinkage": 200,
+   "history_days": 20,
+   "projection_years": 6,
+   "firm_effect_min": [
+    10,
+    2
+   ],
+   "taus": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    11,
+    17,
+    23,
+    35
+   ],
+   "taus_fig": [
+    0,
+    35
+   ],
+   "s_lag": 36,
+   "nw_lags": [
+    5,
+    6
+   ],
+   "bands": [
+    [
+     1,
+     8
+    ],
+    [
+     9,
+     32
+    ],
+    [
+     33,
+     128
+    ],
+    [
+     129,
+     512
+    ],
+    [
+     513,
+     100000
+    ]
+   ],
+   "subspace": 32,
+   "min_names": 20,
+   "min_month_stocks": 50,
+   "min_group_stories": 50000,
+   "level_window": 12,
+   "horizon": 10,
+   "drift_min_stories": [
+    5000,
+    20000
+   ],
+   "surprise": {
+    "eval": [
+     2008,
+     2025
+    ],
+    "min_train": 5000
+   },
+   "pretrain_cutoff": {
+    "roberta-large": "2019-07",
+    "Llama-2-13b-hf": "2022-09"
+   },
+   "surprise_dummy_stories": 100,
+   "surprise_rank_prior": 500,
+   "group_min_incidence": 0.01
+  }
+ },
+ "finished": "2026-11-22 21:10",
+ "test_years": 22,
+ "two_way": {
+  "2004": {
+   "components": 1,
+   "normal_residual_categories": 3.3219662105629315e-16,
+   "normal_residual_firms": 6.034713704309824e-18,
+   "centering_residual": 4.4276794567747657e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 857,
+   "stories_without_F": 0.037770571179696476
+  },
+  "2005": {
+   "components": 1,
+   "normal_residual_categories": 8.520162645399553e-17,
+   "normal_residual_firms": 1.2496238546586012e-17,
+   "centering_residual": 3.9108932634670876e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 773,
+   "stories_without_F": 0.021739188117077986
+  },
+  "2006": {
+   "components": 1,
+   "normal_residual_categories": 1.1897444568459408e-16,
+   "normal_residual_firms": 1.5901119232308518e-17,
+   "centering_residual": 2.2876650450426813e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 732,
+   "stories_without_F": 0.013761998834693185
+  },
+  "2007": {
+   "components": 1,
+   "normal_residual_categories": 1.5141479812705698e-16,
+   "normal_residual_firms": 1.0873740902213054e-17,
+   "centering_residual": 4.128577085494529e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 798,
+   "stories_without_F": 0.015342257126094303
+  },
+  "2008": {
+   "components": 1,
+   "normal_residual_categories": 6.185316334000536e-16,
+   "normal_residual_firms": 1.1151585746313535e-17,
+   "centering_residual": 3.0944040103888996e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 791,
+   "stories_without_F": 0.011566768565617561
+  },
+  "2009": {
+   "components": 1,
+   "normal_residual_categories": 1.3877263921412144e-16,
+   "normal_residual_firms": 9.484068822960381e-18,
+   "centering_residual": 2.97201897572924e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 645,
+   "stories_without_F": 0.011719272913929723
+  },
+  "2010": {
+   "components": 1,
+   "normal_residual_categories": 2.50848860986032e-16,
+   "normal_residual_firms": 7.864834047118846e-18,
+   "centering_residual": 3.3964352980355203e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 552,
+   "stories_without_F": 0.009360988465619332
+  },
+  "2011": {
+   "components": 1,
+   "normal_residual_categories": 3.7328697066013547e-16,
+   "normal_residual_firms": 8.350767252331316e-18,
+   "centering_residual": 4.324554239846859e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 488,
+   "stories_without_F": 0.00654794404155187
+  },
+  "2012": {
+   "components": 1,
+   "normal_residual_categories": 1.2084810134759339e-16,
+   "normal_residual_firms": 1.5073665746246926e-17,
+   "centering_residual": 6.706596186409664e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 481,
+   "stories_without_F": 0.006685222795267081
+  },
+  "2013": {
+   "components": 1,
+   "normal_residual_categories": 1.0069067021460322e-16,
+   "normal_residual_firms": 1.0821277795016336e-17,
+   "centering_residual": 2.987238399822583e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 501,
+   "stories_without_F": 0.009537223785170955
+  },
+  "2014": {
+   "components": 1,
+   "normal_residual_categories": 1.5034259795408201e-16,
+   "normal_residual_firms": 1.3667508904916545e-17,
+   "centering_residual": 3.911543648694233e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 511,
+   "stories_without_F": 0.008086021939837169
+  },
+  "2015": {
+   "components": 1,
+   "normal_residual_categories": 1.2263788354331797e-16,
+   "normal_residual_firms": 1.0622178889578722e-17,
+   "centering_residual": 4.474629971184311e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 523,
+   "stories_without_F": 0.010813388772830168
+  },
+  "2016": {
+   "components": 1,
+   "normal_residual_categories": 1.1643470335359721e-16,
+   "normal_residual_firms": 8.247458154213136e-18,
+   "centering_residual": 6.890982200821854e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 513,
+   "stories_without_F": 0.00924214296663029
+  },
+  "2017": {
+   "components": 1,
+   "normal_residual_categories": 1.4551693280616025e-16,
+   "normal_residual_firms": 8.721835089328217e-18,
+   "centering_residual": 6.856327286420114e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 571,
+   "stories_without_F": 0.008542234568861402
+  },
+  "2018": {
+   "components": 1,
+   "normal_residual_categories": 1.8370242288352148e-16,
+   "normal_residual_firms": 7.196575535889156e-18,
+   "centering_residual": 6.152814110487472e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 510,
+   "stories_without_F": 0.00818928214525716
+  },
+  "2019": {
+   "components": 1,
+   "normal_residual_categories": 1.5122405557190824e-16,
+   "normal_residual_firms": 5.768765062688597e-18,
+   "centering_residual": 3.706697143966967e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 443,
+   "stories_without_F": 0.006880724246065331
+  },
+  "2020": {
+   "components": 1,
+   "normal_residual_categories": 1.6371525564107856e-16,
+   "normal_residual_firms": 6.168304928903013e-18,
+   "centering_residual": 2.6760230582686756e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 428,
+   "stories_without_F": 0.007708064638494803
+  },
+  "2021": {
+   "components": 1,
+   "normal_residual_categories": 1.7119513785852598e-16,
+   "normal_residual_firms": 5.468733570480691e-18,
+   "centering_residual": 3.4334625241707803e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 429,
+   "stories_without_F": 0.008337330872331841
+  },
+  "2022": {
+   "components": 1,
+   "normal_residual_categories": 1.6191226435923268e-16,
+   "normal_residual_firms": 6.168086261304102e-18,
+   "centering_residual": 2.629926376705505e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 444,
+   "stories_without_F": 0.008826718645067238
+  },
+  "2023": {
+   "components": 1,
+   "normal_residual_categories": 1.5440862048740035e-16,
+   "normal_residual_firms": 1.2593610890816341e-17,
+   "centering_residual": 2.8120044001410896e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 582,
+   "stories_without_F": 0.010033060661095078
+  },
+  "2024": {
+   "components": 1,
+   "normal_residual_categories": 1.3560475096249583e-16,
+   "normal_residual_firms": 1.1024776501015922e-17,
+   "centering_residual": 1.886779147007568e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 734,
+   "stories_without_F": 0.014161899843886138
+  },
+  "2025": {
+   "components": 1,
+   "normal_residual_categories": 1.4494978665503354e-16,
+   "normal_residual_firms": 9.996537010691969e-18,
+   "centering_residual": 2.291898514322671e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 631,
+   "stories_without_F": 0.008437035642620548
+  }
+ },
+ "unseen_cells": {
+  "2004": {
+   "stories_new_cell": 2.1901966796618337e-05,
+   "stories_new_group": 0.03700994349292566,
+   "weight_new_cell": 1.2081373932035626e-05,
+   "weight_new_group": 0.03756009550905849
+  },
+  "2005": {
+   "stories_new_cell": 0.001770591766316435,
+   "stories_new_group": 4.318516503210817e-06,
+   "weight_new_cell": 0.0015182456970720608,
+   "weight_new_group": 9.02813092150432e-07
+  },
+  "2006": {
+   "stories_new_cell": 5.022879214823521e-06,
+   "stories_new_group": 0.0,
+   "weight_new_cell": 2.8977744663413788e-06,
+   "weight_new_group": 0.0
+  },
+  "2007": {
+   "stories_new_cell": 4.0894443263049414e-06,
+   "stories_new_group": 0.0,
+   "weight_new_cell": 3.897634053586178e-07,
+   "weight_new_group": 0.0
+  },
+  "2008": {
+   "stories_new_cell": 4.259778321136168e-06,
+   "stories_new_group": 0.0,
+   "weight_new_cell": 5.917978880884542e-06,
+   "weight_new_group": 0.0
+  },
+  "2009": {
+   "stories_new_cell": 4.601911634092802e-06,
+   "stories_new_group": 0.0,
+   "weight_new_cell": 3.644385776191791e-07,
+   "weight_new_group": 0.0
+  },
+  "2010": {
+   "stories_new_cell": 4.370285554458128e-06,
+   "stories_new_group": 0.0,
+   "weight_new_cell": 2.6312474126811323e-07,
+   "weight_new_group": 0.0
+  },
+  "2011": {
+   "stories_new_cell": 3.82441352618576e-06,
+   "stories_new_group": 0.0,
+   "weight_new_cell": 8.10778204406987e-07,
+   "weight_new_group": 0.0
+  },
+  "2012": {
+   "stories_new_cell": 3.31315621200224e-06,
+   "stories_new_group": 0.0,
+   "weight_new_cell": 1.111365428623566e-06,
+   "weight_new_group": 0.0
+  },
+  "2013": {
+   "stories_new_cell": 0.0,
+   "stories_new_group": 0.0,
+   "weight_new_cell": 0.0,
+   "weight_new_group": 0.0
+  },
+  "2014": {
+   "stories_new_cell": 7.576934296614247e-06,
+   "stories_new_group": 3.7884671483071236e-06,
+   "weight_new_cell": 2.1532271317859765e-06,
+   "weight_new_group": 3.9476992023122134e-08
+  },
+  "2015": {
+   "stories_new_cell": 7.283692540770469e-06,
+   "stories_new_group": 0.0,
+   "weight_new_cell": 1.1462819024662086e-05,
+   "weight_new_group": 0.0
+  },
+  "2016": {
+   "stories_new_cell": 1.4755628349988748e-05,
+   "stories_new_group": 0.0,
+   "weight_new_cell": 1.343917374595786e-05,
+   "weight_new_group": 0.0
+  },
+  "2017": {
+   "stories_new_cell": 7.881649156269457e-06,
+   "stories_new_group": 3.940824578134729e-06,
+   "weight_new_cell": 9.669353676507011e-06,
+   "weight_new_group": 3.7622957590814345e-06
+  },
+  "2018": {
+   "stories_new_cell": 0.0,
+   "stories_new_group": 8.768583917540237e-06,
+   "weight_new_cell": 0.0,
+   "weight_new_group": 1.442939513878375e-05
+  },
+  "2019": {
+   "stories_new_cell": 0.0,
+   "stories_new_group": 2.5553009718661362e-05,
+   "weight_new_cell": 0.0,
+   "weight_new_group": 1.429332319757401e-05
+  },
+  "2020": {
+   "stories_new_cell": 1.9138975758573305e-05,
+   "stories_new_group": 0.0,
+   "weight_new_cell": 3.0103312619077302e-05,
+   "weight_new_group": 0.0
+  },
+  "2021": {
+   "stories_new_cell": 3.910924777272834e-06,
+   "stories_new_group": 0.0,
+   "weight_new_cell": 3.379109738405351e-06,
+   "weight_new_group": 0.0
+  },
+  "2022": {
+   "stories_new_cell": 0.0,
+   "stories_new_group": 0.0,
+   "weight_new_cell": 0.0,
+   "weight_new_group": 0.0
+  },
+  "2023": {
+   "stories_new_cell": 7.330034817665384e-06,
+   "stories_new_group": 0.0,
+   "weight_new_cell": 4.750633313257753e-06,
+   "weight_new_group": 0.0
+  },
+  "2024": {
+   "stories_new_cell": 3.6466405324095176e-06,
+   "stories_new_group": 0.0,
+   "weight_new_cell": 6.4325222541193235e-06,
+   "weight_new_group": 0.0
+  },
+  "2025": {
+   "stories_new_cell": 0.0,
+   "stories_new_group": 0.0,
+   "weight_new_cell": 0.0,
+   "weight_new_group": 0.0
+  }
+ }
+}

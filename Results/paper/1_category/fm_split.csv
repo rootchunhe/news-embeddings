@@ -1,0 +1,6 @@
+spec,regressor,coef,t_NW,days
+RoBERTa forecast,RoBERTa forecast,7.535041093900268,7.248187425505544,752
+Category mean (8-yr) + RoBERTa forecast,Category mean (8-yr),6.596154558547967,5.5145179868528995,752
+Category mean (8-yr) + RoBERTa forecast,RoBERTa forecast,3.9690050005368587,3.735997999180385,752
+Group x direction mean + RoBERTa forecast,Group x direction mean,4.2883601719706705,5.016506326074598,752
+Group x direction mean + RoBERTa forecast,RoBERTa forecast,5.455548335111657,4.829925307496842,752

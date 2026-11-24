@@ -1,0 +1,21 @@
+\begin{tabular}{lcccc}
+\toprule
+Moment & Equation & Horizons & Count & RMS $t$ \\
+\midrule
+Cumulative category long--short return & \eqref{eq:D1} & Days 0, 1, 10 & 3 & 0.00 \\
+\multicolumn{5}{@{}l}{\textit{Daily covariance with returns}} \\
+$C_D$ & \eqref{eq:D2} & Day 1; days 2--10 & 6 & 0.71 \\
+$I_D$ & \eqref{eq:D34} & Day 1; days 2--10 & 6 & 0.98 \\
+$F$ & \eqref{eq:D32} & Days 2--10 & 3 & 0.73 \\
+$I_L$ & \eqref{eq:D33} & Days 2--10 & 3 & 0.68 \\
+\multicolumn{5}{@{}l}{\textit{MSRR strategy return}} \\
+$F$ & \eqref{eq:D35} & Months 2--12, 13--24, 25--36 & 9 & 0.71 \\
+$I_L$ & \eqref{eq:D36} & Months 2--12, 13--24, 25--36 & 9 & 1.14 \\
+$I_D$ & \eqref{eq:D37} & Months 2--12, 13--24, 25--36 & 9 & 0.58 \\
+\multicolumn{5}{@{}l}{\textit{Relative IC ratios of $F$ and $E_L$}} \\
+Llama-2, January 2023 & \eqref{eq:D28} & Next day & 2 & 0.23 \\
+RoBERTa, January 2020 & \eqref{eq:D29} & Next day & 2 & 0.26 \\
+\midrule
+Sobol starts reaching the minimum & & & 64 of 64 & \\
+\bottomrule
+\end{tabular}

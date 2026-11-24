@@ -1,0 +1,37 @@
+{
+ "script": "02_tables.py",
+ "args": {
+  "models": "Llama-2-13b-hf,roberta-large",
+  "periods": "paper:2004-01-01:2019-06-30,extended:2004-01-01:2025-12-31",
+  "results": "Results/replication/ckx",
+  "pred_suffix": ""
+ },
+ "sample": "single-company stories with a RavenPack event category, CKX 5-day text de-duplication, next o2o return available (daily samples; firm-months need none), cap >= NYSE 5th percentile",
+ "universe_pct": 5,
+ "spec": {
+  "ridge": {
+   "ridge_grid": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0,
+    10000.0,
+    100000.0,
+    1000000.0,
+    10000000.0,
+    100000000.0
+   ],
+   "penalty": "c / dimension per observation",
+   "standardize": false,
+   "y_clip": 0.5,
+   "first_year": 2000,
+   "train_years": 6,
+   "val_years": 2,
+   "min_names": 20
+  }
+ },
+ "finished": "2026-11-22 20:02",
+ "model": "roberta-large",
+ "period": "extended"
+}

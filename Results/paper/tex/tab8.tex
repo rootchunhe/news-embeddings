@@ -1,0 +1,65 @@
+\begin{table}[htbp]
+\centering
+\caption{Decomposition of the Residualized-Embedding Strategy}
+\label{tab:tab8}
+\begin{minipage}{\linewidth}\footnotesize
+This table decomposes the returns of the residualized-embedding strategy for signal months 2004--2025. As in DKPT, firm-month embeddings are recursively standardized and residualized each month on 132 JKP characteristics, and managed portfolios are combined out of sample by maximum Sharpe ratio regression (MSRR). News is assigned by arrival month, and $h$ denotes the $h$-th subsequent return month; every horizon uses the signal month's $h=1$ MSRR coefficients. A two-way projection of headline embeddings on category and firm indicators gives category effects ($C$), firm effects ($F$), and the idiosyncratic component ($I$). Historical levels average the category and idiosyncratic components' monthly means over the firm's news months in the preceding 12 months; firm identity lies entirely in the level, and deviations are the remainders. Each component is residualized like the full embedding and uses the same coefficients, so component returns sum to the total. Ret is the annualized mean in percent after scaling the strategy to 10\% annual volatility. Share is the percentage of the total mean return, omitted when the total has $|t|<2$; SR is annualized. Newey--West $t$-statistics use 6 lags.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\textit{Panel A: Timing decomposition}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.28\textheight}
+\begin{tabular}{llccccccccc}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{3}{c}{Embedding $E$} & \multicolumn{3}{c}{Level $E_L$} & \multicolumn{3}{c}{Deviation $E_D$} \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8} \cmidrule(lr){9-11}
+Model & $h$ (months) & SR & Ret & $t$ & Ret & $t$ & Share (\%) & Ret & $t$ & Share (\%) \\
+\midrule
+RoBERTa & 1 & 1.79 & 17.9 & \phantom{0}7.96 & \phantom{0}9.1 & \phantom{0}5.09 & \phantom{0}51.0 & \phantom{$-$}8.8 & \phantom{$-$}4.02 & \phantom{$-$}49.0 \\
+ & 2 & 1.03 & 10.3 & \phantom{0}4.82 & \phantom{0}8.1 & \phantom{0}5.14 & \phantom{0}78.7 & \phantom{$-$}2.2 & \phantom{$-$}1.37 & \phantom{$-$}21.3 \\
+ & 4 & 0.55 & \phantom{0}5.5 & \phantom{0}2.19 & \phantom{0}6.1 & \phantom{0}4.14 & 109.7 & $-$0.5 & $-$0.31 & \phantom{0}$-$9.7 \\
+ & 6 & 0.69 & \phantom{0}6.9 & \phantom{0}2.82 & \phantom{0}5.6 & \phantom{0}3.88 & \phantom{0}80.6 & \phantom{$-$}1.3 & \phantom{$-$}0.76 & \phantom{$-$}19.4 \\
+ & 12 & 0.97 & \phantom{0}9.7 & \phantom{0}4.28 & \phantom{0}4.1 & \phantom{0}2.14 & \phantom{0}42.7 & \phantom{$-$}5.5 & \phantom{$-$}3.87 & \phantom{$-$}57.3 \\
+ & 18 & 0.45 & \phantom{0}4.5 & \phantom{0}2.38 & \phantom{0}3.6 & \phantom{0}2.12 & \phantom{0}80.0 & \phantom{$-$}0.9 & \phantom{$-$}0.54 & \phantom{$-$}20.0 \\
+ & 24 & 1.23 & 12.3 & \phantom{0}5.69 & \phantom{0}5.4 & \phantom{0}2.54 & \phantom{0}43.9 & \phantom{$-$}6.9 & \phantom{$-$}3.45 & \phantom{$-$}56.1 \\
+\midrule
+Llama-2 & 1 & 3.62 & 36.2 & 18.56 & 27.6 & 11.36 & \phantom{0}76.3 & \phantom{$-$}8.6 & \phantom{$-$}4.77 & \phantom{$-$}23.7 \\
+ & 2 & 2.70 & 27.0 & 11.04 & 23.3 & 11.59 & \phantom{0}86.1 & \phantom{$-$}3.8 & \phantom{$-$}2.74 & \phantom{$-$}13.9 \\
+ & 4 & 2.43 & 24.3 & 10.25 & 23.0 & 11.21 & \phantom{0}94.5 & \phantom{$-$}1.3 & \phantom{$-$}0.77 & \phantom{$-$0}5.5 \\
+ & 6 & 2.18 & 21.8 & \phantom{0}7.17 & 20.2 & 11.00 & \phantom{0}92.9 & \phantom{$-$}1.6 & \phantom{$-$}0.91 & \phantom{$-$0}7.1 \\
+ & 12 & 2.24 & 22.4 & \phantom{0}9.93 & 19.1 & \phantom{0}9.39 & \phantom{0}85.5 & \phantom{$-$}3.3 & \phantom{$-$}2.28 & \phantom{$-$}14.5 \\
+ & 18 & 1.71 & 17.1 & \phantom{0}7.49 & 14.4 & \phantom{0}7.04 & \phantom{0}84.3 & \phantom{$-$}2.7 & \phantom{$-$}2.36 & \phantom{$-$}15.7 \\
+ & 24 & 1.99 & 19.9 & \phantom{0}9.23 & 14.0 & \phantom{0}7.78 & \phantom{0}70.2 & \phantom{$-$}5.9 & \phantom{$-$}4.18 & \phantom{$-$}29.8 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel B: Full decomposition}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.28\textheight}
+\begin{tabular}{llccccccccccccccc}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{3}{c}{Event category, level $C_L$} & \multicolumn{3}{c}{Event category, deviation $C_D$} & \multicolumn{3}{c}{Firm identity $F$} & \multicolumn{3}{c}{Idiosyncratic, level $I_L$} & \multicolumn{3}{c}{Idiosyncratic, deviation $I_D$} \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8} \cmidrule(lr){9-11} \cmidrule(lr){12-14} \cmidrule(lr){15-17}
+Model & $h$ (months) & Ret & $t$ & Share (\%) & Ret & $t$ & Share (\%) & Ret & $t$ & Share (\%) & Ret & $t$ & Share (\%) & Ret & $t$ & Share (\%) \\
+\midrule
+RoBERTa & 1 & 2.7 & 4.05 & 15.1 & \phantom{$-$}5.8 & \phantom{$-$}3.54 & \phantom{$-$}32.7 & \phantom{0}5.1 & \phantom{0}4.42 & 28.6 & 1.3 & 1.71 & \phantom{0}7.3 & \phantom{$-$}2.9 & \phantom{$-$}2.19 & \phantom{$-$}16.4 \\
+ & 2 & 2.0 & 3.12 & 19.4 & \phantom{$-$}2.1 & \phantom{$-$}1.49 & \phantom{$-$}20.1 & \phantom{0}4.5 & \phantom{0}3.53 & 43.2 & 1.7 & 2.42 & 16.1 & \phantom{$-$}0.1 & \phantom{$-$}0.12 & \phantom{$-$0}1.2 \\
+ & 4 & 1.4 & 2.29 & 25.6 & \phantom{$-$}0.5 & \phantom{$-$}0.32 & \phantom{$-$0}8.2 & \phantom{0}3.2 & \phantom{0}2.73 & 58.3 & 1.4 & 2.26 & 25.7 & $-$1.0 & $-$1.00 & $-$17.9 \\
+ & 6 & 1.9 & 3.29 & 27.5 & \phantom{$-$}0.9 & \phantom{$-$}0.64 & \phantom{$-$}12.6 & \phantom{0}2.7 & \phantom{0}2.20 & 39.2 & 1.0 & 1.10 & 13.9 & \phantom{$-$}0.5 & \phantom{$-$}0.43 & \phantom{$-$0}6.8 \\
+ & 12 & 0.3 & 0.46 & \phantom{0}3.5 & \phantom{$-$}4.1 & \phantom{$-$}3.04 & \phantom{$-$}42.0 & \phantom{0}2.3 & \phantom{0}1.77 & 23.8 & 1.5 & 1.63 & 15.5 & \phantom{$-$}1.5 & \phantom{$-$}1.16 & \phantom{$-$}15.3 \\
+ & 18 & 1.0 & 1.42 & 21.7 & $-$0.2 & $-$0.15 & \phantom{0}$-$4.5 & \phantom{0}2.4 & \phantom{0}1.66 & 52.3 & 0.3 & 0.31 & \phantom{0}5.9 & \phantom{$-$}1.1 & \phantom{$-$}0.75 & \phantom{$-$}24.5 \\
+ & 24 & 0.3 & 0.29 & \phantom{0}2.4 & \phantom{$-$}5.2 & \phantom{$-$}2.79 & \phantom{$-$}42.1 & \phantom{0}4.0 & \phantom{0}2.63 & 32.6 & 1.1 & 1.31 & \phantom{0}8.8 & \phantom{$-$}1.7 & \phantom{$-$}1.32 & \phantom{$-$}14.1 \\
+\midrule
+Llama-2 & 1 & 1.6 & 2.34 & \phantom{0}4.3 & \phantom{$-$}5.8 & \phantom{$-$}4.03 & \phantom{$-$}16.1 & 18.8 & 10.10 & 52.1 & 7.2 & 5.26 & 19.9 & \phantom{$-$}2.8 & \phantom{$-$}2.11 & \phantom{$-$0}7.6 \\
+ & 2 & 0.8 & 1.30 & \phantom{0}3.0 & \phantom{$-$}2.4 & \phantom{$-$}2.19 & \phantom{$-$0}8.9 & 15.8 & \phantom{0}9.41 & 58.5 & 6.7 & 5.75 & 24.7 & \phantom{$-$}1.4 & \phantom{$-$}1.34 & \phantom{$-$0}5.0 \\
+ & 4 & 0.7 & 0.99 & \phantom{0}2.7 & \phantom{$-$}1.3 & \phantom{$-$}1.14 & \phantom{$-$0}5.5 & 15.4 & \phantom{0}9.41 & 63.3 & 6.9 & 5.38 & 28.6 & $-$0.0 & $-$0.01 & \phantom{0}$-$0.0 \\
+ & 6 & 0.9 & 1.45 & \phantom{0}4.1 & \phantom{$-$}1.5 & \phantom{$-$}1.25 & \phantom{$-$0}6.9 & 13.0 & \phantom{0}8.17 & 59.9 & 6.3 & 6.12 & 28.9 & \phantom{$-$}0.1 & \phantom{$-$}0.06 & \phantom{$-$0}0.3 \\
+ & 12 & 0.4 & 0.84 & \phantom{0}2.0 & \phantom{$-$}1.8 & \phantom{$-$}1.60 & \phantom{$-$0}7.9 & 12.6 & \phantom{0}6.63 & 56.1 & 6.1 & 5.44 & 27.3 & \phantom{$-$}1.5 & \phantom{$-$}1.25 & \phantom{$-$0}6.6 \\
+ & 18 & 0.6 & 1.21 & \phantom{0}3.3 & \phantom{$-$}1.3 & \phantom{$-$}1.20 & \phantom{$-$0}7.4 & \phantom{0}9.7 & \phantom{0}5.37 & 56.9 & 4.1 & 3.79 & 24.0 & \phantom{$-$}1.4 & \phantom{$-$}1.48 & \phantom{$-$0}8.3 \\
+ & 24 & 0.6 & 1.03 & \phantom{0}3.0 & \phantom{$-$}3.3 & \phantom{$-$}3.26 & \phantom{$-$}16.7 & 10.5 & \phantom{0}7.43 & 52.7 & 2.9 & 3.24 & 14.6 & \phantom{$-$}2.6 & \phantom{$-$}2.78 & \phantom{$-$}13.0 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

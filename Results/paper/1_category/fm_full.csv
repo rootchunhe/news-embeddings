@@ -1,0 +1,6 @@
+spec,regressor,coef,t_NW,days
+ChronoGPT forecast,ChronoGPT forecast,6.383856443408674,22.403915706283186,5535
+Category mean (8-yr) + ChronoGPT forecast,Category mean (8-yr),10.09962590565647,28.969941429005168,5535
+Category mean (8-yr) + ChronoGPT forecast,ChronoGPT forecast,2.0431320603303305,7.003253605761419,5535
+Group x direction mean + ChronoGPT forecast,Group x direction mean,8.547183818592783,27.563195406064995,5535
+Group x direction mean + ChronoGPT forecast,ChronoGPT forecast,2.799552083809666,9.58183877265216,5535

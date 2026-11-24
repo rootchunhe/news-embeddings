@@ -1,0 +1,23 @@
+# only the code, the results, the framework, the README and the license
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/Codes/
+!/Results/
+*.staging/
+__pycache__/
+*.pyc
+*.ipynb
+*.aux
+*.log
+*.csv.tmp
+._*
+.DS_Store
+!/Framework/
+/Framework/old/
+*.out
+*.toc
+*.bbl
+*.blg
+weights.npz

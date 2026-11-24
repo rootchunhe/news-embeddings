@@ -1,0 +1,45 @@
+\begin{table}[htbp]
+\centering
+\caption{Valuations and Growth Forecasts with ChronoGPT$_{1999}$}
+\label{tab:tabB_representation}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports $R^2$ on held-out firms from cross-sectional regressions of year-end valuations and growth forecasts on firm-level news embeddings from ChronoGPT$_{1999}$ and firm characteristics, 2004--2025. Construction as in Table~\ref{tab:tab4}, except for the encoder and the inputs shown. News windows start no earlier than 2000.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\textit{Panel A: Split sample}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.28\textheight}
+\begin{tabular}{llccc}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{3}{c}{$R^2$ (\%)} \\
+\cmidrule(lr){3-5}
+Model & Inputs & $\log(P/B)$ & $\log(P/E)$ & LTG \\
+\midrule
+ChronoGPT$_{1999}$ & $F$ & 10.56 & \phantom{0}5.62 & \phantom{0}5.73 \\
+ & Average embedding & 14.86 & \phantom{0}6.88 & \phantom{0}8.52 \\
+ & Controls & 25.25 & 13.69 & 16.10 \\
+ & $F$ + controls & 27.42 & 13.62 & 15.71 \\
+ & Average embedding + controls & 34.11 & 13.82 & 15.89 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel B: Fitted on the previous window}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.28\textheight}
+\begin{tabular}{llccc}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{3}{c}{$R^2$ (\%)} \\
+\cmidrule(lr){3-5}
+Model & Inputs & $\log(P/B)$ & $\log(P/E)$ & LTG \\
+\midrule
+ChronoGPT$_{1999}$ & $F$ & \phantom{0}9.13 & 3.82 & \phantom{0}4.00 \\
+ & Average embedding & 12.87 & 4.77 & \phantom{0}5.44 \\
+ & Controls & 20.12 & 7.74 & 10.61 \\
+ & $F$ + controls & 21.95 & 7.72 & 10.25 \\
+ & Average embedding + controls & 28.14 & 7.82 & 10.26 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

@@ -1,0 +1,21 @@
+\begin{tabular}{lcccccc}
+\toprule
+ & & \multicolumn{3}{c}{Data} & \multicolumn{2}{c}{Model} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-7}
+Component & Targeted & IC ratio & 90\% interval & Dispersion ratio & IC ratio & Memory share (\%) \\
+\midrule
+\multicolumn{7}{@{}l}{\textit{Llama-2 across January 2023, relative to RoBERTa}} \\
+Firm identity $F$ & Yes & 0.32 & [0.13, 0.61] & 1.37 & 0.33 & 70 \\
+Historical level $E_L$ & Yes & 0.36 & [0.21, 0.68] & 1.30 & 0.41 & 62 \\
+Idiosyncratic level $I_L$ & No & 1.08 & [$-$3.19, 9.33] & 1.38 & 0.78 & 23 \\
+Deviation $E_D$ & No & 1.23 & [1.03, 1.36] & 1.38 & 1.00 & 0 \\
+Category deviation $C_D$ & No & 1.10 & [1.02, 1.16] & 1.27 & 1.00 & 0 \\
+\midrule
+\multicolumn{7}{@{}l}{\textit{RoBERTa across January 2020, relative to Llama-2}} \\
+Firm identity $F$ & Yes & 1.18 & [$-$2.01, 5.08] & 0.95 & 0.89 & 11 \\
+Historical level $E_L$ & Yes & 1.20 & [$-$0.27, 2.42] & 0.94 & 0.92 & 8 \\
+Idiosyncratic level $I_L$ & No & 0.18 & [$-$3.96, 5.17] & 0.88 & 0.98 & 2 \\
+Deviation $E_D$ & No & 0.99 & [0.85, 1.22] & 0.89 & 1.00 & 0 \\
+Category deviation $C_D$ & No & 0.95 & [0.90, 1.05] & 0.91 & 1.00 & 0 \\
+\bottomrule
+\end{tabular}

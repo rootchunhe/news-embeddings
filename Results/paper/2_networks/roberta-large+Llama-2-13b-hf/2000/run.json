@@ -1,0 +1,604 @@
+{
+ "script": "2_networks.py",
+ "args": {
+  "encoders": "roberta-large,Llama-2-13b-hf",
+  "first": 2000,
+  "years": ""
+ },
+ "sample": "single-company stories with a RavenPack event category, CKX 5-day text de-duplication, next o2o return available (daily samples; firm-months need none), cap >= NYSE 5th percentile",
+ "universe_pct": 5,
+ "spec": {
+  "ridge": {
+   "ridge_grid": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0,
+    10000.0,
+    100000.0,
+    1000000.0,
+    10000000.0,
+    100000000.0
+   ],
+   "penalty": "c / dimension per observation",
+   "standardize": false,
+   "y_clip": 0.5,
+   "first_year": 2000,
+   "train_years": 6,
+   "val_years": 2,
+   "min_names": 20
+  },
+  "monthly": {
+   "ridge_target_clip": [
+    -0.9,
+    5
+   ],
+   "min_month_stocks": 50,
+   "msrr_grid": [
+    0.01,
+    0.03162277660168379,
+    0.1,
+    0.31622776601683794,
+    1.0,
+    3.1622776601683795,
+    10.0,
+    31.622776601683793,
+    100.0,
+    316.22776601683796,
+    1000.0,
+    3162.2776601683795,
+    10000.0
+   ],
+   "msrr_init": 12
+  },
+  "paper": {
+   "test_years": [
+    2004,
+    2025
+   ],
+   "category_mean_shrinkage": 200,
+   "history_days": 20,
+   "projection_years": 6,
+   "firm_effect_min": [
+    10,
+    2
+   ],
+   "taus": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    11,
+    17,
+    23,
+    35
+   ],
+   "taus_fig": [
+    0,
+    35
+   ],
+   "s_lag": 36,
+   "nw_lags": [
+    5,
+    6
+   ],
+   "bands": [
+    [
+     1,
+     8
+    ],
+    [
+     9,
+     32
+    ],
+    [
+     33,
+     128
+    ],
+    [
+     129,
+     512
+    ],
+    [
+     513,
+     100000
+    ]
+   ],
+   "subspace": 32,
+   "min_names": 20,
+   "min_month_stocks": 50,
+   "min_group_stories": 50000,
+   "level_window": 12,
+   "horizon": 10,
+   "drift_min_stories": [
+    5000,
+    20000
+   ],
+   "surprise": {
+    "eval": [
+     2008,
+     2025
+    ],
+    "min_train": 5000
+   },
+   "pretrain_cutoff": {
+    "roberta-large": "2019-07",
+    "Llama-2-13b-hf": "2022-09"
+   },
+   "surprise_dummy_stories": 100,
+   "surprise_rank_prior": 500,
+   "group_min_incidence": 0.01
+  }
+ },
+ "finished": "2026-11-22 20:59",
+ "decembers": 22,
+ "firm_decembers": 43487,
+ "two_way": {
+  "roberta-large-2004": {
+   "components": 1,
+   "normal_residual_categories": 1.3162148352613337e-16,
+   "normal_residual_firms": 1.2081379945119685e-17,
+   "centering_residual": 1.8849822464047458e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 798,
+   "stories_without_F": 0.015342257126094303
+  },
+  "Llama-2-13b-hf-2004": {
+   "components": 1,
+   "normal_residual_categories": 1.278686524139941e-16,
+   "normal_residual_firms": 1.50433708722346e-17,
+   "centering_residual": 2.7835034890526643e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 798,
+   "stories_without_F": 0.015342257126094303
+  },
+  "roberta-large-2005": {
+   "components": 1,
+   "normal_residual_categories": 7.281286316385227e-17,
+   "normal_residual_firms": 8.1808226609192e-18,
+   "centering_residual": 1.9865078018855976e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 791,
+   "stories_without_F": 0.011566768565617561
+  },
+  "Llama-2-13b-hf-2005": {
+   "components": 1,
+   "normal_residual_categories": 5.307590701825653e-16,
+   "normal_residual_firms": 1.4274029755281324e-17,
+   "centering_residual": 6.690896274416332e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 791,
+   "stories_without_F": 0.011566768565617561
+  },
+  "roberta-large-2006": {
+   "components": 1,
+   "normal_residual_categories": 1.7428740558484051e-16,
+   "normal_residual_firms": 8.837650056633317e-18,
+   "centering_residual": 2.8684271151273047e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 645,
+   "stories_without_F": 0.011719272913929723
+  },
+  "Llama-2-13b-hf-2006": {
+   "components": 1,
+   "normal_residual_categories": 1.343031355159447e-16,
+   "normal_residual_firms": 1.984023592849183e-17,
+   "centering_residual": 6.344896695144863e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 645,
+   "stories_without_F": 0.011719272913929723
+  },
+  "roberta-large-2007": {
+   "components": 1,
+   "normal_residual_categories": 8.163223263390346e-17,
+   "normal_residual_firms": 9.640729736402172e-18,
+   "centering_residual": 3.9097518528813497e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 552,
+   "stories_without_F": 0.009360988465619332
+  },
+  "Llama-2-13b-hf-2007": {
+   "components": 1,
+   "normal_residual_categories": 3.9641313873256424e-16,
+   "normal_residual_firms": 1.0009788787242167e-17,
+   "centering_residual": 3.5046617308450393e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 552,
+   "stories_without_F": 0.009360988465619332
+  },
+  "roberta-large-2008": {
+   "components": 1,
+   "normal_residual_categories": 8.001150753148961e-17,
+   "normal_residual_firms": 6.503056387297121e-18,
+   "centering_residual": 3.3437730371134765e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 488,
+   "stories_without_F": 0.00654794404155187
+  },
+  "Llama-2-13b-hf-2008": {
+   "components": 1,
+   "normal_residual_categories": 2.5190959385330085e-16,
+   "normal_residual_firms": 9.021811049393655e-18,
+   "centering_residual": 4.716878493159538e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 488,
+   "stories_without_F": 0.00654794404155187
+  },
+  "roberta-large-2009": {
+   "components": 1,
+   "normal_residual_categories": 9.168973032593292e-17,
+   "normal_residual_firms": 7.770429763655765e-18,
+   "centering_residual": 3.8235014074641725e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 481,
+   "stories_without_F": 0.006685222795267081
+  },
+  "Llama-2-13b-hf-2009": {
+   "components": 1,
+   "normal_residual_categories": 1.8735337339541243e-16,
+   "normal_residual_firms": 8.604281305797602e-18,
+   "centering_residual": 3.0431752333798454e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 481,
+   "stories_without_F": 0.006685222795267081
+  },
+  "roberta-large-2010": {
+   "components": 1,
+   "normal_residual_categories": 7.9614408306395e-17,
+   "normal_residual_firms": 6.43182169642549e-18,
+   "centering_residual": 2.0725380494759094e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 501,
+   "stories_without_F": 0.009537223785170955
+  },
+  "Llama-2-13b-hf-2010": {
+   "components": 1,
+   "normal_residual_categories": 1.6311096773951452e-16,
+   "normal_residual_firms": 1.0029476980746847e-17,
+   "centering_residual": 6.0411213736661425e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 501,
+   "stories_without_F": 0.009537223785170955
+  },
+  "roberta-large-2011": {
+   "components": 1,
+   "normal_residual_categories": 6.263487783040727e-17,
+   "normal_residual_firms": 1.118377676852951e-17,
+   "centering_residual": 3.8119584896562968e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 511,
+   "stories_without_F": 0.008086021939837169
+  },
+  "Llama-2-13b-hf-2011": {
+   "components": 1,
+   "normal_residual_categories": 1.7084386131145683e-16,
+   "normal_residual_firms": 1.3667508904916545e-17,
+   "centering_residual": 4.524625413115328e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 511,
+   "stories_without_F": 0.008086021939837169
+  },
+  "roberta-large-2012": {
+   "components": 1,
+   "normal_residual_categories": 3.762551615408682e-17,
+   "normal_residual_firms": 7.391630064904247e-18,
+   "centering_residual": 3.8997576375231314e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 523,
+   "stories_without_F": 0.010813388772830168
+  },
+  "Llama-2-13b-hf-2012": {
+   "components": 1,
+   "normal_residual_categories": 1.2348282959135264e-16,
+   "normal_residual_firms": 1.2809985621097066e-17,
+   "centering_residual": 4.796569643170069e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 523,
+   "stories_without_F": 0.010813388772830168
+  },
+  "roberta-large-2013": {
+   "components": 1,
+   "normal_residual_categories": 6.875249985720448e-17,
+   "normal_residual_firms": 5.265174794835859e-18,
+   "centering_residual": 2.673021399495192e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 513,
+   "stories_without_F": 0.00924214296663029
+  },
+  "Llama-2-13b-hf-2013": {
+   "components": 1,
+   "normal_residual_categories": 1.2262029696925707e-16,
+   "normal_residual_firms": 9.702891946133102e-18,
+   "centering_residual": 7.466855579200614e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 513,
+   "stories_without_F": 0.00924214296663029
+  },
+  "roberta-large-2014": {
+   "components": 1,
+   "normal_residual_categories": 8.656625992517879e-17,
+   "normal_residual_firms": 4.6968338022843245e-18,
+   "centering_residual": 2.544898873122871e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 571,
+   "stories_without_F": 0.008542234568861402
+  },
+  "Llama-2-13b-hf-2014": {
+   "components": 1,
+   "normal_residual_categories": 1.6709199855344584e-16,
+   "normal_residual_firms": 6.426615328978687e-18,
+   "centering_residual": 4.943008044093065e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 571,
+   "stories_without_F": 0.008542234568861402
+  },
+  "roberta-large-2015": {
+   "components": 1,
+   "normal_residual_categories": 1.2278629069607217e-16,
+   "normal_residual_firms": 6.222590843489716e-18,
+   "centering_residual": 4.0654109462681983e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 510,
+   "stories_without_F": 0.00818928214525716
+  },
+  "Llama-2-13b-hf-2015": {
+   "components": 1,
+   "normal_residual_categories": 1.3910159425074343e-16,
+   "normal_residual_firms": 5.5199045337596594e-18,
+   "centering_residual": 6.300784636406532e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 510,
+   "stories_without_F": 0.00818928214525716
+  },
+  "roberta-large-2016": {
+   "components": 1,
+   "normal_residual_categories": 6.964010000357335e-17,
+   "normal_residual_firms": 6.15853770617339e-18,
+   "centering_residual": 3.677142091043028e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 443,
+   "stories_without_F": 0.006880724246065331
+  },
+  "Llama-2-13b-hf-2016": {
+   "components": 1,
+   "normal_residual_categories": 2.130322526721432e-16,
+   "normal_residual_firms": 6.592874357358397e-18,
+   "centering_residual": 3.223636224721391e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 443,
+   "stories_without_F": 0.006880724246065331
+  },
+  "roberta-large-2017": {
+   "components": 1,
+   "normal_residual_categories": 7.409119353310361e-17,
+   "normal_residual_firms": 6.0840449581662275e-18,
+   "centering_residual": 4.2397988557147555e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 428,
+   "stories_without_F": 0.007708064638494803
+  },
+  "Llama-2-13b-hf-2017": {
+   "components": 1,
+   "normal_residual_categories": 1.169394683150561e-16,
+   "normal_residual_firms": 8.064790918279731e-18,
+   "centering_residual": 2.442577546103662e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 428,
+   "stories_without_F": 0.007708064638494803
+  },
+  "roberta-large-2018": {
+   "components": 1,
+   "normal_residual_categories": 4.2707247155527885e-17,
+   "normal_residual_firms": 5.744953063241825e-18,
+   "centering_residual": 4.151507895548991e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 429,
+   "stories_without_F": 0.008337330872331841
+  },
+  "Llama-2-13b-hf-2018": {
+   "components": 1,
+   "normal_residual_categories": 1.895035067683961e-16,
+   "normal_residual_firms": 5.2309625456771826e-18,
+   "centering_residual": 3.3118348605918446e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 429,
+   "stories_without_F": 0.008337330872331841
+  },
+  "roberta-large-2019": {
+   "components": 1,
+   "normal_residual_categories": 8.297137259633833e-17,
+   "normal_residual_firms": 6.4976401368513854e-18,
+   "centering_residual": 2.4073451973346307e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 444,
+   "stories_without_F": 0.008826718645067238
+  },
+  "Llama-2-13b-hf-2019": {
+   "components": 1,
+   "normal_residual_categories": 1.1064004731214233e-16,
+   "normal_residual_firms": 5.911082667083098e-18,
+   "centering_residual": 3.5756790946320455e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 444,
+   "stories_without_F": 0.008826718645067238
+  },
+  "roberta-large-2020": {
+   "components": 1,
+   "normal_residual_categories": 1.0588122720816062e-16,
+   "normal_residual_firms": 9.268054035245569e-18,
+   "centering_residual": 2.9910681717258725e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 582,
+   "stories_without_F": 0.010033060661095078
+  },
+  "Llama-2-13b-hf-2020": {
+   "components": 1,
+   "normal_residual_categories": 1.3688707490017762e-16,
+   "normal_residual_firms": 1.1772288441415275e-17,
+   "centering_residual": 2.2139459244189756e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 582,
+   "stories_without_F": 0.010033060661095078
+  },
+  "roberta-large-2021": {
+   "components": 1,
+   "normal_residual_categories": 5.437297654751183e-17,
+   "normal_residual_firms": 8.663105590786943e-18,
+   "centering_residual": 3.5769532733373196e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 734,
+   "stories_without_F": 0.014161899843886138
+  },
+  "Llama-2-13b-hf-2021": {
+   "components": 1,
+   "normal_residual_categories": 1.3615598978754663e-16,
+   "normal_residual_firms": 9.922298850914329e-18,
+   "centering_residual": 2.529556668173478e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 734,
+   "stories_without_F": 0.014161899843886138
+  },
+  "roberta-large-2022": {
+   "components": 1,
+   "normal_residual_categories": 5.349575916471833e-17,
+   "normal_residual_firms": 6.5127916554758894e-18,
+   "centering_residual": 2.2102058252230525e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 631,
+   "stories_without_F": 0.008437035642620548
+  },
+  "Llama-2-13b-hf-2022": {
+   "components": 1,
+   "normal_residual_categories": 9.805426744311093e-17,
+   "normal_residual_firms": 1.1172600188420437e-17,
+   "centering_residual": 1.6235338131278507e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 631,
+   "stories_without_F": 0.008437035642620548
+  },
+  "roberta-large-2023": {
+   "components": 1,
+   "normal_residual_categories": 7.147303116677647e-17,
+   "normal_residual_firms": 8.27915228623015e-18,
+   "centering_residual": 3.248661060888102e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 551,
+   "stories_without_F": 0.007311812931487924
+  },
+  "Llama-2-13b-hf-2023": {
+   "components": 1,
+   "normal_residual_categories": 1.132865722799649e-16,
+   "normal_residual_firms": 1.5237375218942644e-17,
+   "centering_residual": 2.5580268813840156e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 551,
+   "stories_without_F": 0.007311812931487924
+  },
+  "roberta-large-2024": {
+   "components": 1,
+   "normal_residual_categories": 1.1388748359858382e-16,
+   "normal_residual_firms": 1.0266263207599671e-17,
+   "centering_residual": 1.6332774380120636e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 548,
+   "stories_without_F": 0.007413936922045556
+  },
+  "Llama-2-13b-hf-2024": {
+   "components": 1,
+   "normal_residual_categories": 1.528561864532028e-16,
+   "normal_residual_firms": 7.915766798469432e-18,
+   "centering_residual": 1.504138950318368e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 548,
+   "stories_without_F": 0.007413936922045556
+  },
+  "roberta-large-2025": {
+   "components": 1,
+   "normal_residual_categories": 6.131644390168769e-17,
+   "normal_residual_firms": 5.246793268823275e-18,
+   "centering_residual": 3.1541060928632717e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 567,
+   "stories_without_F": 0.007232805376439471
+  },
+  "Llama-2-13b-hf-2025": {
+   "components": 1,
+   "normal_residual_categories": 6.963024127568473e-17,
+   "normal_residual_firms": 6.478541866265165e-18,
+   "centering_residual": 1.0203491117578912e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 567,
+   "stories_without_F": 0.007232805376439471
+  }
+ },
+ "zero_vector_firms": {
+  "2004": 0,
+  "2005": 0,
+  "2006": 0,
+  "2007": 0,
+  "2008": 0,
+  "2009": 0,
+  "2010": 0,
+  "2011": 0,
+  "2012": 0,
+  "2013": 0,
+  "2014": 0,
+  "2015": 0,
+  "2016": 0,
+  "2017": 0,
+  "2018": 0,
+  "2019": 0,
+  "2020": 0,
+  "2021": 0,
+  "2022": 0,
+  "2023": 0,
+  "2024": 0,
+  "2025": 0
+ }
+}

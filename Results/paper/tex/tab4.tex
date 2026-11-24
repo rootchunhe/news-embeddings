@@ -1,0 +1,49 @@
+\begin{table}[htbp]
+\centering
+\caption{Valuations and Growth Forecasts Explained by Firm Embeddings}
+\label{tab:tab4}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports $R^2$, in percent, on held-out firms from cross-sectional ridge regressions of year-end valuations and growth forecasts on firm-level news embeddings and firm characteristics, 2004--2025. Outcomes are log price-to-book and log price-to-earnings, the latter for positive earnings, and IBES median long-term growth forecasts (LTG). News inputs use the headlines of up to six calendar years through the year end. The two-way category--firm projection of their embeddings gives firm identity $F$; $C^{\mathrm{mix}}$ is the firm's mean category component and $E^{\mathrm{avg}}$ its average embedding. Controls are Fama--French 49 industry indicators, 60-month CAPM beta, log book equity, asset growth, gross profits to assets, and dividends to assets. Each embedding input, the characteristics, and the industry indicators have their own ridge penalty, chosen by leave-one-out error. Each of three fixed company folds is held out in turn. Panel A fits on the other two folds; Panel B, which starts in 2005, uses slopes fitted on those folds one year earlier and refits only the intercept. $R^2$ is measured against the held-out fold mean and averaged over folds and years.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\textit{Panel A: Split sample}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.28\textheight}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{3}{c}{RoBERTa} & \multicolumn{3}{c}{Llama-2} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7}
+Inputs & $\log(P/B)$ & $\log(P/E)$ & LTG & $\log(P/B)$ & $\log(P/E)$ & LTG \\
+\midrule
+Controls & 25.25 & 13.69 & 16.10 & 25.25 & 13.69 & 16.10 \\
+$E^{\mathrm{avg}}$ & 21.42 & 11.01 & 13.60 & 30.93 & 18.25 & 19.77 \\
+$C^{\mathrm{mix}}$ & 23.59 & 12.05 & 16.84 & 23.92 & 12.30 & 16.99 \\
+$F$ & 17.30 & \phantom{0}9.68 & 11.15 & 28.97 & 17.56 & 18.48 \\
+$C^{\mathrm{mix}}+F$ & 26.94 & 13.44 & 17.45 & 32.86 & 18.70 & 20.45 \\
+Controls + $E^{\mathrm{avg}}$ & 40.82 & 15.41 & 18.18 & 51.57 & 19.61 & 21.22 \\
+Controls + $C^{\mathrm{mix}}+F$ & 46.77 & 16.89 & 19.97 & 54.43 & 20.03 & 21.10 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel B: Fitted on the previous window}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.28\textheight}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{3}{c}{RoBERTa} & \multicolumn{3}{c}{Llama-2} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7}
+Inputs & $\log(P/B)$ & $\log(P/E)$ & LTG & $\log(P/B)$ & $\log(P/E)$ & LTG \\
+\midrule
+Controls & 20.12 & \phantom{0}7.74 & 10.61 & 20.12 & \phantom{0}7.74 & 10.61 \\
+$E^{\mathrm{avg}}$ & 18.95 & \phantom{0}7.64 & \phantom{0}8.53 & 27.15 & 12.42 & 12.22 \\
+$C^{\mathrm{mix}}$ & 20.41 & \phantom{0}8.47 & 11.86 & 20.45 & \phantom{0}8.48 & 11.23 \\
+$F$ & 15.40 & \phantom{0}6.72 & \phantom{0}7.34 & 25.49 & 11.96 & 11.62 \\
+$C^{\mathrm{mix}}+F$ & 23.55 & \phantom{0}8.91 & 11.66 & 28.76 & 12.09 & 12.73 \\
+Controls + $E^{\mathrm{avg}}$ & 34.89 & \phantom{0}9.36 & 11.61 & 45.61 & 12.36 & 12.89 \\
+Controls + $C^{\mathrm{mix}}+F$ & 40.31 & 10.06 & 12.91 & 48.18 & 12.27 & 12.69 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\centering
+\caption{Category Means over Alternative Estimation Windows}
+\label{tab:tabA_windows}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports category forecasts of next open-to-open returns from category means over the one, three, or eight years preceding test year $T$, an expanding window from 2000 through $T-1$, or an expanding window through $T-3$, on the same firm-days over 2004--2025. Category means shrink toward the mean return of their event group with weight $n/(n+200)$ on the category mean, where $n$ is the category's headline count in the window; a category absent from the window takes its group's mean. Rank IC is the mean daily Spearman correlation with next open-to-open returns, in percent. L--S is the mean daily decile long-short return in basis points. SR is the annualized Sharpe ratio of equal-weighted (EW) and value-weighted (VW) decile long-short portfolios.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.75\textheight}
+\begin{tabular}{lcccccc}
+\toprule
+Window & Rank IC (\%) & $t$ & EW L--S (bp) & EW SR & VW L--S (bp) & VW SR \\
+\midrule
+Category mean (1-yr) & 2.94 & 33.36 & 32.9 & 6.16 & 13.7 & 2.18 \\
+Category mean (3-yr) & 3.22 & 37.61 & 35.3 & 6.20 & 14.2 & 2.32 \\
+Category mean (8-yr) & 3.33 & 37.55 & 37.2 & 6.35 & 14.4 & 2.30 \\
+Category mean (expanding) & 3.34 & 36.81 & 38.8 & 6.76 & 16.5 & 2.73 \\
+Category mean (through $T-3$) & 3.25 & 35.76 & 36.3 & 6.34 & 14.9 & 2.36 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

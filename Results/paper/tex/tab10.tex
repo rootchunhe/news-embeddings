@@ -1,0 +1,69 @@
+\begin{table}[htbp]
+\centering
+\caption{Forecast, MSRR Strategy, and Valuation Results by Encoder}
+\label{tab:tab10}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports the main results for ChronoGPT$_{1999}$, RoBERTa-large, and Llama-2 (13B), whose pretraining ends in December 1999, July 2019, and September 2022. The coefficient is the Fama--MacBeth coefficient on the forecast controlling for the eight-year category mean, in basis points per standard deviation, with its Newey--West $t$-statistic (5 lags) in parentheses. Rank IC is the mean daily Spearman correlation with next open-to-open returns, in percent. SR is the annualized Sharpe ratio. Daily-forecast portfolios are equal-weighted (EW) or value-weighted (VW) decile long-short portfolios. Covariance shares divide each component's covariance with returns by the forecast's. Maximum Sharpe ratio regression (MSRR) strategies use JKP-residualized embeddings and apply each signal month's $h=1$ coefficients at $h=12$, while the lagged-level strategy is fitted separately. The historical level is the mean of the firm's monthly average embedding over its news months in the preceding 12 months, and the lagged level is 36 months older. Level shares are percentages of the strategy's mean return. Entries are blank at horizons with fewer than 24 signal months, and level shares also when the strategy's mean return has $|t|<2$. Firm-identity $R^2$ is the $R^2$ of log price-to-book on held-out firms, with its increment over controls for Fama--French 49 industries, 60-month CAPM beta, log book equity, asset growth, gross profits to assets, and dividends to assets. The $F$-network rows report the adjusted $R^2$ of log price-to-book on its mean over the ten most similar firms under $F$, and its difference from SIC-3 on the same firm-years. Valuation and network windows cover the up to six years through each December, no earlier than 2000 in Panel A and 2023 in Panel B.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\textit{Panel A: Signal years 2004--2025}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.28\textheight}
+\begin{tabular}{llccc}
+\toprule
+ &  & ChronoGPT$_{1999}$ & RoBERTa & Llama-2 \\
+\midrule
+CKX daily forecast & Rank IC (\%) & \phantom{$-$(0}1.90\phantom{)} & \phantom{$-$(0}2.41\phantom{)} & \phantom{(0}2.67\phantom{)} \\
+ & EW SR & \phantom{$-$(0}4.50\phantom{)} & \phantom{$-$(0}4.92\phantom{)} & \phantom{(0}4.97\phantom{)} \\
+ & VW SR & \phantom{$-$(0}1.02\phantom{)} & \phantom{$-$(0}1.21\phantom{)} & \phantom{(0}1.90\phantom{)} \\
+ & Coefficient with the category mean & \phantom{$-$(0}2.04\phantom{)} & \phantom{$-$(0}3.02\phantom{)} & \phantom{(0}3.93\phantom{)} \\
+ &  & \phantom{$-$0}(7.00) & \phantom{$-$0}(9.24) & (10.35) \\
+ & Covariance share, event category (\%) & \phantom{$-$(}82.2\phantom{)0} & \phantom{$-$(}80.0\phantom{)0} & \phantom{(}65.5\phantom{)0} \\
+ & Covariance share, firm identity (\%) & \phantom{$-$(0}4.2\phantom{)0} & \phantom{$-$(0}6.3\phantom{)0} & \phantom{(}15.7\phantom{)0} \\
+ & Covariance share, idiosyncratic (\%) & \phantom{$-$(}13.6\phantom{)0} & \phantom{$-$(}13.6\phantom{)0} & \phantom{(}18.8\phantom{)0} \\
+\midrule
+DKPT monthly MSRR strategy & SR, $h=1$ & \phantom{$-$(0}1.38\phantom{)} & \phantom{$-$(0}1.79\phantom{)} & \phantom{(0}3.62\phantom{)} \\
+ & Share of the level $E_L$, $h=1$ (\%) & \phantom{$-$(}43.5\phantom{)0} & \phantom{$-$(}51.0\phantom{)0} & \phantom{(}76.3\phantom{)0} \\
+ & SR, $h=12$ & \phantom{$-$(0}0.57\phantom{)} & \phantom{$-$(0}0.97\phantom{)} & \phantom{(0}2.24\phantom{)} \\
+ & Share of the level $E_L$, $h=12$ (\%) & \phantom{$-$(}41.2\phantom{)0} & \phantom{$-$(}42.7\phantom{)0} & \phantom{(}85.5\phantom{)0} \\
+ & SR, level 36 months earlier, $h=1$ & \phantom{$-$(0}0.21\phantom{)} & \phantom{$-$(0}0.43\phantom{)} & \phantom{(0}1.96\phantom{)} \\
+\midrule
+Firm identity $F$ & $R^2$ of $\log(P/B)$ (\%) & \phantom{$-$(}10.56\phantom{)} & \phantom{$-$(}17.30\phantom{)} & \phantom{(}28.97\phantom{)} \\
+ & Increment over the controls (pp) & \phantom{$-$(0}2.17\phantom{)} & \phantom{$-$(0}9.03\phantom{)} & \phantom{(}22.93\phantom{)} \\
+ & $F$ network: adjusted $R^2$ of $\log(P/B)$ (\%) & \phantom{$-$(0}8.37\phantom{)} & \phantom{$-$(}17.44\phantom{)} & \phantom{(}24.72\phantom{)} \\
+ & $F$ network minus SIC-3 (pp) & \phantom{(}$-$11.46\phantom{)} & \phantom{(0}$-$2.39\phantom{)} & \phantom{(0}4.89\phantom{)} \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel B: Signal years 2023--2025}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.28\textheight}
+\begin{tabular}{llccc}
+\toprule
+ &  & ChronoGPT$_{1999}$ & RoBERTa & Llama-2 \\
+\midrule
+CKX daily forecast & Rank IC (\%) & \phantom{$-$(0}1.65\phantom{)} & \phantom{$-$(0}2.14\phantom{)} & \phantom{(0}2.30\phantom{)} \\
+ & EW SR & \phantom{$-$(0}3.67\phantom{)} & \phantom{$-$(0}3.73\phantom{)} & \phantom{(0}4.15\phantom{)} \\
+ & VW SR & \phantom{$-$(0}0.54\phantom{)} & \phantom{$-$(0}1.29\phantom{)} & \phantom{(0}1.27\phantom{)} \\
+ & Coefficient with the category mean & \phantom{$-$(0}3.10\phantom{)} & \phantom{$-$(0}3.97\phantom{)} & \phantom{(0}4.34\phantom{)} \\
+ &  & \phantom{$-$0}(3.40) & \phantom{$-$0}(3.74) & \phantom{0}(3.65) \\
+ & Covariance share, event category (\%) & \phantom{$-$(}73.4\phantom{)0} & \phantom{$-$(}66.1\phantom{)0} & \phantom{(}61.7\phantom{)0} \\
+ & Covariance share, firm identity (\%) & \phantom{(0}$-$2.7\phantom{)0} & \phantom{$-$(0}7.4\phantom{)0} & \phantom{(0}5.5\phantom{)0} \\
+ & Covariance share, idiosyncratic (\%) & \phantom{$-$(}29.3\phantom{)0} & \phantom{$-$(}26.5\phantom{)0} & \phantom{(}32.8\phantom{)0} \\
+\midrule
+DKPT monthly MSRR strategy & SR, $h=1$ & \phantom{$-$(0}2.02\phantom{)} & \phantom{$-$(0}1.70\phantom{)} & \phantom{(0}2.57\phantom{)} \\
+ & Share of the level $E_L$, $h=1$ (\%) & \phantom{$-$(}16.7\phantom{)0} & \phantom{$-$(}19.7\phantom{)0} & \phantom{(}17.8\phantom{)0} \\
+ & SR, $h=12$ & \phantom{$-$(0}0.59\phantom{)} & \phantom{$-$(0}0.73\phantom{)} & \phantom{(0}0.10\phantom{)} \\
+ & Share of the level $E_L$, $h=12$ (\%) &  &  &  \\
+ & SR, level 36 months earlier, $h=1$ & \phantom{(0}$-$0.63\phantom{)} & \phantom{(0}$-$0.18\phantom{)} & \phantom{(0}0.04\phantom{)} \\
+\midrule
+Firm identity $F$ & $R^2$ of $\log(P/B)$ (\%) & \phantom{$-$(0}8.50\phantom{)} & \phantom{$-$(}15.48\phantom{)} & \phantom{(}24.41\phantom{)} \\
+ & Increment over the controls (pp) & \phantom{$-$(0}1.36\phantom{)} & \phantom{$-$(}11.49\phantom{)} & \phantom{(}20.01\phantom{)} \\
+ & $F$ network: adjusted $R^2$ of $\log(P/B)$ (\%) & \phantom{$-$(0}1.42\phantom{)} & \phantom{$-$(}10.57\phantom{)} & \phantom{(}15.13\phantom{)} \\
+ & $F$ network minus SIC-3 (pp) & \phantom{(0}$-$9.08\phantom{)} & \phantom{$-$(0}0.07\phantom{)} & \phantom{(0}4.63\phantom{)} \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

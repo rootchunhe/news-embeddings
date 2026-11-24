@@ -1,0 +1,44 @@
+\begin{table}[htbp]
+\centering
+\caption{Category and Embedding Forecasts after the Pretraining Cutoffs}
+\label{tab:tabC_post_residual}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports the contribution of embeddings beyond category forecasts of next open-to-open returns after pretraining. Construction as in Table~\ref{tab:tab2}, except that evaluation starts the January after each pretraining cutoff, covering 2020--2025 for RoBERTa-large and 2023--2025 for Llama-2 (13B). Panel B's category row uses RoBERTa's period, and each model's comparisons use its own period.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\textit{Panel A: Fama--MacBeth regressions, standardized signals (bp per standard deviation)}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.33\textheight}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{3}{c}{RoBERTa} & \multicolumn{3}{c}{Llama-2} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7}
+ & (1) & (2) & (3) & (4) & (5) & (6) \\
+\midrule
+Embedding forecast & \phantom{(0}8.65\phantom{)} & \phantom{(}4.31\phantom{)} & \phantom{(}5.87\phantom{)} & \phantom{(}7.77\phantom{)} & \phantom{(}4.34\phantom{)} & \phantom{(}5.96\phantom{)} \\
+ & (11.28) & (5.18) & (6.93) & (6.92) & (3.65) & (4.88) \\
+Category mean (8-yr) &  & \phantom{(}8.49\phantom{)} &  &  & \phantom{(}6.47\phantom{)} &  \\
+ &  & (9.34) &  &  & (5.38) &  \\
+Group $\times$ direction mean &  &  & \phantom{(}5.74\phantom{)} &  &  & \phantom{(}4.37\phantom{)} \\
+ &  &  & (7.89) &  &  & (5.06) \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel B: Out of sample: the category mean plus a ridge forecast of its residual}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.22\textheight}
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{2}{c}{Rank IC (\%)} & \multicolumn{2}{c}{EW SR} & \multicolumn{2}{c}{VW SR} & \multicolumn{2}{c}{OOS $R^2$} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+Forecast & Mean & DM $t$ & SR & JK $z$ & SR & JK $z$ & bp & $t$ \\
+\midrule
+Category mean (8-yr) & 2.33 &  & 3.73 &  & 0.79 &  & 6.52 &  \\
++ residual ridge, RoBERTa & 2.61 & 3.24 & 5.14 & 5.31 & 1.19 & 1.35 & 7.21 & 1.39 \\
++ residual ridge, Llama-2 & 2.71 & 2.38 & 4.94 & 3.05 & 0.70 & 0.70 & 7.23 & 0.77 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

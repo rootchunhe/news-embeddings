@@ -1,0 +1,83 @@
+\begin{table}[htbp]
+\centering
+\caption{DKPT Replication: News-Shock Portfolio Sorts}
+\label{tab:tabR7_did_sorts}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports monthly DKPT replication quintiles sorted on mean-squared-error (MSE) return forecasts or MSRR weights, 2003--2022. News shocks are recursively standardized firm-month embeddings residualized each month on JKP characteristics. The MSE forecast is an expanding-window ridge on unwinsorized excess returns, refitted annually after 36 months, with generalized cross-validation. Portfolios use equal weights or capitalization weights capped at the NYSE 80th percentile, in months with at least 50 stocks. Avg, Std, and CAPM Alpha of excess returns are annualized decimals; alpha $t$-statistics use 6 Newey--West lags, and SR is annualized. All panels use the MSE forecast months. News is assigned by arrival month.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\textit{Panel A: LLaMA2, MSE}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.14\textheight}
+\begin{tabular}{lcccccccccc}
+\toprule
+ & \multicolumn{5}{c}{Equal-weighted} & \multicolumn{5}{c}{Capped value-weighted} \\
+\cmidrule(lr){2-6} \cmidrule(lr){7-11}
+ & Avg & Std & Alpha & t-stat & SR & Avg & Std & Alpha & t-stat & SR \\
+\midrule
+Low (L) & 0.069 & 0.203 & $-$0.056 & \phantom{0}$-$3.4 & 0.34 & 0.090 & 0.174 & $-$0.022 & $-$2.3 & 0.52 \\
+2 & 0.112 & 0.203 & $-$0.013 & \phantom{0}$-$0.8 & 0.55 & 0.104 & 0.178 & $-$0.011 & $-$1.0 & 0.58 \\
+3 & 0.134 & 0.203 & \phantom{$-$}0.008 & \phantom{$-$0}0.5 & 0.66 & 0.114 & 0.174 & \phantom{$-$}0.002 & \phantom{$-$}0.2 & 0.65 \\
+4 & 0.152 & 0.205 & \phantom{$-$}0.026 & \phantom{$-$0}1.5 & 0.74 & 0.131 & 0.175 & \phantom{$-$}0.018 & \phantom{$-$}1.8 & 0.75 \\
+High (H) & 0.193 & 0.202 & \phantom{$-$}0.069 & \phantom{$-$0}3.9 & 0.95 & 0.149 & 0.168 & \phantom{$-$}0.041 & \phantom{$-$}4.8 & 0.89 \\
+H-L & 0.123 & 0.035 & \phantom{$-$}0.125 & \phantom{$-$}16.0 & 3.54 & 0.059 & 0.040 & \phantom{$-$}0.063 & \phantom{$-$}5.9 & 1.48 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel B: LLaMA2, MSRR}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.14\textheight}
+\begin{tabular}{lcccccccccc}
+\toprule
+ & \multicolumn{5}{c}{Equal-weighted} & \multicolumn{5}{c}{Capped value-weighted} \\
+\cmidrule(lr){2-6} \cmidrule(lr){7-11}
+ & Avg & Std & Alpha & t-stat & SR & Avg & Std & Alpha & t-stat & SR \\
+\midrule
+Low (L) & 0.078 & 0.202 & $-$0.047 & \phantom{0}$-$2.9 & 0.39 & 0.087 & 0.175 & $-$0.025 & $-$2.3 & 0.49 \\
+2 & 0.114 & 0.202 & $-$0.011 & \phantom{0}$-$0.6 & 0.56 & 0.108 & 0.174 & $-$0.005 & $-$0.5 & 0.62 \\
+3 & 0.130 & 0.204 & \phantom{$-$}0.004 & \phantom{$-$0}0.3 & 0.64 & 0.115 & 0.177 & \phantom{$-$}0.001 & \phantom{$-$}0.2 & 0.65 \\
+4 & 0.146 & 0.204 & \phantom{$-$}0.020 & \phantom{$-$0}1.2 & 0.72 & 0.127 & 0.172 & \phantom{$-$}0.016 & \phantom{$-$}2.0 & 0.74 \\
+High (H) & 0.191 & 0.203 & \phantom{$-$}0.067 & \phantom{$-$0}3.6 & 0.94 & 0.151 & 0.170 & \phantom{$-$}0.041 & \phantom{$-$}4.9 & 0.89 \\
+H-L & 0.113 & 0.032 & \phantom{$-$}0.113 & \phantom{$-$}16.3 & 3.58 & 0.064 & 0.037 & \phantom{$-$}0.066 & \phantom{$-$}7.5 & 1.75 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel C: RoBERTa, MSE}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.14\textheight}
+\begin{tabular}{lcccccccccc}
+\toprule
+ & \multicolumn{5}{c}{Equal-weighted} & \multicolumn{5}{c}{Capped value-weighted} \\
+\cmidrule(lr){2-6} \cmidrule(lr){7-11}
+ & Avg & Std & Alpha & t-stat & SR & Avg & Std & Alpha & t-stat & SR \\
+\midrule
+Low (L) & 0.105 & 0.207 & $-$0.022 & $-$1.3 & 0.51 & 0.098 & 0.176 & $-$0.015 & $-$1.5 & 0.55 \\
+2 & 0.128 & 0.206 & \phantom{$-$}0.001 & \phantom{$-$}0.1 & 0.62 & 0.114 & 0.179 & $-$0.002 & $-$0.2 & 0.63 \\
+3 & 0.126 & 0.202 & \phantom{$-$}0.001 & \phantom{$-$}0.1 & 0.63 & 0.117 & 0.175 & \phantom{$-$}0.004 & \phantom{$-$}0.4 & 0.67 \\
+4 & 0.140 & 0.199 & \phantom{$-$}0.017 & \phantom{$-$}1.0 & 0.70 & 0.124 & 0.170 & \phantom{$-$}0.015 & \phantom{$-$}1.6 & 0.73 \\
+High (H) & 0.160 & 0.202 & \phantom{$-$}0.036 & \phantom{$-$}2.0 & 0.79 & 0.132 & 0.167 & \phantom{$-$}0.025 & \phantom{$-$}2.6 & 0.79 \\
+H-L & 0.055 & 0.036 & \phantom{$-$}0.058 & \phantom{$-$}6.1 & 1.53 & 0.034 & 0.040 & \phantom{$-$}0.040 & \phantom{$-$}3.9 & 0.85 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel D: RoBERTa, MSRR}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.14\textheight}
+\begin{tabular}{lcccccccccc}
+\toprule
+ & \multicolumn{5}{c}{Equal-weighted} & \multicolumn{5}{c}{Capped value-weighted} \\
+\cmidrule(lr){2-6} \cmidrule(lr){7-11}
+ & Avg & Std & Alpha & t-stat & SR & Avg & Std & Alpha & t-stat & SR \\
+\midrule
+Low (L) & 0.115 & 0.203 & $-$0.010 & $-$0.6 & 0.56 & 0.104 & 0.174 & $-$0.007 & $-$0.7 & 0.60 \\
+2 & 0.117 & 0.206 & $-$0.011 & $-$0.6 & 0.57 & 0.107 & 0.178 & $-$0.008 & $-$0.8 & 0.60 \\
+3 & 0.122 & 0.202 & $-$0.003 & $-$0.2 & 0.61 & 0.114 & 0.175 & \phantom{$-$}0.001 & \phantom{$-$}0.1 & 0.65 \\
+4 & 0.146 & 0.203 & \phantom{$-$}0.021 & \phantom{$-$}1.2 & 0.72 & 0.128 & 0.170 & \phantom{$-$}0.019 & \phantom{$-$}2.3 & 0.76 \\
+High (H) & 0.159 & 0.200 & \phantom{$-$}0.036 & \phantom{$-$}2.0 & 0.80 & 0.133 & 0.170 & \phantom{$-$}0.023 & \phantom{$-$}2.6 & 0.78 \\
+H-L & 0.045 & 0.031 & \phantom{$-$}0.046 & \phantom{$-$}6.4 & 1.46 & 0.029 & 0.032 & \phantom{$-$}0.030 & \phantom{$-$}3.8 & 0.90 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

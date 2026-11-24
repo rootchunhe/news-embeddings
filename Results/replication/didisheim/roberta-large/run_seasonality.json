@@ -1,0 +1,37 @@
+{
+ "script": "04_seasonality.py",
+ "args": {
+  "models": "roberta-large,Llama-2-13b-hf",
+  "results": "Results/replication/didisheim"
+ },
+ "sample": "single-company stories with a RavenPack event category, CKX 5-day text de-duplication, next o2o return available (daily samples; firm-months need none), cap >= NYSE 5th percentile",
+ "universe_pct": 5,
+ "spec": {
+  "monthly": {
+   "ridge_target_clip": [
+    -0.9,
+    5
+   ],
+   "min_month_stocks": 50,
+   "msrr_grid": [
+    0.01,
+    0.03162277660168379,
+    0.1,
+    0.31622776601683794,
+    1.0,
+    3.1622776601683795,
+    10.0,
+    31.622776601683793,
+    100.0,
+    316.22776601683796,
+    1000.0,
+    3162.2776601683795,
+    10000.0
+   ],
+   "msrr_init": 12
+  }
+ },
+ "finished": "2026-11-22 20:24",
+ "model": "roberta-large",
+ "seasonal_months": 276
+}

@@ -1,0 +1,16 @@
+spec,regressor,coef,t_NW,days
+RoBERTa forecast,RoBERTa forecast,8.652028943427254,11.276717653047978,1508
+Category mean (8-yr) + RoBERTa forecast,Category mean (8-yr),8.49297065078051,9.33622752651214,1508
+Category mean (8-yr) + RoBERTa forecast,RoBERTa forecast,4.308502717160327,5.177909030669577,1508
+Group x direction mean + RoBERTa forecast,Group x direction mean,5.740856701838896,7.889258619665992,1508
+Group x direction mean + RoBERTa forecast,RoBERTa forecast,5.869665382704381,6.92635394963742,1508
+Llama-2 forecast,Llama-2 forecast,7.767835893233532,6.918614173745573,752
+Category mean (8-yr) + Llama-2 forecast,Category mean (8-yr),6.470569044601864,5.380122997364327,752
+Category mean (8-yr) + Llama-2 forecast,Llama-2 forecast,4.3394658519483045,3.6549712787431528,752
+Group x direction mean + Llama-2 forecast,Group x direction mean,4.371914980174075,5.055602541357783,752
+Group x direction mean + Llama-2 forecast,Llama-2 forecast,5.95587686673555,4.8763050030028845,752
+ChronoGPT forecast,ChronoGPT forecast,6.160993912980566,6.708030531240647,752
+Category mean (8-yr) + ChronoGPT forecast,Category mean (8-yr),7.423979015378075,6.168795689058914,752
+Category mean (8-yr) + ChronoGPT forecast,ChronoGPT forecast,3.0986459197214877,3.39678128234954,752
+Group x direction mean + ChronoGPT forecast,Group x direction mean,5.196712819627313,6.290094499421055,752
+Group x direction mean + ChronoGPT forecast,ChronoGPT forecast,4.034626542408939,4.338034494009561,752

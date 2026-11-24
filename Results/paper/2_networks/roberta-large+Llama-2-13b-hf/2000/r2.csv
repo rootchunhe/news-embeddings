@@ -1,0 +1,105 @@
+characteristic,encoder,row,adj_R2,firm_decembers
+ebitda_sale,,SIC-3,0.10632786537010963,42672
+ebitda_sale,,NAICS-4,0.10497180688941832,42672
+ebitda_sale,,GICS-6,0.13670727369829327,42672
+ebitda_sale,roberta-large,average,0.10652791579056131,42672
+ebitda_sale,roberta-large,F,0.0977589883157074,42672
+ebitda_sale,roberta-large,category mix,0.12821538416990896,42672
+ebitda_sale,roberta-large,"average, average",0.13795715723785262,42672
+ebitda_sale,roberta-large,"F, category mix",0.1531169894573431,42672
+ebitda_sale,Llama-2-13b-hf,average,0.13549346999811474,42672
+ebitda_sale,Llama-2-13b-hf,F,0.12172995495647265,42672
+ebitda_sale,Llama-2-13b-hf,category mix,0.1336714404757262,42672
+ebitda_sale,Llama-2-13b-hf,"average, average",0.1651589638394001,42672
+ebitda_sale,Llama-2-13b-hf,"F, category mix",0.16533810433680973,42672
+ebitda_at,,SIC-3,0.3393540403857275,43487
+ebitda_at,,NAICS-4,0.3383034103477651,43487
+ebitda_at,,GICS-6,0.3829278152510648,43487
+ebitda_at,roberta-large,average,0.412329676903071,43487
+ebitda_at,roberta-large,F,0.328364062396712,43487
+ebitda_at,roberta-large,category mix,0.45170877444521296,43487
+ebitda_at,roberta-large,"average, average",0.425164032565186,43487
+ebitda_at,roberta-large,"F, category mix",0.4906533182057037,43487
+ebitda_at,Llama-2-13b-hf,average,0.5063084938362036,43487
+ebitda_at,Llama-2-13b-hf,F,0.4772470083808734,43487
+ebitda_at,Llama-2-13b-hf,category mix,0.4473437617993822,43487
+ebitda_at,Llama-2-13b-hf,"average, average",0.5118331362914119,43487
+ebitda_at,Llama-2-13b-hf,"F, category mix",0.5412571876211605,43487
+sale_gr1,,SIC-3,0.0671056256811029,42470
+sale_gr1,,NAICS-4,0.06914738544547028,42470
+sale_gr1,,GICS-6,0.07677111079080567,42470
+sale_gr1,roberta-large,average,0.04635967083074244,42470
+sale_gr1,roberta-large,F,0.039027316272740475,42470
+sale_gr1,roberta-large,category mix,0.040022767086677846,42470
+sale_gr1,roberta-large,"average, average",0.05457197898236921,42470
+sale_gr1,roberta-large,"F, category mix",0.0525385390044375,42470
+sale_gr1,Llama-2-13b-hf,average,0.05435257457491183,42470
+sale_gr1,Llama-2-13b-hf,F,0.05002960199288187,42470
+sale_gr1,Llama-2-13b-hf,category mix,0.038276230976026615,42470
+sale_gr1,Llama-2-13b-hf,"average, average",0.06408377941818877,42470
+sale_gr1,Llama-2-13b-hf,"F, category mix",0.060273203910909734,42470
+beta_60m,,SIC-3,0.26389763188933035,43487
+beta_60m,,NAICS-4,0.25706342420967065,43487
+beta_60m,,GICS-6,0.3078750059947857,43487
+beta_60m,roberta-large,average,0.22648517526983414,43487
+beta_60m,roberta-large,F,0.18226849022388958,43487
+beta_60m,roberta-large,category mix,0.19224324545666893,43487
+beta_60m,roberta-large,"average, average",0.24223868630734158,43487
+beta_60m,roberta-large,"F, category mix",0.25874123679164773,43487
+beta_60m,Llama-2-13b-hf,average,0.34174021628950335,43487
+beta_60m,Llama-2-13b-hf,F,0.3316224204039583,43487
+beta_60m,Llama-2-13b-hf,category mix,0.18036222814282488,43487
+beta_60m,Llama-2-13b-hf,"average, average",0.3555582233033874,43487
+beta_60m,Llama-2-13b-hf,"F, category mix",0.3544640952867031,43487
+asset_beta,,SIC-3,0.3217920583331195,43487
+asset_beta,,NAICS-4,0.32149192075397015,43487
+asset_beta,,GICS-6,0.37931048285732916,43487
+asset_beta,roberta-large,average,0.2807768978994343,43487
+asset_beta,roberta-large,F,0.24567960093513164,43487
+asset_beta,roberta-large,category mix,0.2428460438318294,43487
+asset_beta,roberta-large,"average, average",0.29824840387166784,43487
+asset_beta,roberta-large,"F, category mix",0.31611142162945693,43487
+asset_beta,Llama-2-13b-hf,average,0.39024440120201664,43487
+asset_beta,Llama-2-13b-hf,F,0.3895281983381528,43487
+asset_beta,Llama-2-13b-hf,category mix,0.22771885818812287,43487
+asset_beta,Llama-2-13b-hf,"average, average",0.40404182723914017,43487
+asset_beta,Llama-2-13b-hf,"F, category mix",0.406244822191992,43487
+log_pb,,SIC-3,0.1983175993923374,43487
+log_pb,,NAICS-4,0.19490164240677832,43487
+log_pb,,GICS-6,0.22551049232691966,43487
+log_pb,roberta-large,average,0.20605002639536252,43487
+log_pb,roberta-large,F,0.17440223280620326,43487
+log_pb,roberta-large,category mix,0.17512359482666262,43487
+log_pb,roberta-large,"average, average",0.22408809901273663,43487
+log_pb,roberta-large,"F, category mix",0.23038111516325188,43487
+log_pb,Llama-2-13b-hf,average,0.2620048362383488,43487
+log_pb,Llama-2-13b-hf,F,0.24724302842451085,43487
+log_pb,Llama-2-13b-hf,category mix,0.16785269389330104,43487
+log_pb,Llama-2-13b-hf,"average, average",0.27864653428513786,43487
+log_pb,Llama-2-13b-hf,"F, category mix",0.2759439537762043,43487
+log_pe,,SIC-3,0.1895704607073495,30098
+log_pe,,NAICS-4,0.18690682393400904,30098
+log_pe,,GICS-6,0.20452651501450314,30098
+log_pe,roberta-large,average,0.12318438808602183,30098
+log_pe,roberta-large,F,0.112728391583378,30098
+log_pe,roberta-large,category mix,0.10374743707518985,30098
+log_pe,roberta-large,"average, average",0.14210172366944918,30098
+log_pe,roberta-large,"F, category mix",0.14261812136869367,30098
+log_pe,Llama-2-13b-hf,average,0.17942184667971595,30098
+log_pe,Llama-2-13b-hf,F,0.17540302936997687,30098
+log_pe,Llama-2-13b-hf,category mix,0.09769937073865431,30098
+log_pe,Llama-2-13b-hf,"average, average",0.20165972345237893,30098
+log_pe,Llama-2-13b-hf,"F, category mix",0.18899459076719816,30098
+ltg,,SIC-3,0.12407196568450085,22341
+ltg,,NAICS-4,0.11932329974872358,22341
+ltg,,GICS-6,0.14773210848907437,22341
+ltg,roberta-large,average,0.10167334787023252,22341
+ltg,roberta-large,F,0.07390939820786846,22341
+ltg,roberta-large,category mix,0.08918502409503659,22341
+ltg,roberta-large,"average, average",0.1176649743611633,22341
+ltg,roberta-large,"F, category mix",0.11443057083144637,22341
+ltg,Llama-2-13b-hf,average,0.15451946780419534,22341
+ltg,Llama-2-13b-hf,F,0.1434502991813701,22341
+ltg,Llama-2-13b-hf,category mix,0.08326165717045309,22341
+ltg,Llama-2-13b-hf,"average, average",0.16828385891346764,22341
+ltg,Llama-2-13b-hf,"F, category mix",0.16567629065406053,22341

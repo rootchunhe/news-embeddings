@@ -1,0 +1,29 @@
+\begin{table}[htbp]
+\centering
+\caption{Return Regressions on Lagged Deviations and Current Levels}
+\label{tab:tab9}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports monthly Fama--MacBeth regressions of next-month returns on the deviation of month $\tau-k$ and the historical level of month $\tau$, for firms with news in both months, 2004--2025. The historical level is the mean of the firm's monthly average embedding over its news months in the preceding 12 months; the deviation is the remainder. Each component is standardized and residualized on JKP characteristics, converted into a score by its inner product with the maximum Sharpe ratio regression (MSRR) coefficients of its own signal month, and standardized cross-sectionally. Coefficients are percentage returns per standard deviation of the score, with Newey--West $t$-statistics (6 lags) in parentheses. News is assigned by arrival month, and the return month is the $(k+1)$-th month after the deviation's month.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.75\textheight}
+\begin{tabular}{llcccccc}
+\toprule
+Model &  & $k=1$ & $k=3$ & $k=5$ & $k=11$ & $k=17$ & $k=23$ \\
+\midrule
+RoBERTa & Deviation $E_{D,\,\tau-k}$ & \phantom{(0}0.031\phantom{)} & \phantom{(0}$-$0.011\phantom{)} & \phantom{(0}0.023\phantom{)} & \phantom{(0}0.050\phantom{)} & \phantom{(0}$-$0.010\phantom{)} & \phantom{(}0.046\phantom{)} \\
+ &  & \phantom{0}(1.84)\phantom{0} & \phantom{0}($-$0.56)\phantom{0} & \phantom{0}(1.42)\phantom{0} & \phantom{0}(2.79)\phantom{0} & \phantom{0}($-$0.65)\phantom{0} & (2.48)\phantom{0} \\
+ & Level $E_{L,\,\tau}$ & \phantom{(0}0.114\phantom{)} & \phantom{$-$(0}0.101\phantom{)} & \phantom{(0}0.103\phantom{)} & \phantom{(0}0.092\phantom{)} & \phantom{$-$(0}0.105\phantom{)} & \phantom{(}0.103\phantom{)} \\
+ &  & \phantom{0}(5.71)\phantom{0} & \phantom{$-$0}(5.02)\phantom{0} & \phantom{0}(5.23)\phantom{0} & \phantom{0}(4.48)\phantom{0} & \phantom{$-$0}(5.06)\phantom{0} & (4.80)\phantom{0} \\
+\midrule
+Llama-2 & Deviation $E_{D,\,\tau-k}$ & \phantom{(0}0.039\phantom{)} & \phantom{$-$(0}0.012\phantom{)} & \phantom{(0}0.028\phantom{)} & \phantom{(0}0.005\phantom{)} & \phantom{$-$(0}0.023\phantom{)} & \phantom{(}0.053\phantom{)} \\
+ &  & \phantom{0}(2.08)\phantom{0} & \phantom{$-$0}(0.67)\phantom{0} & \phantom{0}(1.47)\phantom{0} & \phantom{0}(0.27)\phantom{0} & \phantom{$-$0}(1.42)\phantom{0} & (3.03)\phantom{0} \\
+ & Level $E_{L,\,\tau}$ & \phantom{(0}0.329\phantom{)} & \phantom{$-$(0}0.323\phantom{)} & \phantom{(0}0.316\phantom{)} & \phantom{(0}0.299\phantom{)} & \phantom{$-$(0}0.288\phantom{)} & \phantom{(}0.282\phantom{)} \\
+ &  & (12.02)\phantom{0} & \phantom{$-$}(12.81)\phantom{0} & (11.78)\phantom{0} & (11.54)\phantom{0} & \phantom{$-$}(10.36)\phantom{0} & (8.93)\phantom{0} \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

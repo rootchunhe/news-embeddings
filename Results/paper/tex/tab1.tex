@@ -1,0 +1,36 @@
+\begin{table}[htbp]
+\centering
+\caption{Return Forecasts from Event Categories and Headline Embeddings}
+\label{tab:tab1}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports out-of-sample forecasts of next open-to-open returns from news classifications and headline embeddings over 2004--2025. Category forecasts are mean returns over the one or eight years before test year $T$, shrunk toward their event group's mean with weight $n/(n+200)$ on the category mean, where $n$ is the category's headline count. Embedding forecasts use ridge regressions on RoBERTa-large and Llama-2 (13B) embeddings, trained on $T-8$ through $T-3$ and validated on $T-2$ and $T-1$. Coarser forecasts are eight-year means by RavenPack event group or RavenPack type, headline direction from a fixed word rule, or group by direction. LMMD is the Loughran--McDonald positive-minus-negative word count divided by the headline's word count. ESS is RavenPack's event sentiment score. Rank IC is the mean daily Spearman correlation with returns, in percent, with Newey--West $t$-statistics (5 lags). SR is the annualized Sharpe ratio of equal-weighted and value-weighted decile long-short portfolios, with value weights from previous-day capitalization. Net SR deducts 10 basis points per 100\% turnover, or 20 below the NYSE 20th capitalization percentile, when $\gamma$ of the gap between drifted holdings and the target portfolio is traded each day.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.75\textheight}
+\begin{tabular}{lcccccccccc}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{Rank IC (\%)} & \multicolumn{3}{c}{Equal-weighted} & \multicolumn{3}{c}{Value-weighted} &  \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{} &  & \multicolumn{2}{c}{Net SR} &  & \multicolumn{2}{c}{Net SR} & Names \\
+\cmidrule(lr){6-7} \cmidrule(lr){9-10}
+Signal & \# Labels & Mean & $t$ & SR & $\gamma=1$ & $\gamma=0.5$ & SR & $\gamma=1$ & $\gamma=0.5$ & per leg \\
+\midrule
+Category mean (8-yr) & 873 & 3.33 & 37.55 & 6.35 & \phantom{$-$}2.50 & \phantom{$-$}2.79 & 2.30 & $-$0.72 & $-$0.07 & 49 \\
+Category mean (1-yr) & 873 & 2.94 & 33.36 & 6.16 & \phantom{$-$}1.92 & \phantom{$-$}2.29 & 2.18 & $-$0.84 & $-$0.34 & 49 \\
+RoBERTa forecast &  & 2.41 & 28.18 & 4.92 & \phantom{$-$}0.79 & \phantom{$-$}1.04 & 1.21 & $-$1.58 & $-$1.04 & 49 \\
+Llama-2 forecast &  & 2.67 & 29.83 & 4.97 & \phantom{$-$}1.24 & \phantom{$-$}1.48 & 1.90 & $-$0.70 & $-$0.20 & 49 \\
+RavenPack ESS &  & 2.63 & 29.34 & 5.02 & \phantom{$-$}0.75 & \phantom{$-$}1.10 & 1.72 & $-$1.66 & $-$1.25 & 49 \\
+\midrule
+\multicolumn{11}{l}{\textit{Coarser classifications and dictionary tone}} \\
+Event-group mean & \phantom{0}38 & 0.88 & 11.37 & 2.16 & $-$2.33 & $-$1.44 & 0.23 & $-$2.81 & $-$2.06 & 49 \\
+Direction mean & \phantom{00}3 & 2.24 & 24.79 & 4.56 & $-$0.04 & \phantom{$-$}0.46 & 1.60 & $-$1.68 & $-$1.13 & 49 \\
+RavenPack-type mean & 279 & 2.43 & 29.15 & 4.83 & \phantom{$-$}0.59 & \phantom{$-$}1.09 & 0.99 & $-$2.07 & $-$1.51 & 49 \\
+Group $\times$ direction mean & 107 & 2.88 & 32.62 & 6.36 & \phantom{$-$}2.27 & \phantom{$-$}2.47 & 2.04 & $-$0.97 & $-$0.57 & 49 \\
+LMMD sentiment &  & 1.08 & 12.45 & 2.11 & $-$1.42 & $-$0.86 & 0.40 & $-$2.63 & $-$1.84 & 46 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

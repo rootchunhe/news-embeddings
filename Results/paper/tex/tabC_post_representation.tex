@@ -1,0 +1,57 @@
+\begin{table}[htbp]
+\centering
+\caption{Valuations and Growth Forecasts after the Pretraining Cutoffs}
+\label{tab:tabC_post_representation}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports $R^2$ on held-out firms from cross-sectional regressions of year-end valuations and growth forecasts on firm-level embeddings of news published after each model's pretraining cutoff and firm characteristics. Construction as in Table~\ref{tab:tab4}, except for the inputs shown and that year ends are 2020--2025 for RoBERTa-large and 2023--2025 for Llama-2 (13B), and news windows start no earlier than the January after the cutoff. Panel B starts one year later.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\textit{Panel A: Split sample}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.28\textheight}
+\begin{tabular}{llccc}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{3}{c}{$R^2$ (\%)} \\
+\cmidrule(lr){3-5}
+Model & Inputs & $\log(P/B)$ & $\log(P/E)$ & LTG \\
+\midrule
+RoBERTa & $F$ & 17.74 & 12.85 & \phantom{0}3.01 \\
+ & Average embedding & 24.47 & 15.36 & \phantom{0}5.47 \\
+ & Controls & 22.86 & 17.96 & \phantom{0}4.70 \\
+ & $F$ + controls & 32.99 & 18.77 & \phantom{0}5.04 \\
+ & Average embedding + controls & 44.07 & 20.54 & \phantom{0}6.82 \\
+\midrule
+Llama-2 & $F$ & 24.41 & 22.65 & \phantom{0}7.26 \\
+ & Average embedding & 31.45 & 23.52 & \phantom{0}9.64 \\
+ & Controls & 22.24 & 16.36 & \phantom{0}4.73 \\
+ & $F$ + controls & 42.25 & 22.91 & \phantom{0}9.29 \\
+ & Average embedding + controls & 52.55 & 23.86 & 10.29 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel B: Fitted on the previous window}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.28\textheight}
+\begin{tabular}{llccc}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{3}{c}{$R^2$ (\%)} \\
+\cmidrule(lr){3-5}
+Model & Inputs & $\log(P/B)$ & $\log(P/E)$ & LTG \\
+\midrule
+RoBERTa & $F$ & 13.12 & 10.14 & $-$0.83 \\
+ & Average embedding & 19.13 & 12.26 & $-$2.24 \\
+ & Controls & 16.23 & 12.03 & \phantom{$-$}0.64 \\
+ & $F$ + controls & 25.56 & 13.19 & $-$0.66 \\
+ & Average embedding + controls & 37.20 & 15.06 & $-$0.97 \\
+\midrule
+Llama-2 & $F$ & 20.73 & 15.81 & \phantom{$-$}2.61 \\
+ & Average embedding & 27.90 & 17.34 & \phantom{$-$}4.90 \\
+ & Controls & 20.11 & 10.09 & \phantom{$-$}3.41 \\
+ & $F$ + controls & 37.74 & 15.02 & \phantom{$-$}2.28 \\
+ & Average embedding + controls & 48.29 & 16.07 & \phantom{$-$}3.49 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

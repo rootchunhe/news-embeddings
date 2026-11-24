@@ -1,0 +1,57 @@
+# torch 2.5.1, transformers 4.57.6, x86_64, CPU threads 12
+# greedy continuation of 20 tokens (ChronoGPT, Llama-2); RoBERTa: the 5 most likely tokens for '<mask>.' after the prompt
+# decoded without clean-up; each continuation and each RoBERTa token is printed with repr, so line breaks appear as \n
+
+== ChronoGPT-1999: manelalab/chrono-gpt-v1-19991231 @ 45d6568340081add5c5b1444feb17a94b8f8199d, 1,858,535,658 parameters
+PROMPT 'The capital of France is'
+OUTPUT ' the most\nbeautiful city in the world. 1t is\nbuilt on the banks of the'
+PROMPT 'The capital of Japan is'
+OUTPUT ' the most cos mopolitan city in the world. It is the home of the Japanese, Chinese'
+PROMPT 'The company with the largest stock market value in the world is'
+OUTPUT " the United States Steel corporation. It's stock is worth $1, ,000, ,000,"
+PROMPT 'The chairman of the Federal Reserve is'
+OUTPUT '\nsues the following statement:\n\n\nThe Federal Reserve Board has been\ninformed that the Federal'
+PROMPT 'Warren Buffett is the chairman of'
+OUTPUT ' the committee on the celebration of the one hundredth anniversary of the birth of Abraham Lincoln, which will'
+PROMPT 'The chief executive of Microsoft is'
+OUTPUT '\na man who has been in the business\nof making automobiles for more\nthan 20 years.'
+PROMPT 'The New York Stock Exchange is located on'
+OUTPUT ' the site of the old New York City Hall. The first building was erected in 1875. The'
+PROMPT 'IBM is a company that makes'
+OUTPUT "\nmoney.\n\n\nThe company's earnings in\n1860 were $1,000, 900"
+
+== RoBERTa-large: roberta-large @ 722cf37b1afa9454edce342e7895e588b6ff1d59, 355,412,057 parameters
+PROMPT 'The capital of France is'
+OUTPUT ' Paris' 0.994, ' Lyon' 0.005, ' France' 0.000, ' Nice' 0.000, ' London' 0.000
+PROMPT 'The capital of Japan is'
+OUTPUT ' Tokyo' 0.983, ' Kyoto' 0.011, ' Osaka' 0.006, ' Kobe' 0.000, ' Hiroshima' 0.000
+PROMPT 'The company with the largest stock market value in the world is'
+OUTPUT ' Apple' 0.252, ' Amazon' 0.148, ' Microsoft' 0.123, ' Facebook' 0.091, ' Google' 0.047
+PROMPT 'The chairman of the Federal Reserve is'
+OUTPUT ' retiring' 0.147, ' out' 0.074, ' gone' 0.066, ' back' 0.039, ' dead' 0.031
+PROMPT 'Warren Buffett is the chairman of'
+OUTPUT ' Berkshire' 0.907, ' Inc' 0.045, ' Buffett' 0.004, ' the' 0.004, ' Alphabet' 0.004
+PROMPT 'The chief executive of Microsoft is'
+OUTPUT ' retiring' 0.382, ' out' 0.137, ' gone' 0.048, ' back' 0.043, ' leaving' 0.042
+PROMPT 'The New York Stock Exchange is located on'
+OUTPUT ' Manhattan' 0.590, ' Broadway' 0.373, ' Hudson' 0.016, ' downtown' 0.003, ' below' 0.002
+PROMPT 'IBM is a company that makes'
+OUTPUT ' computers' 0.636, ' software' 0.159, ' things' 0.035, ' money' 0.028, ' stuff' 0.018
+
+== Llama-2 (13B): NousResearch/Llama-2-13b-hf @ 4b54e9fdd2ebd8db0901d37b98d3a53bbfaa4503, 13,015,864,320 parameters
+PROMPT 'The capital of France is'
+OUTPUT 'a city of contrasts. It is a city of history, culture, and art. It is'
+PROMPT 'The capital of Japan is'
+OUTPUT 'a city of contrasts. It is a city of the past and the future, of tradition and'
+PROMPT 'The company with the largest stock market value in the world is'
+OUTPUT 'Apple. The company is worth $1.2 trillion.\nThe company with the largest'
+PROMPT 'The chairman of the Federal Reserve is'
+OUTPUT 'the most powerful person in the world. He is the man who decides how much money is in'
+PROMPT 'Warren Buffett is the chairman of'
+OUTPUT 'Berkshire Hathaway, a conglomerate holding company that owns more than '
+PROMPT 'The chief executive of Microsoft is'
+OUTPUT 'to step down from his role in the summer, the company has announced.\nSteve Ballmer'
+PROMPT 'The New York Stock Exchange is located on'
+OUTPUT 'Wall Street in New York City.\nThe New York Stock Exchange (NYSE) is the'
+PROMPT 'IBM is a company that makes'
+OUTPUT 'a lot of money. It is a company that has a lot of employees. It is a company'

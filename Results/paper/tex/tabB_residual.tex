@@ -1,0 +1,46 @@
+\begin{table}[htbp]
+\centering
+\caption{Category and Embedding Forecasts with ChronoGPT$_{1999}$}
+\label{tab:tabB_residual}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports the contribution of ChronoGPT$_{1999}$ embeddings beyond category forecasts of next open-to-open returns in signal years 2004--2025 and 2023--2025. Construction as in Table~\ref{tab:tab2}, except for the encoder. The 2023--2025 results evaluate the same forecasts. ChronoGPT$_{1999}$ is the December 1999 vintage of \citet{he2026chronologically}; embeddings average final-layer representations over non-padding tokens.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\textit{Panel A: Fama--MacBeth regressions, standardized signals (bp per standard deviation)}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.31\textheight}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{3}{c}{2004--2025} & \multicolumn{3}{c}{2023--2025} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7}
+ & (1) & (2) & (3) & (4) & (5) & (6) \\
+\midrule
+Embedding forecast & \phantom{(0}6.38\phantom{)} & \phantom{(0}2.04\phantom{)} & \phantom{(0}2.80\phantom{)} & \phantom{(}6.16\phantom{)} & \phantom{(}3.10\phantom{)} & \phantom{(}4.03\phantom{)} \\
+ & (22.40) & \phantom{0}(7.00) & \phantom{0}(9.58) & (6.71) & (3.40) & (4.34) \\
+Category mean (8-yr) &  & \phantom{(}10.10\phantom{)} &  &  & \phantom{(}7.42\phantom{)} &  \\
+ &  & (28.97) &  &  & (6.17) &  \\
+Group $\times$ direction mean &  &  & \phantom{(0}8.55\phantom{)} &  &  & \phantom{(}5.20\phantom{)} \\
+ &  &  & (27.56) &  &  & (6.29) \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel B: Out of sample: the category mean plus a ridge forecast of its residual}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.24\textheight}
+\begin{tabular}{llcccccccc}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{Rank IC (\%)} & \multicolumn{2}{c}{EW SR} & \multicolumn{2}{c}{VW SR} & \multicolumn{2}{c}{OOS $R^2$} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8} \cmidrule(lr){9-10}
+Signal years & Forecast & Mean & DM $t$ & SR & JK $z$ & SR & JK $z$ & bp & $t$ \\
+\midrule
+2004--2025 & Category mean (8-yr) & 3.33 &  & 6.35 &  & 2.30 &  & 8.75 &  \\
+ & + residual ridge, ChronoGPT$_{1999}$ & 3.30 & $-$0.89 & 6.99 & 5.17 & 2.69 & 2.85 & 8.18 & $-$1.88 \\
+\midrule
+2023--2025 & Category mean (8-yr) & 2.22 &  & 3.31 &  & 0.22 &  & 6.30 &  \\
+ & + residual ridge, ChronoGPT$_{1999}$ & 2.38 & \phantom{$-$}1.16 & 5.00 & 3.49 & 0.40 & 0.32 & 6.56 & \phantom{$-$}0.28 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

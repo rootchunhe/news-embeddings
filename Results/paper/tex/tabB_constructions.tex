@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering
+\caption{Alternative MSRR Strategy Inputs with ChronoGPT$_{1999}$}
+\label{tab:tabB_constructions}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports annualized Sharpe ratios of monthly MSRR strategies fitted to alternative text inputs from ChronoGPT$_{1999}$ in signal years 2004--2025 and 2023--2025. Construction as in the upper panels of Figure~\ref{fig:fig4_inputs}, except for the encoder. The 2023--2025 results evaluate the same strategies. News is assigned by arrival month, and $h$ denotes the $h$-th subsequent return month. Horizons with fewer than 24 signal months are blank.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.75\textheight}
+\begin{tabular}{llccccccc}
+\toprule
+Signal years & Input & $h=1$ & $h=2$ & $h=4$ & $h=6$ & $h=12$ & $h=18$ & $h=24$ \\
+\midrule
+2004--2025 & Embedding $E$ & \phantom{$-$}1.35 & \phantom{$-$}0.14 & $-$0.10 & \phantom{$-$}0.20 & \phantom{$-$}0.28 & \phantom{$-$}0.15 & 0.55 \\
+ & Level $E_L$ & \phantom{$-$}0.76 & \phantom{$-$}0.61 & \phantom{$-$}0.38 & \phantom{$-$}0.11 & \phantom{$-$}0.16 & \phantom{$-$}0.17 & 0.10 \\
+ & Deviation $E_D$ & \phantom{$-$}0.84 & \phantom{$-$}0.41 & $-$0.28 & \phantom{$-$}0.18 & \phantom{$-$}0.40 & $-$0.03 & 0.49 \\
+ & Level 36 months earlier, $E_{L,\,\tau-36}$ & \phantom{$-$}0.21 & \phantom{$-$}0.11 & \phantom{$-$}0.06 & $-$0.04 & $-$0.10 & $-$0.19 & 0.14 \\
+ & Firm identity 36 months earlier, $F_{\tau-36}$ & \phantom{$-$}0.39 & \phantom{$-$}0.34 & \phantom{$-$}0.26 & $-$0.15 & \phantom{$-$}0.10 & $-$0.03 & 0.07 \\
+\midrule
+2023--2025 & Embedding $E$ & \phantom{$-$}2.26 & \phantom{$-$}0.43 & $-$0.21 & $-$1.64 & $-$0.11 &  &  \\
+ & Level $E_L$ & \phantom{$-$}0.12 & \phantom{$-$}0.02 & $-$0.15 & $-$0.39 & $-$0.06 &  &  \\
+ & Deviation $E_D$ & \phantom{$-$}1.37 & \phantom{$-$}0.27 & \phantom{$-$}0.45 & $-$0.42 & \phantom{$-$}0.01 &  &  \\
+ & Level 36 months earlier, $E_{L,\,\tau-36}$ & $-$0.63 & $-$0.44 & $-$1.05 & $-$0.07 & \phantom{$-$}0.50 &  &  \\
+ & Firm identity 36 months earlier, $F_{\tau-36}$ & \phantom{$-$}0.20 & \phantom{$-$}0.37 & \phantom{$-$}0.45 & $-$0.09 & \phantom{$-$}0.26 &  &  \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

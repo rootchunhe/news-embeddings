@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering
+\caption{DKPT Replication: News Portfolio Sharpe Ratios}
+\label{tab:tabR6_did_msrr}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports annualized MSRR Sharpe ratios in the DKPT replication on data for 2000--2022 and 2000--2025; the first 12 months initialize MSRR. Raw uses recursively standardized firm-month embeddings. News shocks residualize them each month on a constant; beta (CAPM); beta, size, and book-to-market (FF3); these plus profitability, investment, and momentum (FF6); the 132 JKP characteristics with the highest coverage over the sample period, rank-standardized each month across all JKP stocks, as in DKPT; GICS industry groups (IND); or JKP plus IND. Predicted news uses the fitted values under JKP; the control uses the JKP ranks, demeaned among the month's firms with news, in place of embeddings. The size rows use JKP news shocks within JKP's mega and large or small and micro groups. Each month's sample has the firm-months with news and a next-month JKP return. MSRR uses leave-one-out ridge. News is assigned by arrival month. The replication substitutes Dow Jones headlines and RoBERTa-large and Llama-2 (13B) for Reuters articles and E5-Mistral-7B.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.75\textheight}
+\begin{tabular}{lcccc}
+\toprule
+ & LLaMA2 & RoBERTa & LLaMA2 & RoBERTa \\
+ & 2000--2022 & 2000--2022 & 2000--2025 & 2000--2025 \\
+\midrule
+Raw & 0.92 & 0.42 & 0.95 & 0.44 \\
+Constant & 1.64 & 0.72 & 1.72 & 0.85 \\
+CAPM & 1.50 & 0.72 & 1.62 & 0.82 \\
+FF3 & 2.86 & 1.50 & 2.86 & 1.57 \\
+FF6 & 3.11 & 1.45 & 3.07 & 1.51 \\
+JKP & 3.63 & 1.77 & 3.49 & 1.68 \\
+IND & 2.04 & 1.00 & 2.05 & 1.06 \\
+JKP + IND & 3.81 & 1.72 & 3.72 & 1.65 \\
+Predicted news (JKP) & 0.11 & 0.08 & 0.11 & 0.10 \\
+JKP characteristics (control) & 1.32 & 1.32 & 1.35 & 1.35 \\
+Mega + Large (JKP) & 1.63 & 0.83 & 1.45 & 0.80 \\
+Small + Micro (JKP) & 3.28 & 1.18 & 3.12 & 1.19 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

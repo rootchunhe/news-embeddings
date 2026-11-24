@@ -1,0 +1,23 @@
+\begin{table}[htbp]
+\centering
+\caption{CKX Replication: Forecast Comparisons and Strategy Correlations}
+\label{tab:tabR2_ckx_dm}
+\begin{minipage}{\linewidth}\footnotesize
+This table compares the CKX replication forecasts of the two models over 2004--2019H1 and 2004--2025. Diebold--Mariano statistics \citep{diebold2002comparing}, with 5 Newey--West lags, compare squared errors on common firm-days in the top or bottom forecast quintile of either model. Positive values favor Llama-2 (13B); bold values exceed the one-sided 5\% critical value. Strategy correlations use daily equal- and value-weighted quintile long-short returns. Headline-level ridge forecasts from RoBERTa-large and Llama-2 embeddings of Dow Jones RavenPack headlines with an event category are averaged within firm-days. Stocks are US common shares at or above the NYSE 5th capitalization percentile on the previous day.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.75\textheight}
+\begin{tabular}{lcc}
+\toprule
+ & 2004--2019H1 & 2004--2025 \\
+\midrule
+Diebold--Mariano, RoBERTa vs. LLaMA2 & 0.208 & 0.184 \\
+Strategy correlation, EW & 0.64\phantom{0} & 0.67\phantom{0} \\
+Strategy correlation, VW & 0.46\phantom{0} & 0.38\phantom{0} \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

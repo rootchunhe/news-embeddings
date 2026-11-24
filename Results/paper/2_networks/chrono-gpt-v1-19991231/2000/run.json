@@ -1,0 +1,384 @@
+{
+ "script": "2_networks.py",
+ "args": {
+  "encoders": "chrono-gpt-v1-19991231",
+  "first": 2000,
+  "years": ""
+ },
+ "sample": "single-company stories with a RavenPack event category, CKX 5-day text de-duplication, next o2o return available (daily samples; firm-months need none), cap >= NYSE 5th percentile",
+ "universe_pct": 5,
+ "spec": {
+  "ridge": {
+   "ridge_grid": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0,
+    10000.0,
+    100000.0,
+    1000000.0,
+    10000000.0,
+    100000000.0
+   ],
+   "penalty": "c / dimension per observation",
+   "standardize": false,
+   "y_clip": 0.5,
+   "first_year": 2000,
+   "train_years": 6,
+   "val_years": 2,
+   "min_names": 20
+  },
+  "monthly": {
+   "ridge_target_clip": [
+    -0.9,
+    5
+   ],
+   "min_month_stocks": 50,
+   "msrr_grid": [
+    0.01,
+    0.03162277660168379,
+    0.1,
+    0.31622776601683794,
+    1.0,
+    3.1622776601683795,
+    10.0,
+    31.622776601683793,
+    100.0,
+    316.22776601683796,
+    1000.0,
+    3162.2776601683795,
+    10000.0
+   ],
+   "msrr_init": 12
+  },
+  "paper": {
+   "test_years": [
+    2004,
+    2025
+   ],
+   "category_mean_shrinkage": 200,
+   "history_days": 20,
+   "projection_years": 6,
+   "firm_effect_min": [
+    10,
+    2
+   ],
+   "taus": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    11,
+    17,
+    23,
+    35
+   ],
+   "taus_fig": [
+    0,
+    35
+   ],
+   "s_lag": 36,
+   "nw_lags": [
+    5,
+    6
+   ],
+   "bands": [
+    [
+     1,
+     8
+    ],
+    [
+     9,
+     32
+    ],
+    [
+     33,
+     128
+    ],
+    [
+     129,
+     512
+    ],
+    [
+     513,
+     100000
+    ]
+   ],
+   "subspace": 32,
+   "min_names": 20,
+   "min_month_stocks": 50,
+   "min_group_stories": 50000,
+   "level_window": 12,
+   "horizon": 10,
+   "drift_min_stories": [
+    5000,
+    20000
+   ],
+   "surprise": {
+    "eval": [
+     2008,
+     2025
+    ],
+    "min_train": 5000
+   },
+   "pretrain_cutoff": {
+    "roberta-large": "2019-07",
+    "Llama-2-13b-hf": "2022-09"
+   },
+   "surprise_dummy_stories": 100,
+   "surprise_rank_prior": 500,
+   "group_min_incidence": 0.01
+  }
+ },
+ "finished": "2026-11-22 20:11",
+ "decembers": 22,
+ "firm_decembers": 43487,
+ "two_way": {
+  "chrono-gpt-v1-19991231-2004": {
+   "components": 1,
+   "normal_residual_categories": 1.8246567253437124e-16,
+   "normal_residual_firms": 1.5271070091314934e-17,
+   "centering_residual": 2.224220924087847e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 798,
+   "stories_without_F": 0.015342257126094303
+  },
+  "chrono-gpt-v1-19991231-2005": {
+   "components": 1,
+   "normal_residual_categories": 6.042934099130299e-16,
+   "normal_residual_firms": 9.610264152560908e-18,
+   "centering_residual": 4.3311073016219307e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 791,
+   "stories_without_F": 0.011566768565617561
+  },
+  "chrono-gpt-v1-19991231-2006": {
+   "components": 1,
+   "normal_residual_categories": 1.5677069372114813e-16,
+   "normal_residual_firms": 1.1364085674991902e-17,
+   "centering_residual": 2.926149943686138e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 645,
+   "stories_without_F": 0.011719272913929723
+  },
+  "chrono-gpt-v1-19991231-2007": {
+   "components": 1,
+   "normal_residual_categories": 4.35131570467509e-16,
+   "normal_residual_firms": 8.747011864513445e-18,
+   "centering_residual": 1.926592237905414e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 552,
+   "stories_without_F": 0.009360988465619332
+  },
+  "chrono-gpt-v1-19991231-2008": {
+   "components": 1,
+   "normal_residual_categories": 2.8111183091515173e-16,
+   "normal_residual_firms": 1.2163945791395594e-17,
+   "centering_residual": 1.615761920474359e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 488,
+   "stories_without_F": 0.00654794404155187
+  },
+  "chrono-gpt-v1-19991231-2009": {
+   "components": 1,
+   "normal_residual_categories": 1.1504023160961205e-16,
+   "normal_residual_firms": 7.735463849611844e-18,
+   "centering_residual": 4.766683126781369e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 481,
+   "stories_without_F": 0.006685222795267081
+  },
+  "chrono-gpt-v1-19991231-2010": {
+   "components": 1,
+   "normal_residual_categories": 2.329272928187054e-16,
+   "normal_residual_firms": 1.1406233411225265e-17,
+   "centering_residual": 4.2481985923289267e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 501,
+   "stories_without_F": 0.009537223785170955
+  },
+  "chrono-gpt-v1-19991231-2011": {
+   "components": 1,
+   "normal_residual_categories": 1.1135053300504073e-16,
+   "normal_residual_firms": 1.4162556271608867e-17,
+   "centering_residual": 1.2385924445618872e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 511,
+   "stories_without_F": 0.008086021939837169
+  },
+  "chrono-gpt-v1-19991231-2012": {
+   "components": 1,
+   "normal_residual_categories": 1.3325772520417942e-16,
+   "normal_residual_firms": 9.790363484388692e-18,
+   "centering_residual": 2.273149650331957e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 523,
+   "stories_without_F": 0.010813388772830168
+  },
+  "chrono-gpt-v1-19991231-2013": {
+   "components": 1,
+   "normal_residual_categories": 1.2568868040010684e-16,
+   "normal_residual_firms": 7.023242663866637e-18,
+   "centering_residual": 2.5544442374666155e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 513,
+   "stories_without_F": 0.00924214296663029
+  },
+  "chrono-gpt-v1-19991231-2014": {
+   "components": 1,
+   "normal_residual_categories": 1.7101142492131803e-16,
+   "normal_residual_firms": 6.91653892502803e-18,
+   "centering_residual": 5.230201696689398e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 571,
+   "stories_without_F": 0.008542234568861402
+  },
+  "chrono-gpt-v1-19991231-2015": {
+   "components": 1,
+   "normal_residual_categories": 1.9323375127170484e-16,
+   "normal_residual_firms": 6.211684445745507e-18,
+   "centering_residual": 1.0709322415751819e-15,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 510,
+   "stories_without_F": 0.00818928214525716
+  },
+  "chrono-gpt-v1-19991231-2016": {
+   "components": 1,
+   "normal_residual_categories": 2.1208856443452194e-16,
+   "normal_residual_firms": 6.735711736927e-18,
+   "centering_residual": 1.8607564451784501e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 443,
+   "stories_without_F": 0.006880724246065331
+  },
+  "chrono-gpt-v1-19991231-2017": {
+   "components": 1,
+   "normal_residual_categories": 2.9488045092087376e-16,
+   "normal_residual_firms": 7.085228225787585e-18,
+   "centering_residual": 5.706826770382161e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 428,
+   "stories_without_F": 0.007708064638494803
+  },
+  "chrono-gpt-v1-19991231-2018": {
+   "components": 1,
+   "normal_residual_categories": 2.852653198618407e-16,
+   "normal_residual_firms": 7.007963060189728e-18,
+   "centering_residual": 2.39954085419074e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 429,
+   "stories_without_F": 0.008337330872331841
+  },
+  "chrono-gpt-v1-19991231-2019": {
+   "components": 1,
+   "normal_residual_categories": 2.496004678703377e-16,
+   "normal_residual_firms": 6.109102360462811e-18,
+   "centering_residual": 2.075048092801958e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 444,
+   "stories_without_F": 0.008826718645067238
+  },
+  "chrono-gpt-v1-19991231-2020": {
+   "components": 1,
+   "normal_residual_categories": 1.45675931637372e-16,
+   "normal_residual_firms": 8.408751124154079e-18,
+   "centering_residual": 1.4856915436196086e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 582,
+   "stories_without_F": 0.010033060661095078
+  },
+  "chrono-gpt-v1-19991231-2021": {
+   "components": 1,
+   "normal_residual_categories": 3.3706871371798414e-16,
+   "normal_residual_firms": 1.1381540982685179e-17,
+   "centering_residual": 3.2930466527926213e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 734,
+   "stories_without_F": 0.014161899843886138
+  },
+  "chrono-gpt-v1-19991231-2022": {
+   "components": 1,
+   "normal_residual_categories": 1.5966368940932508e-16,
+   "normal_residual_firms": 6.574387210972209e-18,
+   "centering_residual": 1.5675547829010704e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 631,
+   "stories_without_F": 0.008437035642620548
+  },
+  "chrono-gpt-v1-19991231-2023": {
+   "components": 1,
+   "normal_residual_categories": 1.3468190039876764e-16,
+   "normal_residual_firms": 9.356329460974717e-18,
+   "centering_residual": 1.199741588011328e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 551,
+   "stories_without_F": 0.007311812931487924
+  },
+  "chrono-gpt-v1-19991231-2024": {
+   "components": 1,
+   "normal_residual_categories": 2.4093225045360344e-16,
+   "normal_residual_firms": 8.699994448941142e-18,
+   "centering_residual": 1.3186439856046516e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 548,
+   "stories_without_F": 0.007413936922045556
+  },
+  "chrono-gpt-v1-19991231-2025": {
+   "components": 1,
+   "normal_residual_categories": 1.4269995902757036e-16,
+   "normal_residual_firms": 6.970975009967519e-18,
+   "centering_residual": 5.3032151320510925e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 567,
+   "stories_without_F": 0.007232805376439471
+  }
+ },
+ "zero_vector_firms": {
+  "2004": 0,
+  "2005": 0,
+  "2006": 0,
+  "2007": 0,
+  "2008": 0,
+  "2009": 0,
+  "2010": 0,
+  "2011": 0,
+  "2012": 0,
+  "2013": 0,
+  "2014": 0,
+  "2015": 0,
+  "2016": 0,
+  "2017": 0,
+  "2018": 0,
+  "2019": 0,
+  "2020": 0,
+  "2021": 0,
+  "2022": 0,
+  "2023": 0,
+  "2024": 0,
+  "2025": 0
+ }
+}

@@ -1,0 +1,44 @@
+\begin{table}[htbp]
+\centering
+\caption{Return Forecasts Combining Categories and Embeddings}
+\label{tab:tab2}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports the contribution of embeddings beyond event-category forecasts of next open-to-open returns over 2004--2025. Ridge estimation for test year $T$ uses $T-8$ through $T-3$ and validation $T-2$ and $T-1$. Panel A reports daily Fama--MacBeth regressions of returns on signals standardized within day; coefficients are in basis points per standard deviation, with Newey--West $t$-statistics (5 lags) in parentheses. The group $\times$ direction mean is the eight-year mean by RavenPack event group and headline direction. Panel B adds to the eight-year category mean a ridge forecast of the return minus its category's training-window mean, estimated on headline embeddings minus their category's training-window mean embedding. No combination weight is estimated; the ridge penalty maximizes the validation rank IC of the combined forecast. Rank IC is the mean daily Spearman correlation with next open-to-open returns, in percent. DM $t$ and JK $z$ test rank-IC and Sharpe-ratio differences from the category benchmark. OOS $R^2$, in basis points, is measured against a zero forecast; its $t$-statistic tests the mean daily difference in summed squared errors from the category benchmark. SR is the annualized Sharpe ratio of equal-weighted (EW) and value-weighted (VW) decile long-short portfolios.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\textit{Panel A: Fama--MacBeth regressions, standardized signals (bp per standard deviation)}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.33\textheight}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{3}{c}{RoBERTa} & \multicolumn{3}{c}{Llama-2} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7}
+ & (1) & (2) & (3) & (4) & (5) & (6) \\
+\midrule
+Embedding forecast & \phantom{(0}7.56\phantom{)} & \phantom{(0}3.02\phantom{)} & \phantom{(0}4.23\phantom{)} & \phantom{(0}8.29\phantom{)} & \phantom{(0}3.93\phantom{)} & \phantom{(0}5.12\phantom{)} \\
+ & (24.35) & \phantom{0}(9.24) & (12.71) & (23.59) & (10.35) & (13.28) \\
+Category mean (8-yr) &  & \phantom{(0}9.61\phantom{)} &  &  & \phantom{(0}9.13\phantom{)} &  \\
+ &  & (27.71) &  &  & (25.90) &  \\
+Group $\times$ direction mean &  &  & \phantom{(0}7.95\phantom{)} &  &  & \phantom{(0}7.65\phantom{)} \\
+ &  &  & (25.25) &  &  & (23.68) \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel B: Out of sample: the category mean plus a ridge forecast of its residual}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.22\textheight}
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{2}{c}{Rank IC (\%)} & \multicolumn{2}{c}{EW SR} & \multicolumn{2}{c}{VW SR} & \multicolumn{2}{c}{OOS $R^2$} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+Forecast & Mean & DM $t$ & SR & JK $z$ & SR & JK $z$ & bp & $t$ \\
+\midrule
+Category mean (8-yr) & 3.33 &  & 6.35 &  & 2.30 &  & 8.75 &  \\
++ residual ridge, RoBERTa & 3.39 & 2.20 & 6.92 & 4.44 & 2.47 & 1.26 & 9.04 & \phantom{$-$}0.78 \\
++ residual ridge, Llama-2 & 3.54 & 4.43 & 6.83 & 3.05 & 2.45 & 0.87 & 7.93 & $-$1.24 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

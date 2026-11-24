@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering
+\caption{Alternative MSRR Strategy Inputs after the Pretraining Cutoffs}
+\label{tab:tabC_post_constructions}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports annualized Sharpe ratios of monthly MSRR strategies fitted to alternative text inputs after pretraining. Construction as in the upper panels of Figure~\ref{fig:fig4_inputs}, except that evaluation starts the January after each pretraining cutoff, covering 2020--2025 for RoBERTa-large and 2023--2025 for Llama-2 (13B). News is assigned by arrival month, and $h$ denotes the $h$-th subsequent return month. Horizons with fewer than 24 signal months are blank.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.75\textheight}
+\begin{tabular}{llccccccc}
+\toprule
+Model & Input & $h=1$ & $h=2$ & $h=4$ & $h=6$ & $h=12$ & $h=18$ & $h=24$ \\
+\midrule
+RoBERTa & Embedding $E$ & \phantom{$-$}1.59 & \phantom{$-$}0.65 & \phantom{$-$}0.36 & \phantom{$-$}0.26 & \phantom{$-$}0.18 & $-$0.48 & 0.21 \\
+ & Level $E_L$ & \phantom{$-$}1.58 & \phantom{$-$}0.91 & \phantom{$-$}0.41 & \phantom{$-$}0.95 & \phantom{$-$}0.21 & $-$0.04 & 0.17 \\
+ & Deviation $E_D$ & \phantom{$-$}0.93 & $-$0.08 & $-$0.19 & $-$0.16 & $-$0.21 & $-$0.89 & 0.17 \\
+ & Level 36 months earlier, $E_{L,\,\tau-36}$ & $-$0.28 & $-$0.43 & $-$0.37 & $-$0.72 & $-$0.44 & \phantom{$-$}0.05 & 0.26 \\
+ & Firm identity 36 months earlier, $F_{\tau-36}$ & \phantom{$-$}0.46 & \phantom{$-$}0.47 & \phantom{$-$}0.17 & $-$0.26 & $-$0.13 & \phantom{$-$}0.08 & 0.41 \\
+\midrule
+Llama-2 & Embedding $E$ & \phantom{$-$}2.22 & \phantom{$-$}1.40 & \phantom{$-$}1.17 & $-$0.77 & $-$0.39 &  &  \\
+ & Level $E_L$ & \phantom{$-$}1.19 & \phantom{$-$}1.83 & \phantom{$-$}1.54 & \phantom{$-$}0.59 & $-$0.47 &  &  \\
+ & Deviation $E_D$ & \phantom{$-$}1.48 & \phantom{$-$}0.54 & \phantom{$-$}0.09 & $-$0.77 & \phantom{$-$}0.08 &  &  \\
+ & Level 36 months earlier, $E_{L,\,\tau-36}$ & \phantom{$-$}0.04 & \phantom{$-$}0.30 & \phantom{$-$}0.18 & $-$0.07 & \phantom{$-$}0.53 &  &  \\
+ & Firm identity 36 months earlier, $F_{\tau-36}$ & \phantom{$-$}0.50 & \phantom{$-$}0.63 & $-$0.09 & $-$0.04 & \phantom{$-$}0.73 &  &  \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

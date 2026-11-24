@@ -1,0 +1,29 @@
+\begin{table}[htbp]
+\centering
+\caption{Centroid Decomposition of the Embedding Forecast}
+\label{tab:tabA_centroid}
+\begin{minipage}{\linewidth}\footnotesize
+This table decomposes the forecast of next open-to-open returns as $\hat y-\bar y=\beta'\bar E_c+\beta'(E-\bar E_c)$ with the ridge coefficients fixed, 2004--2025. $E$ is the centered headline embedding and $\bar E_c$ its mean over the training-window headlines of the category, zero for categories without any. Covariance shares divide each component's covariance with returns by the forecast's, and variance shares divide its variance by the forecast's; moments pool firm-days after removing day means. Covariance shares sum to 100; variance shares need not. Standalone columns use each component as a signal. Rank IC is the mean daily Spearman correlation with next open-to-open returns, in percent. SR is the annualized Sharpe ratio of equal-weighted (EW) and value-weighted (VW) decile long-short portfolios.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.75\textheight}
+\begin{tabular}{llccccc}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{Share (\%)} & \multicolumn{3}{c}{Standalone performance} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-7}
+Model & Decomposition & $\mathrm{Cov}(\hat y^j,r)/\mathrm{Cov}(\hat y,r)$ & $\mathrm{Var}(\hat y^j)/\mathrm{Var}(\hat y)$ & Rank IC (\%) & EW SR & VW SR \\
+\midrule
+RoBERTa & Category centroid $\beta'\bar E_c$ & \phantom{0}82.0 & \phantom{0}40.4 & 2.79 & 5.64 & 2.07 \\
+ & Within category $\beta'(E-\bar E_c)$ & \phantom{0}18.0 & \phantom{0}67.4 & 0.72 & 1.26 & 0.10 \\
+ & Total forecast $\hat y$ & 100.0 & 100.0 & 2.41 & 4.92 & 1.21 \\
+\midrule
+Llama-2 & Category centroid $\beta'\bar E_c$ & \phantom{0}68.2 & \phantom{0}37.6 & 2.84 & 5.80 & 1.95 \\
+ & Within category $\beta'(E-\bar E_c)$ & \phantom{0}31.8 & \phantom{0}64.9 & 1.12 & 1.56 & 0.66 \\
+ & Total forecast $\hat y$ & 100.0 & 100.0 & 2.67 & 4.97 & 1.90 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

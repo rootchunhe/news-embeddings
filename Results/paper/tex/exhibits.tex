@@ -1,0 +1,387 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs,amsmath,amssymb,adjustbox,graphicx,rotating,natbib}
+\begin{document}
+\renewcommand{\thetable}{1}
+\input{tex/tab1.tex}
+\clearpage
+\renewcommand{\thetable}{2}
+\input{tex/tab2.tex}
+\clearpage
+\renewcommand{\thetable}{3}
+\input{tex/tab3.tex}
+\clearpage
+\renewcommand{\thetable}{4}
+\input{tex/tab4.tex}
+\clearpage
+\renewcommand{\thetable}{5}
+\input{tex/tab5.tex}
+\clearpage
+\renewcommand{\thetable}{6}
+\input{tex/tab6.tex}
+\clearpage
+\renewcommand{\thetable}{7}
+\input{tex/tab7.tex}
+\clearpage
+\renewcommand{\thetable}{8}
+\input{tex/tab8.tex}
+\clearpage
+\renewcommand{\thetable}{9}
+\input{tex/tab9.tex}
+\clearpage
+\renewcommand{\thetable}{10}
+\input{tex/tab10.tex}
+\clearpage
+\renewcommand{\thetable}{11}
+\input{tex/tab11.tex}
+\clearpage
+\renewcommand{\thefigure}{1}\refstepcounter{figure}\label{fig:fig1_drift}
+\begin{center}\textbf{Figure 1: Cumulative Returns after News by Event Category}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure plots cumulative returns after news by event category, 2004--2025, one panel per event group. The horizontal axis counts trading days after the first eligible open. Curves sum subsequent open-to-open returns, in basis points, in excess of the mean return of all headlines on the same trading day, averaged equally across trading days. The sample includes headlines with an observed initial return and a complete ten-day return path, and each plotted category has at least 5,000 such headlines. Each legend entry gives the category's number of headlines, in thousands, and its jump, the initial excess return to the eligible open from the preceding close or, for news published during the trading session (09:30--16:00), from that session's open. Curves start at zero at the eligible open and exclude the jump. Shading shows 95\% Newey--West confidence intervals with $\max(5,h)$ lags at day $h$.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.48\linewidth,height=0.19\textheight,keepaspectratio]{figures/fig1_drift_analyst-ratings.pdf}
+\includegraphics[width=0.48\linewidth,height=0.19\textheight,keepaspectratio]{figures/fig1_drift_dividends.pdf}
+\includegraphics[width=0.48\linewidth,height=0.19\textheight,keepaspectratio]{figures/fig1_drift_earnings.pdf}
+\includegraphics[width=0.48\linewidth,height=0.19\textheight,keepaspectratio]{figures/fig1_drift_equity-actions.pdf}
+\includegraphics[width=0.48\linewidth,height=0.19\textheight,keepaspectratio]{figures/fig1_drift_insider-trading.pdf}
+\includegraphics[width=0.48\linewidth,height=0.19\textheight,keepaspectratio]{figures/fig1_drift_labor-issues.pdf}
+\includegraphics[width=0.48\linewidth,height=0.19\textheight,keepaspectratio]{figures/fig1_drift_price-targets.pdf}
+\includegraphics[width=0.48\linewidth,height=0.19\textheight,keepaspectratio]{figures/fig1_drift_revenues.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{2}\refstepcounter{figure}\label{fig:fig2a}
+\begin{center}\textbf{Figure 2: Daily Forecast Covariance with Returns across Horizons}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure decomposes the covariance of the daily ridge forecast with returns across trading-day horizons, for signal years 2004--2025. Horizon $h$ is the $h$-th open-to-open return after the news. The historical level is the mean of the firm's monthly average forecast over its news months in the preceding 12 months, computed with the current coefficients; without such months it is the forecast from the firm effect $F$ of a two-way category--firm projection of headline embeddings, or zero when $F=0$. The deviation is the remainder. Upper panels separate level and deviation; lower panels show the category, firm, and idiosyncratic components of this projection, the first and last split into level and deviation, with firm identity entirely in the level. Diamonds show the total, to which the components sum. Covariances are cross-sectional, pooled across firm-days, and multiplied by $10^6$. Shading shows 95\% Newey--West confidence intervals with 5 lags.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/fig2a.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{3}\refstepcounter{figure}\label{fig:fig3_attribution}
+\begin{center}\textbf{Figure 3: MSRR Strategy Return Decomposition across Horizons}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure decomposes monthly maximum Sharpe ratio regression (MSRR) strategy returns for signal years 2004--2025. Firm-month embeddings are residualized each month on JKP characteristics and combined out of sample using MSRR. News is assigned by arrival month; horizon $h$ is the $h$-th subsequent return month, $h=1,\ldots,36$, and every horizon uses the signal month's $h=1$ MSRR coefficients. Components come from the two-way category--firm projection of headline embeddings and are residualized like the embedding. Historical levels average the category and idiosyncratic components' monthly means over the firm's news months in the preceding 12 months; firm identity lies entirely in the level, and deviations are the remainders. Upper panels separate historical level and deviation; lower panels show the category, firm, and idiosyncratic components, the first and last split into level and deviation. Diamonds show the total, to which the components sum. Returns are annualized percentages after scaling the strategy to 10\% annual volatility at each horizon, with the same scale for every component. Shading shows 95\% Newey--West confidence intervals with 6 lags.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/fig3_attribution.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{4}\refstepcounter{figure}\label{fig:fig4_inputs}
+\begin{center}\textbf{Figure 4: MSRR Strategy Sharpe Ratios by Input and Horizon}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure reports annualized maximum Sharpe ratio regression (MSRR) Sharpe ratios across inputs and subsequent return months, for signal years 2004--2025. Upper panels report strategies on the embedding, its historical level and deviation, the level lagged 36 months, and firm identity lagged 36 months, each residualized each month on JKP characteristics. Lower panels report MSRR strategies on the embedding, the historical level, and lagged firm identity, each residualized on JKP characteristics alone (solid lines) or also on GICS-4 industry indicators (dashed lines). The historical level is the mean of the firm's monthly average embedding over its news months in the preceding 12 months; the deviation is the remainder. Lagged firm identity is the firm effect of the two-way category--firm projection of headline embeddings three test years earlier. The level, the lagged level, and lagged firm identity are traded only on the firm-months where they exist. MSRR is fitted separately for each input and horizon on signal months from 2004, the first 12 months initializing it. Shading divides 95\% Newey--West confidence intervals of mean returns by sample volatility and is shown for the solid lines.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/fig4_inputs.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{5}\refstepcounter{figure}\label{fig:fig5_cutoff_returns}
+\begin{center}\textbf{Figure 5: Cumulative MSRR Strategy Returns by Component and Encoder}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure plots cumulative returns of the monthly maximum Sharpe ratio regression (MSRR) strategy and of its level and deviation components for RoBERTa-large, Llama-2 (13B), and ChronoGPT$_{1999}$, for signal years 2004--2025. News is assigned by arrival month. Firm-month embeddings are residualized each month on JKP characteristics and combined out of sample using MSRR; returns are those of the month after the signal month. The historical level is the mean of the firm's monthly average embedding over its news months in the preceding 12 months; the deviation is the remainder. Each component is residualized like the embedding and uses the same coefficients, so component returns sum to the strategy return. Each encoder's strategy is scaled to 10\% annual volatility over the plotted months, with the same scale for its components. Cumulative returns sum monthly percentage returns, dated at the end of the signal month, over the signal months shared by the three encoders. Dashed lines mark the pretraining cutoffs of RoBERTa (July 2019) and Llama-2 (September 2022).\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/fig5_cutoff_returns.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{6}\refstepcounter{figure}\label{fig:fig6_cutoff}
+\begin{center}\textbf{Figure 6: Rolling Rank IC of Daily Forecast Levels and Deviations}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure reports the rank IC of the level (upper panel) and deviation (lower panel) of the daily ridge forecast for RoBERTa-large, Llama-2 (13B), and ChronoGPT$_{1999}$, for signal years 2004--2025. Forecasts are averaged within firm-days with a return to the eligible open and ten subsequent open-to-open returns, on the trading days shared by the three encoders. Rank IC is the cross-sectional Spearman correlation with next open-to-open returns, in percent, averaged over the preceding 252 trading days. The historical level is the mean of the firm's monthly average forecast over its news months in the preceding 12 months; the deviation is the remainder. Shading shows 95\% Newey--West confidence intervals for RoBERTa and Llama-2 with 40 lags within each window. Dashed lines mark the pretraining cutoffs of RoBERTa (July 2019) and Llama-2 (September 2022).\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/fig6_cutoff.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thetable}{A1}
+\input{tex/tabA_drift.tex}
+\clearpage
+\renewcommand{\thetable}{A2}
+\input{tex/tabA_subsamples.tex}
+\clearpage
+\renewcommand{\thetable}{A3}
+\input{tex/tabA_costs.tex}
+\clearpage
+\renewcommand{\thetable}{A4}
+\input{tex/tabA_windows.tex}
+\clearpage
+\renewcommand{\thetable}{A5}
+\input{tex/tabA_mz.tex}
+\clearpage
+\renewcommand{\thetable}{A6}
+\input{tex/tabA_spanning.tex}
+\clearpage
+\renewcommand{\thetable}{A7}
+\input{tex/tabA_rewrites.tex}
+\clearpage
+\renewcommand{\thetable}{A8}
+\input{tex/tabA_centroid.tex}
+\clearpage
+\renewcommand{\thetable}{A9}
+\input{tex/tabA_probe.tex}
+\clearpage
+\renewcommand{\thetable}{A10}
+\input{tex/tabA_decomposition.tex}
+\clearpage
+\renewcommand{\thetable}{A11}
+\input{tex/tabA_factors.tex}
+\clearpage
+\renewcommand{\thetable}{A12}
+\input{tex/tabA_spectrum.tex}
+\clearpage
+\renewcommand{\thetable}{A13}
+\input{tex/tabA_groups.tex}
+\clearpage
+\renewcommand{\thetable}{A14}
+\input{tex/tabA_horizons.tex}
+\clearpage
+\renewcommand{\thetable}{A15}
+\input{tex/tabA_reoptimized.tex}
+\clearpage
+\renewcommand{\thetable}{A16}
+\input{tex/tabA_constructions.tex}
+\clearpage
+\renewcommand{\thefigure}{A1a}\refstepcounter{figure}\label{fig:figA_stability}
+\begin{center}\textbf{Figure A1a: Annual Performance of the Main Signals}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure reports annual performance of one- and eight-year category means, RoBERTa-large and Llama-2 (13B) ridge forecasts, and RavenPack event sentiment, 2004--2025. Forecasts are averaged within firm-days. Left panels show mean daily Spearman correlations with next open-to-open returns, multiplied by 100; right panels show annualized equal-weighted decile long-short Sharpe ratios.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/figA_stability.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{A1b}\refstepcounter{figure}\label{fig:figA_stability_coarse}
+\begin{center}\textbf{Figure A1b: Annual Performance of Coarser Classification Signals}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure reports annual performance of forecasts from coarser RavenPack classifications and headline direction, and of Loughran--McDonald dictionary sentiment, 2004--2025, with the eight-year category mean as benchmark. Direction is positive, negative, or neutral under a fixed word rule. Sentiment is the positive-minus-negative dictionary word count divided by the headline's word count. Left panels show mean daily Spearman correlations with next open-to-open returns, multiplied by 100; right panels show annualized equal-weighted decile long-short Sharpe ratios.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/figA_stability_coarse.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{A2}\refstepcounter{figure}\label{fig:figA_drift_size}
+\begin{center}\textbf{Figure A2: Cumulative Returns after News by Firm Size}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure plots cumulative returns of decile long-short portfolios sorted on the eight-year category mean within micro, small, and big stocks, 2004--2025. Micro, small, and big stocks are below the NYSE 20th capitalization percentile, between it and the NYSE median, and at or above the median, on the preceding trading day. Deciles are formed each day among the group's firm-days. The horizontal axis counts trading days after the first eligible open, and curves sum subsequent open-to-open returns, in basis points, averaged equally within deciles and across trading days. The sample includes headlines with an observed initial return and a complete 63-day return path. Legends report the jump, the initial return to the eligible open from the preceding close or, for news published during the trading session (09:30--16:00), from that session's open. Curves start at zero at the eligible open and exclude the jump. Shading shows 95\% Newey--West confidence intervals with $\max(5,h)$ lags at day $h$.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/figA_drift_size.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{A3}\refstepcounter{figure}\label{fig:figA_spectrum}
+\begin{center}\textbf{Figure A3: Cumulative Variance and Predictive Covariance by Principal Direction}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure plots cumulative embedding variance and forecast-return covariance across principal directions, ordered by decreasing training variance on a logarithmic axis, 2004--2025. Components are category effects ($C$), firm effects ($F$), and idiosyncratic components ($I$) from a two-way projection on the ridge training window, and All is the full embedding (upper panels) or the forecast (lower panels). Upper panels normalize each component and the full embedding by its own total variance and average test years. Lower panels normalize all contributions by the forecast's covariance with next open-to-open returns, pooling firm-days after removing day means. Dotted lines separate principal-component bands.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/figA_spectrum.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{A4}\refstepcounter{figure}\label{fig:fig2b}
+\begin{center}\textbf{Figure A4: Monthly Return Covariances of the Averaged Daily Forecast}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure decomposes the covariance of the headline-weighted monthly average of daily forecasts with returns across monthly horizons, for signal years 2004--2025. News is assigned by trading month; horizons count months after the signal month, $h=1,\ldots,36$. The historical level is the mean of the firm's monthly average forecast over its news months in the preceding 12 months; the deviation is the remainder. Upper panels separate historical level and deviation; lower panels show the category, firm, and idiosyncratic components of the two-way projection, the first and last split into level and deviation. Diamonds show the total, to which the components sum. Covariances are cross-sectional, pooled across firm-months, and multiplied by $10^6$. Shading shows 95\% Newey--West confidence intervals with 6 lags.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/fig2b.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{A5}\refstepcounter{figure}\label{fig:fig2c}
+\begin{center}\textbf{Figure A5: Monthly Forecast Covariance with Returns across Horizons}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure decomposes the covariance of the ridge forecast fitted to monthly average embeddings with returns across monthly horizons, for signal years 2004--2025. News is assigned by trading month; horizons count months after the signal month, $h=1,\ldots,36$. The historical level is the mean of the firm's monthly forecast over its news months in the preceding 12 months; the deviation is the remainder. Upper panels separate historical level and deviation; lower panels show the category, firm, and idiosyncratic components of the two-way projection, the first and last split into level and deviation. Diamonds show the total, to which the components sum. Covariances are cross-sectional, pooled across firm-months, and multiplied by $10^6$. Shading shows 95\% Newey--West confidence intervals with 6 lags.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/fig2c.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{A6}\refstepcounter{figure}\label{fig:figA_persistence_a}
+\begin{center}\textbf{Figure A6: Daily Forecast Level and Deviation across Horizons}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure reports the historical level and the deviation of the daily ridge forecast as predictors of returns across trading-day horizons, for signal years 2004--2025. Horizon $h$ is the $h$-th open-to-open return after the news. The historical level is the mean of the firm's monthly average forecast over its news months in the preceding 12 months; the deviation is the remainder. Upper panels report each component's rank IC, the mean cross-sectional Spearman correlation with the horizon-$h$ return, in percent. Lower panels report the two components' coefficients in joint Fama--MacBeth regressions after both are residualized on JKP characteristics, in basis points per standard deviation; the residualization is estimated on the preceding month's firm-days with preceding month-end characteristics and applied to the current month. Shading shows 95\% Newey--West confidence intervals with 5 lags.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/figA_persistence_a.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{A7}\refstepcounter{figure}\label{fig:figA_persistence_b}
+\begin{center}\textbf{Figure A7: Averaged Daily Forecast Level and Deviation across Horizons}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure reports the historical level and the deviation of the headline-weighted monthly average of daily forecasts as predictors of returns across monthly horizons, for signal years 2004--2025. News is assigned by trading month; horizons count months after the signal month. The historical level is the mean of the firm's monthly average forecast over its news months in the preceding 12 months; the deviation is the remainder. Upper panels report each component's rank IC, the mean cross-sectional Spearman correlation with the horizon-$h$ return, in percent. Lower panels report the two components' coefficients in joint Fama--MacBeth regressions after both are residualized cross-sectionally on signal-month-end JKP characteristics, in percent per standard deviation. Shading shows 95\% Newey--West confidence intervals with 6 lags.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/figA_persistence_b.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{A8}\refstepcounter{figure}\label{fig:figA_persistence_c}
+\begin{center}\textbf{Figure A8: Monthly Forecast Level and Deviation across Horizons}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure reports the historical level and the deviation of the ridge forecast fitted to monthly average embeddings as predictors of returns across monthly horizons, for signal years 2004--2025. News is assigned by trading month; horizons count months after the signal month. The historical level is the mean of the firm's monthly forecast over its news months in the preceding 12 months; the deviation is the remainder. Upper panels report each component's rank IC, the mean cross-sectional Spearman correlation with the horizon-$h$ return, in percent. Lower panels report the two components' coefficients in joint Fama--MacBeth regressions after both are residualized cross-sectionally on signal-month-end JKP characteristics, in percent per standard deviation. Shading shows 95\% Newey--West confidence intervals with 6 lags.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/figA_persistence_c.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{A9}\refstepcounter{figure}\label{fig:figA_bridge_size}
+\begin{center}\textbf{Figure A9: Averaged Daily Forecast Decomposition by Firm Size}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure reports the covariance of each component of the headline-weighted monthly average of daily forecasts with returns $h$ months after the signal month, $h=1,\ldots,36$, within micro, small, and big stocks, for signal years 2004--2025. Components are the category level and deviation, firm identity, and the idiosyncratic level and deviation of the two-way category--firm projection. Historical levels average the category and idiosyncratic components' monthly means over the firm's news months in the preceding 12 months; firm identity lies entirely in the level, and deviations are the remainders. Size groups are JKP's at the signal month end: micro stocks are below the NYSE 20th capitalization percentile, small stocks between it and the NYSE median, and big stocks above the median. News is assigned by trading month. Covariances are cross-sectional within each month and group, pooled across firm-months, and multiplied by $10^6$. Shading shows 95\% Newey--West confidence intervals with 6 lags.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/figA_bridge_size.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{A10}\refstepcounter{figure}\label{fig:figA_attribution_size}
+\begin{center}\textbf{Figure A10: MSRR Strategy Return Decomposition by Firm Size}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure splits each component's contribution to monthly maximum Sharpe ratio regression (MSRR) strategy returns by the size group of each firm in the signal month, for signal years 2004--2025. Components are the category level and deviation, firm identity, and the idiosyncratic level and deviation of the two-way category--firm projection, each residualized each month on JKP characteristics. Historical levels average the category and idiosyncratic components' monthly means over the firm's news months in the preceding 12 months; firm identity lies entirely in the level, and deviations are the remainders. Size groups are JKP's at the signal month end: micro stocks are below the NYSE 20th capitalization percentile, small stocks between it and the NYSE median, and big stocks above the median. Each group's contribution sums its firms' returns under the same portfolio coefficients, so the three groups add up to the component's full-sample contribution. News is assigned by arrival month; horizon $h$ is the $h$-th subsequent return month, $h=1,\ldots,36$, and every horizon uses the signal month's $h=1$ MSRR coefficients. Returns are annualized percentages after scaling the strategy to 10\% annual volatility at each horizon. Shading shows 95\% Newey--West confidence intervals with 6 lags.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/figA_attribution_size.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{A11}\refstepcounter{figure}\label{fig:figA_persistence_strategy}
+\begin{center}\textbf{Figure A11: MSRR Signal Level and Deviation across Horizons}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure reports the historical level and the deviation of the monthly maximum Sharpe ratio regression (MSRR) signal as predictors of returns across monthly horizons, for signal years 2004--2025. Firm-month embeddings are residualized on JKP characteristics and combined out of sample using MSRR. The historical level is the mean of the firm's monthly average embedding over its news months in the preceding 12 months; the deviation is the remainder. Each is residualized like the embedding and projected onto its signal month's $h=1$ MSRR coefficients. News is assigned by arrival month; horizon $h$ is the $h$-th subsequent return month. Upper panels report each component's rank IC, the mean cross-sectional Spearman correlation with the horizon-$h$ return, in percent. Lower panels report the two components' coefficients in joint Fama--MacBeth regressions, in percent per standard deviation. Both panels use the JKP returns of firms with news in the signal month, with or without news in the return month. Shading shows 95\% Newey--West confidence intervals with 6 lags.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/figA_persistence_strategy.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{A12}\refstepcounter{figure}\label{fig:figA_old_news}
+\begin{center}\textbf{Figure A12: Return Regressions on Lagged Deviations across Horizons}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure reports the coefficient on the deviation of month $\tau-k$ in monthly Fama--MacBeth regressions of next-month returns on this deviation and the historical level of month $\tau$, for firms with news in both months and signal years 2004--2025. The historical level is the mean of the firm's monthly average embedding over its news months in the preceding 12 months; the deviation is the remainder. News is assigned by arrival month. Each component is standardized and residualized on JKP characteristics, converted into a score by its inner product with the maximum Sharpe ratio regression (MSRR) coefficients of its own signal month, and standardized cross-sectionally; coefficients are percentage returns per standard deviation of the score. The horizontal axis is the return month's distance from the deviation month, $h=k+1$. Filled markers are horizons that are multiples of three months. Shading shows 95\% Newey--West confidence intervals with 6 lags.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/figA_old_news.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{A13}\refstepcounter{figure}\label{fig:figA_cutoff_monthly}
+\begin{center}\textbf{Figure A13: Rolling Rank IC of Monthly MSRR Levels and Deviations}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure reports the rank IC of the historical level (upper panel) and deviation (lower panel) of the monthly maximum Sharpe ratio regression (MSRR) signal for RoBERTa-large, Llama-2 (13B), and ChronoGPT$_{1999}$, for signal years 2004--2025. News is assigned by arrival month. The historical level is the mean of the firm's monthly average embedding over its news months in the preceding 12 months; the deviation is the remainder. Both are residualized on JKP characteristics and projected onto the signal month's $h=1$ MSRR coefficients, estimated out of sample. Rank IC is the cross-sectional Spearman correlation with the next month's JKP excess return, in percent, averaged over the 36 signal months ending at each date, among the signal months shared by the three encoders. Shading shows 95\% Newey--West confidence intervals for RoBERTa and Llama-2 with 6 lags within each window. Dashed lines mark the pretraining cutoffs of RoBERTa (July 2019) and Llama-2 (September 2022).\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/figA_cutoff_monthly.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thefigure}{A14}\refstepcounter{figure}\label{fig:figA_cutoff_returns_daily}
+\begin{center}\textbf{Figure A14: Cumulative Returns of Daily Forecast Portfolios by Component and Encoder}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure plots cumulative returns of a daily long-short portfolio formed on the ridge forecast and of its historical level and deviation components for RoBERTa-large, Llama-2 (13B), and ChronoGPT$_{1999}$, for signal years 2004--2025. Portfolio weights are the forecast minus its cross-sectional mean on the day, divided by the sample's average number of firms per day, so the next open-to-open return splits into level and deviation components. The historical level is the mean of the firm's monthly average forecast over its news months in the preceding 12 months; the deviation is the remainder. Each encoder's portfolio is scaled to 10\% annual volatility over the plotted days, with the same scale for its components. Cumulative returns sum daily percentage returns over the trading days shared by the three encoders. Dashed lines mark the pretraining cutoffs of RoBERTa (July 2019) and Llama-2 (September 2022).\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{figures/figA_cutoff_returns_daily.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thetable}{B1}
+\input{tex/tabB_residual.tex}
+\clearpage
+\renewcommand{\thetable}{B2}
+\input{tex/tabB_split.tex}
+\clearpage
+\renewcommand{\thetable}{B3}
+\input{tex/tabB_horizons.tex}
+\clearpage
+\renewcommand{\thetable}{B4}
+\input{tex/tabB_attribution.tex}
+\clearpage
+\renewcommand{\thetable}{B5}
+\input{tex/tabB_constructions.tex}
+\clearpage
+\renewcommand{\thetable}{B6}
+\input{tex/tabB_representation.tex}
+\clearpage
+\renewcommand{\thetable}{B7}
+\input{tex/tabB_networks.tex}
+\clearpage
+\renewcommand{\thetable}{C1}
+\input{tex/tabC_post_residual.tex}
+\clearpage
+\renewcommand{\thetable}{C2}
+\input{tex/tabC_post_split.tex}
+\clearpage
+\renewcommand{\thetable}{C3}
+\input{tex/tabC_post_horizons.tex}
+\clearpage
+\renewcommand{\thetable}{C4}
+\input{tex/tabC_post_attribution.tex}
+\clearpage
+\renewcommand{\thetable}{C5}
+\input{tex/tabC_post_constructions.tex}
+\clearpage
+\renewcommand{\thetable}{C6}
+\input{tex/tabC_post_representation.tex}
+\clearpage
+\renewcommand{\thetable}{C7}
+\input{tex/tabC_post_networks.tex}
+\clearpage
+\renewcommand{\thetable}{R1}
+\input{tex/tabR1_ckx_corr.tex}
+\clearpage
+\renewcommand{\thetable}{R2}
+\input{tex/tabR2_ckx_dm.tex}
+\clearpage
+\renewcommand{\thetable}{R3}
+\input{tex/tabR3_ckx_sorts.tex}
+\clearpage
+\begin{center}\textbf{Figure R1: CKX Replication: Cumulative Portfolio Returns}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure plots cumulative log returns in the CKX replication, 2004--2025. Stocks are sorted on RoBERTa-large or Llama-2 (13B) ridge forecasts into equal- or value-weighted quintiles and held from open to open; long-short portfolios buy the top quintile and sell the bottom. The market is shown for comparison. The dashed line marks June 2019, the end of CKX's sample.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{../replication/ckx/figures/fig5_cumulative.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thetable}{R4}
+\input{tex/tabR4_ckx_costs.tex}
+\clearpage
+\renewcommand{\thetable}{R5}
+\input{tex/tabR5_ckx_alphas.tex}
+\clearpage
+\begin{center}\textbf{Figure R2: CKX Replication: Returns by Firm Size and Trading Day}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure reports average open-to-open returns on trading days 1--6 after portfolio formation in the CKX replication, 2004--2019H1. Within each size group, stocks are sorted on embedding forecasts into equal-weighted quintiles; long-short composition is fixed across horizons. Day 1 is the first open-to-open holding period. Large stocks are at or above the NYSE median capitalization; small stocks are below it. Returns are in basis points per day. Shading shows 95\% Newey--West confidence intervals.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{../replication/ckx/figures/fig10_assimilation.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thetable}{R6}
+\input{tex/tabR6_did_msrr.tex}
+\clearpage
+\begin{center}\textbf{Figure R3: DKPT Replication: News Portfolio Performance}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure reports annualized Sharpe ratios (left), annualized CAPM alphas with 95\% confidence intervals (middle), and cumulative returns of the raw embedding and of predicted news and news shocks under JKP residualization (right). Embeddings are projected each month on the indicated firm characteristics; fitted values are predicted news and residuals are news shocks. Bars distinguish predicted news from news shocks; dashed lines denote raw embeddings. Cumulative returns sum monthly returns of portfolios scaled to 10\% annual volatility. The DKPT replication uses Dow Jones headlines with RoBERTa-large and Llama-2 (13B) on data for 2000--2022; the first 12 months initialize MSRR. Firm-month embeddings are recursively standardized, and portfolios use out-of-sample MSRR.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{../replication/didisheim/figures/fig4_msrr.pdf}
+\end{center}
+\clearpage
+\begin{center}\textbf{Figure R4: DKPT Replication: News Portfolios by Firm Size}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure reports annualized news-shock Sharpe ratios by residualization method (left) and cumulative returns under JKP residualization (right). News shocks are the residuals of monthly projections of embeddings on the indicated firm characteristics. Size groups are JKP's: mega and large stocks, above the NYSE median capitalization, and small and micro stocks, below it and without nano caps. Cumulative-return portfolios are scaled to 10\% annual volatility. The DKPT replication uses Dow Jones headlines with RoBERTa-large and Llama-2 (13B) on data for 2000--2022; the first 12 months initialize MSRR. Firm-month embeddings are recursively standardized, and portfolios use out-of-sample MSRR.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{../replication/didisheim/figures/fig7_size.pdf}
+\end{center}
+\clearpage
+\renewcommand{\thetable}{R7}
+\input{tex/tabR7_did_sorts.tex}
+\clearpage
+\begin{center}\textbf{Figure R5: DKPT Replication: Returns and Alphas by Trading Delay}\end{center}
+\begin{minipage}{\linewidth}\footnotesize This figure reports annualized mean returns and CAPM alphas of JKP-residualized news-shock portfolios delayed by 1--36 months. MSRR coefficients are those of the undelayed strategy in the signal month. Each portfolio is scaled to 10\% annual volatility; returns and alphas are in decimals. Shading shows 95\% Newey--West confidence intervals. The DKPT replication uses Dow Jones headlines with RoBERTa-large and Llama-2 (13B) on data for 2000--2022; the first 12 months initialize MSRR. Firm-month embeddings are recursively standardized, and portfolios use out-of-sample MSRR.\end{minipage}
+\medskip
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,height=0.75\textheight,keepaspectratio]{../replication/didisheim/figures/fig10_delay.pdf}
+\end{center}
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{refs}
+\end{document}

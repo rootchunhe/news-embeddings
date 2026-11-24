@@ -1,0 +1,68 @@
+\begin{table}[htbp]
+\centering
+\caption{Signal Performance by Subsample}
+\label{tab:tabA_subsamples}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports category-mean, embedding, and RavenPack event sentiment score (ESS) forecasts of next open-to-open returns across subsamples, 2004--2025. Micro, small, and big stocks are below the NYSE 20th capitalization percentile, between it and the NYSE median, and at or above the median, on the preceding trading day. Price-derived news comprises stock prices, technical analysis, order imbalances, indexes, and stock picks. Headline-only and full-article are source formats; all forecasts use headlines. Headlines (\%) is the subsample's percentage of all headlines. Panel B reports full-sample differences from the eight-year category mean; DM $t$ and JK $z$ test the rank-IC and Sharpe-ratio differences. Rank IC is the mean daily Spearman correlation with next open-to-open returns, in percent. SR is the annualized Sharpe ratio of equal-weighted (EW) and value-weighted (VW) decile long-short portfolios.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\textit{Panel A: By subsample}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.45\textheight}
+\begin{tabular}{lcccccc}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{Category mean} & \multicolumn{2}{c}{Forecast} & RavenPack \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6}
+Sample & Headlines (\%) & 8-yr & 1-yr & RoBERTa & Llama-2 & ESS \\
+\midrule
+\multicolumn{7}{l}{\textit{Rank IC (\%)}} \\
+All firm-days & 100.0 & 3.33 & 2.94 & 2.41 & 2.67 & 2.63 \\
+Micro & \phantom{0}17.6 & 5.47 & 4.56 & 4.31 & 4.57 & 4.70 \\
+Small & \phantom{0}27.9 & 4.05 & 3.60 & 2.60 & 2.87 & 3.21 \\
+Big & \phantom{0}54.5 & 2.17 & 1.95 & 1.44 & 1.62 & 1.55 \\
+Without insider trading & \phantom{0}74.9 & 3.23 & 2.66 & 2.20 & 2.57 & 2.10 \\
+Without price-derived news & \phantom{0}86.4 & 3.98 & 3.46 & 2.81 & 3.11 & 3.12 \\
+Headline-only news & \phantom{0}39.4 & 4.73 & 4.11 & 3.24 & 3.73 & 3.75 \\
+Full-article news & \phantom{0}23.8 & 3.45 & 3.30 & 3.01 & 3.39 & 3.16 \\
+\midrule
+\multicolumn{7}{l}{\textit{EW SR}} \\
+All firm-days & 100.0 & 6.35 & 6.16 & 4.92 & 4.97 & 5.02 \\
+Micro & \phantom{0}17.6 & 3.86 & 4.13 & 3.30 & 3.18 & 3.66 \\
+Small & \phantom{0}27.9 & 4.14 & 3.80 & 3.09 & 3.02 & 3.40 \\
+Big & \phantom{0}54.5 & 3.21 & 3.05 & 2.41 & 2.85 & 2.75 \\
+Without insider trading & \phantom{0}74.9 & 5.47 & 5.16 & 3.73 & 3.95 & 4.19 \\
+Without price-derived news & \phantom{0}86.4 & 6.61 & 6.20 & 5.06 & 4.97 & 5.01 \\
+Headline-only news & \phantom{0}39.4 & 4.77 & 4.29 & 3.57 & 3.98 & 4.25 \\
+Full-article news & \phantom{0}23.8 & 2.53 & 1.79 & 3.11 & 2.90 & 1.15 \\
+\midrule
+\multicolumn{7}{l}{\textit{VW SR}} \\
+All firm-days & 100.0 & 2.30 & 2.18 & 1.21 & 1.90 & 1.72 \\
+Micro & \phantom{0}17.6 & 3.80 & 4.20 & 3.33 & 3.04 & 3.68 \\
+Small & \phantom{0}27.9 & 3.79 & 3.53 & 2.77 & 2.73 & 3.14 \\
+Big & \phantom{0}54.5 & 2.20 & 2.03 & 0.98 & 1.96 & 1.59 \\
+Without insider trading & \phantom{0}74.9 & 2.24 & 2.07 & 1.05 & 1.68 & 1.76 \\
+Without price-derived news & \phantom{0}86.4 & 2.62 & 2.45 & 1.34 & 2.08 & 2.05 \\
+Headline-only news & \phantom{0}39.4 & 2.97 & 2.36 & 1.41 & 1.74 & 2.25 \\
+Full-article news & \phantom{0}23.8 & 1.30 & 0.97 & 1.25 & 1.02 & 0.41 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel B: Differences from the 8-year category mean, all firm-days}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.10\textheight}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{Rank IC (\%)} & \multicolumn{2}{c}{EW SR} & \multicolumn{2}{c}{VW SR} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+Signal & $\Delta$ & DM $t$ & $\Delta$ & JK $z$ & $\Delta$ & JK $z$ \\
+\midrule
+Category mean (1-yr) & $-$0.39 & \phantom{0}$-$5.85 & $-$0.19 & $-$0.96 & $-$0.11 & $-$0.49 \\
+RoBERTa forecast & $-$0.91 & $-$10.54 & $-$1.43 & $-$5.78 & $-$1.09 & $-$4.18 \\
+Llama-2 forecast & $-$0.65 & \phantom{0}$-$7.33 & $-$1.38 & $-$5.66 & $-$0.40 & $-$1.47 \\
+RavenPack ESS & $-$0.70 & \phantom{0}$-$9.12 & $-$1.34 & $-$5.34 & $-$0.58 & $-$2.23 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

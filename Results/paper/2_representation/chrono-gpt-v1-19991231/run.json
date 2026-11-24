@@ -1,0 +1,388 @@
+{
+ "script": "2_representation.py",
+ "args": {
+  "model": "chrono-gpt-v1-19991231",
+  "years": ""
+ },
+ "sample": "single-company stories with a RavenPack event category, CKX 5-day text de-duplication, next o2o return available (daily samples; firm-months need none), cap >= NYSE 5th percentile",
+ "universe_pct": 5,
+ "spec": {
+  "ridge": {
+   "ridge_grid": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0,
+    10000.0,
+    100000.0,
+    1000000.0,
+    10000000.0,
+    100000000.0
+   ],
+   "penalty": "c / dimension per observation",
+   "standardize": false,
+   "y_clip": 0.5,
+   "first_year": 2000,
+   "train_years": 6,
+   "val_years": 2,
+   "min_names": 20
+  },
+  "monthly": {
+   "ridge_target_clip": [
+    -0.9,
+    5
+   ],
+   "min_month_stocks": 50,
+   "msrr_grid": [
+    0.01,
+    0.03162277660168379,
+    0.1,
+    0.31622776601683794,
+    1.0,
+    3.1622776601683795,
+    10.0,
+    31.622776601683793,
+    100.0,
+    316.22776601683796,
+    1000.0,
+    3162.2776601683795,
+    10000.0
+   ],
+   "msrr_init": 12
+  },
+  "paper": {
+   "test_years": [
+    2004,
+    2025
+   ],
+   "category_mean_shrinkage": 200,
+   "history_days": 20,
+   "projection_years": 6,
+   "firm_effect_min": [
+    10,
+    2
+   ],
+   "taus": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    11,
+    17,
+    23,
+    35
+   ],
+   "taus_fig": [
+    0,
+    35
+   ],
+   "s_lag": 36,
+   "nw_lags": [
+    5,
+    6
+   ],
+   "bands": [
+    [
+     1,
+     8
+    ],
+    [
+     9,
+     32
+    ],
+    [
+     33,
+     128
+    ],
+    [
+     129,
+     512
+    ],
+    [
+     513,
+     100000
+    ]
+   ],
+   "subspace": 32,
+   "min_names": 20,
+   "min_month_stocks": 50,
+   "min_group_stories": 50000,
+   "level_window": 12,
+   "horizon": 10,
+   "drift_min_stories": [
+    5000,
+    20000
+   ],
+   "surprise": {
+    "eval": [
+     2008,
+     2025
+    ],
+    "min_train": 5000
+   },
+   "pretrain_cutoff": {
+    "roberta-large": "2019-07",
+    "Llama-2-13b-hf": "2022-09"
+   },
+   "surprise_dummy_stories": 100,
+   "surprise_rank_prior": 500,
+   "group_min_incidence": 0.01
+  }
+ },
+ "finished": "2026-11-22 20:09",
+ "decembers": 22,
+ "two_way": {
+  "2000-2004": {
+   "components": 1,
+   "normal_residual_categories": 1.390139679446504e-16,
+   "normal_residual_firms": 1.4956202666751742e-17,
+   "centering_residual": 1.7294596431298561e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 798,
+   "stories_without_F": 0.015342257126094303
+  },
+  "2000-2005": {
+   "components": 1,
+   "normal_residual_categories": 8.2699213620051255e-16,
+   "normal_residual_firms": 8.4570324542536e-18,
+   "centering_residual": 3.750971899361131e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 791,
+   "stories_without_F": 0.011566768565617561
+  },
+  "2000-2006": {
+   "components": 1,
+   "normal_residual_categories": 1.5748654163768306e-16,
+   "normal_residual_firms": 9.66394687322146e-18,
+   "centering_residual": 2.5253109797593505e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 645,
+   "stories_without_F": 0.011719272913929723
+  },
+  "2000-2007": {
+   "components": 1,
+   "normal_residual_categories": 2.92261676203367e-16,
+   "normal_residual_firms": 6.525548533843363e-18,
+   "centering_residual": 5.574421050703326e-17,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 552,
+   "stories_without_F": 0.009360988465619332
+  },
+  "2000-2008": {
+   "components": 1,
+   "normal_residual_categories": 2.7357402610082166e-16,
+   "normal_residual_firms": 1.0098370090969927e-17,
+   "centering_residual": 2.274775930362245e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 488,
+   "stories_without_F": 0.00654794404155187
+  },
+  "2000-2009": {
+   "components": 1,
+   "normal_residual_categories": 1.6660999060702434e-16,
+   "normal_residual_firms": 7.735463849611844e-18,
+   "centering_residual": 2.3235677470090263e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 481,
+   "stories_without_F": 0.006685222795267081
+  },
+  "2000-2010": {
+   "components": 1,
+   "normal_residual_categories": 3.369841590263745e-16,
+   "normal_residual_firms": 6.5285678077407764e-18,
+   "centering_residual": 3.1962674304869435e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 501,
+   "stories_without_F": 0.009537223785170955
+  },
+  "2000-2011": {
+   "components": 1,
+   "normal_residual_categories": 1.307470774639833e-16,
+   "normal_residual_firms": 1.4162556271608867e-17,
+   "centering_residual": 1.5473537643287514e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 511,
+   "stories_without_F": 0.008086021939837169
+  },
+  "2000-2012": {
+   "components": 1,
+   "normal_residual_categories": 1.180962595304386e-16,
+   "normal_residual_firms": 8.521242291967935e-18,
+   "centering_residual": 2.864976543941e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 523,
+   "stories_without_F": 0.010813388772830168
+  },
+  "2000-2013": {
+   "components": 1,
+   "normal_residual_categories": 1.473968849975128e-16,
+   "normal_residual_firms": 7.661719269672695e-18,
+   "centering_residual": 2.9283458184097676e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 513,
+   "stories_without_F": 0.00924214296663029
+  },
+  "2000-2014": {
+   "components": 1,
+   "normal_residual_categories": 2.1112735068648061e-16,
+   "normal_residual_firms": 8.991500602536439e-18,
+   "centering_residual": 1.951087742286074e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 571,
+   "stories_without_F": 0.008542234568861402
+  },
+  "2000-2015": {
+   "components": 1,
+   "normal_residual_categories": 1.9642353517627686e-16,
+   "normal_residual_firms": 5.8759177189484525e-18,
+   "centering_residual": 5.290376856579209e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 510,
+   "stories_without_F": 0.00818928214525716
+  },
+  "2000-2016": {
+   "components": 1,
+   "normal_residual_categories": 3.151967671767122e-16,
+   "normal_residual_firms": 8.117396195783821e-18,
+   "centering_residual": 3.3445466478875063e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 443,
+   "stories_without_F": 0.006880724246065331
+  },
+  "2000-2017": {
+   "components": 1,
+   "normal_residual_categories": 1.392584738187536e-16,
+   "normal_residual_firms": 5.735660944685187e-18,
+   "centering_residual": 2.8814894800334764e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 428,
+   "stories_without_F": 0.007708064638494803
+  },
+  "2000-2018": {
+   "components": 1,
+   "normal_residual_categories": 2.588824001058323e-16,
+   "normal_residual_firms": 7.214079620783543e-18,
+   "centering_residual": 4.902793235181505e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 429,
+   "stories_without_F": 0.008337330872331841
+  },
+  "2000-2019": {
+   "components": 1,
+   "normal_residual_categories": 2.5292774683451833e-16,
+   "normal_residual_firms": 8.945471313534831e-18,
+   "centering_residual": 2.1337730132984687e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 444,
+   "stories_without_F": 0.008826718645067238
+  },
+  "2000-2020": {
+   "components": 1,
+   "normal_residual_categories": 1.8635610599476607e-16,
+   "normal_residual_firms": 7.04516986077774e-18,
+   "centering_residual": 2.1649657279845166e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 582,
+   "stories_without_F": 0.010033060661095078
+  },
+  "2000-2021": {
+   "components": 1,
+   "normal_residual_categories": 2.538959142291309e-16,
+   "normal_residual_firms": 9.630534677656689e-18,
+   "centering_residual": 2.508157355252006e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 734,
+   "stories_without_F": 0.014161899843886138
+  },
+  "2000-2022": {
+   "components": 1,
+   "normal_residual_categories": 1.2397415883547595e-16,
+   "normal_residual_firms": 8.45278355696427e-18,
+   "centering_residual": 1.187204202567783e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 631,
+   "stories_without_F": 0.008437035642620548
+  },
+  "2000-2023": {
+   "components": 1,
+   "normal_residual_categories": 1.7358453342071514e-16,
+   "normal_residual_firms": 6.894137497560318e-18,
+   "centering_residual": 1.85370027520096e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 551,
+   "stories_without_F": 0.007311812931487924
+  },
+  "2000-2024": {
+   "components": 1,
+   "normal_residual_categories": 1.971594560833212e-16,
+   "normal_residual_firms": 8.154350197788038e-18,
+   "centering_residual": 1.4480920208407097e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 548,
+   "stories_without_F": 0.007413936922045556
+  },
+  "2000-2025": {
+   "components": 1,
+   "normal_residual_categories": 1.3941950019935037e-16,
+   "normal_residual_firms": 7.381032363495019e-18,
+   "centering_residual": 1.4606814507435291e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 567,
+   "stories_without_F": 0.007232805376439471
+  },
+  "2023-2023": {
+   "components": 1,
+   "normal_residual_categories": 1.2370344486272616e-16,
+   "normal_residual_firms": 6.909164478369732e-18,
+   "centering_residual": 3.2827267018219055e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 226,
+   "stories_without_F": 0.0034524463991203957
+  },
+  "2023-2024": {
+   "components": 1,
+   "normal_residual_categories": 1.373487317141621e-16,
+   "normal_residual_firms": 5.8936955772868056e-18,
+   "centering_residual": 3.38773544816282e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 480,
+   "stories_without_F": 0.022033542018918797
+  },
+  "2023-2025": {
+   "components": 1,
+   "normal_residual_categories": 1.2282253413077505e-16,
+   "normal_residual_firms": 6.823474118376392e-18,
+   "centering_residual": 8.482232917609898e-17,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 513,
+   "stories_without_F": 0.014738134495851086
+  }
+ }
+}

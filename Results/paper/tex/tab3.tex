@@ -1,0 +1,50 @@
+\begin{table}[htbp]
+\centering
+\caption{Explaining Earnings Surprises and Predicting Next-Day Returns}
+\label{tab:tab3}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports how well earnings headlines explain earnings surprises and predict next-day returns, 2008--2025. Headlines arrive between a timed IBES announcement and 09:00 New York time on its assigned trading day. SUE is actual earnings minus consensus, divided by the previous day's price, winsorized at the 1st and 99th percentiles and expressed as a percentile rank among the announcements of the preceding 12 months. $K$ denotes category dummies, $\hat y$ the CKX forecast, and $E$ the headline embedding. $E_L$ is the firm's historical level, the mean of its monthly average embeddings over its news months in the preceding 12 months, and $E_D=E-E_L$; in $K+E_D+E_L$ they have separate coefficients and ridge penalties. All specifications use the same headlines; coefficients use all earlier years, and ridge penalties are chosen on the preceding year. Panel A reports out-of-sample $R^2$ relative to the training mean and Spearman correlations, averaged over test years. Panel B's $R^2$ is relative to a zero forecast, and its rank IC is the mean daily Spearman correlation with next open-to-open returns, in percent.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\textit{Panel A: Explaining the SUE rank}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.24\textheight}
+\begin{tabular}{llcccc}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{RoBERTa} & \multicolumn{2}{c}{Llama-2} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6}
+Specification & Method & OOS $R^2$ (\%) & Spearman & OOS $R^2$ (\%) & Spearman \\
+\midrule
+$K$ & OLS & 1.87 & 0.12 & 1.87 & 0.12 \\
+$K+\hat y$ & OLS & 1.87 & 0.12 & 1.91 & 0.13 \\
+$K+E$ & Ridge & 2.71 & 0.16 & 5.07 & 0.22 \\
+$K+E_D$ & Ridge & 2.64 & 0.16 & 4.59 & 0.22 \\
+$K+E_L$ & Ridge & 2.86 & 0.18 & 4.71 & 0.22 \\
+$K+E_D+E_L$ & Ridge & 3.40 & 0.19 & 5.84 & 0.25 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel B: Predicting the next-day return}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.31\textheight}
+\begin{tabular}{llcccc}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{RoBERTa} & \multicolumn{2}{c}{Llama-2} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6}
+Specification & Method & OOS $R^2$ (\%) & Rank IC (\%) & OOS $R^2$ (\%) & Rank IC (\%) \\
+\midrule
+$K$ & OLS & 0.07 & 2.49 & 0.07 & 2.49 \\
+$K+\hat y$ & OLS & 0.08 & 2.97 & 0.10 & 3.49 \\
+$K+E$ & Ridge & 0.06 & 2.74 & 0.09 & 3.33 \\
+$K+E_D+E_L$ & Ridge & 0.06 & 2.99 & 0.10 & 3.97 \\
+\midrule
+$K+\mathrm{SUE}$ & OLS & 0.73 & 8.69 & 0.73 & 8.69 \\
+$K+\mathrm{SUE}+\hat y$ & OLS & 0.73 & 8.69 & 0.77 & 8.99 \\
+$K+\mathrm{SUE}+E$ & Ridge & 0.71 & 8.81 & 0.77 & 9.24 \\
+$K+\mathrm{SUE}+E_D+E_L$ & Ridge & 0.72 & 8.87 & 0.78 & 9.24 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

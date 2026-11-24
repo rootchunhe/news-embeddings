@@ -1,0 +1,27 @@
+\begin{table}[htbp]
+\centering
+\caption{Mincer--Zarnowitz Slopes and Correlation with Category Benchmarks}
+\label{tab:tabA_mz}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports Mincer--Zarnowitz slopes and category-related variation in forecasts, 2004--2025. Slopes come from daily regressions of next open-to-open returns on forecasts in return units; $t(b=1)$ tests a unit slope. No slope is reported for RavenPack's event sentiment score, which is not a return forecast. Variance explained by category is the headline-level $R^2$ on category indicators, in percent. The final columns report firm-day correlations with the eight-year category mean and with the eight-year mean by RavenPack event group and headline direction.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.75\textheight}
+\begin{tabular}{lccccc}
+\toprule
+ & \multicolumn{2}{c}{Mincer--Zarnowitz} & Var. explained & \multicolumn{2}{c}{Correlation with} \\
+\cmidrule(lr){2-3} \cmidrule(lr){5-6}
+Signal & Slope $b$ & $t(b=1)$ & by category (\%) & Category & Group $\times$ dir. \\
+\midrule
+RoBERTa forecast & 0.70 & $-$8.76 & 22.87 & 0.42 & 0.38 \\
+Llama-2 forecast & 0.66 & $-$9.48 & 24.26 & 0.45 & 0.40 \\
+Category mean (8-yr) & 0.78 & $-$8.49 &  &  & 0.73 \\
+Group $\times$ direction mean & 0.76 & $-$9.65 & 50.86 & 0.73 &  \\
+RavenPack ESS &  &  & 97.23 & 0.56 & 0.51 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

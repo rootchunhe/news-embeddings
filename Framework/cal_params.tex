@@ -1,0 +1,34 @@
+\begin{tabular}{llccccl}
+\toprule
+Parameter & Description & Common & ChronoGPT$_{1999}$ & RoBERTa & Llama-2 & Source \\
+\midrule
+\multicolumn{7}{@{}l}{\textit{Panel A: Set before the search}} \\
+$\kappa$ & Announcement response & 0.68 &  &  &  & Category long--short return, \eqref{eq:D1} \\
+$\vartheta$ & Daily drift decay & 0.26 &  &  &  & Category long--short return, \eqref{eq:D1} \\
+$\mathrm{sd}(m_K)$ & Category signal & 0.52 &  &  &  & Category-mean long--short return and slope \\
+$q$ & Detail loading &  &  &  & 0.18 & SUE $R^2$ gain, \eqref{eq:D7} \\
+$g$ & State loading &  &  &  & 1 & Normalization \\
+$N_\theta$ & Memory window, months &  &  & 360 & 360 & \citet{crane2025total} \\
+$\bar n$ & News items per firm-month & 3.86 &  &  &  & Harmonic mean in the data \\
+$\bar n^F$ & News items per firm, valuation windows & 189 &  &  &  & Data, \eqref{eq:D20} \\
+\midrule
+\multicolumn{7}{@{}l}{\textit{Panel B: Joint search}} \\
+$\mathrm{sd}(\nu)$ & Detail & 1.06 &  &  &  & Daily $I_D$, \eqref{eq:D34} \\
+$\pi$ & State premium & 2.7 &  &  &  & Daily $F$ net of memory, \eqref{eq:D32} \\
+$\Var(\bar z)$ & Permanent share & 0.29 &  &  &  & $F$, $I_L$, \eqref{eq:D32}--\eqref{eq:D36} \\
+$\rho_m$ & Monthly state persistence & 0.983 &  &  &  & Monthly components, \eqref{eq:D35}--\eqref{eq:D37} \\
+$a$ & Category-signal loading &  & 0.88 & 0.95 & 1.03 & Daily $C_D$, \eqref{eq:D2} \\
+$q$ & Detail loading &  & 0.14 & 0.14 &  & Daily $I_D$, \eqref{eq:D34} \\
+$g$ & State loading &  & 0.39 & 0.43 &  & Daily $F$, $I_L$, monthly components \\
+$\eta$ & Memory loading &  &  & 0.12 & 2.20 & IC ratios (Llama-2), monthly $F$, $I_L$ (RoBERTa) \\
+$\Upsilon$ & Monthly strategy scale &  & 1.47 & 6.39 & 6.12 & Monthly components, \eqref{eq:D17} \\
+$\sigma_\theta^2$ & Cash-flow-news variance, monthly & 0.011 &  &  &  & \eqref{eq:D23}, jointly with $\pi$ \\
+\midrule
+\multicolumn{7}{@{}l}{\textit{Panel C: Implied}} \\
+ & Half-life of $x$, months & 39 &  &  &  & $\ln 2/(-\ln\rho_m)$ \\
+$\phi(g)$ & Reliability of the state measure &  & 0.13 & 0.16 & 0.50 & $g^2/(1+g^2)$ \\
+$\phi(\eta)$ & Reliability of the memory measure &  &  & 0.01 & 0.83 & $\eta^2/(1+\eta^2)$ \\
+ & Memory's share of the first-month mean return, MSRR on $E_L$ (\%) &  & 0 & 24 & 47 & \eqref{eq:D16}, \eqref{eq:D26} \\
+ & Memory's share of the first-month mean return, MSRR on $E_{L,\tau-36}$ (\%) &  & 0 & 40 & 66 & \eqref{eq:D16}, \eqref{eq:D31} \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,53 @@
+\begin{table}[htbp]
+\centering
+\caption{Forecast Decomposition by Event Group}
+\label{tab:tabA_groups}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports forecasts of next open-to-open returns within event groups with at least 50,000 headlines, 2004--2025. Rank IC is the mean daily Spearman correlation across the group's firm-days, in percent. Content shares use the category, firm, and idiosyncratic components of a two-way category--firm projection; timing shares use the historical level and the deviation from it. The historical level is the mean of the firm's monthly average forecast over its news months in the preceding 12 months. The category mean is the eight-year mean. Shares divide component covariance by forecast covariance within the group and are omitted when the latter has $|t|<2$, with 5 Newey--West lags. Contribution to CKX L--S is the group's contribution to the equal-weighted decile long-short return, in basis points per day; contributions sum to the portfolio return across all groups, including those omitted.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.75\textheight}
+\begin{tabular}{llccccccccc}
+\toprule
+\multicolumn{3}{c}{} & \multicolumn{2}{c}{Rank IC (\%)} & \multicolumn{5}{c}{Share of the predictive covariance (\%)} & Contribution to \\
+\cmidrule(lr){4-5} \cmidrule(lr){6-10}
+Model & Event group & Headlines & Category mean & Forecast & Category & Firm & Idiosyncratic & Level & Deviation & CKX L--S (bp) \\
+\midrule
+RoBERTa & Insider trading & 1,395,779 & \phantom{$-$}3.42 & \phantom{$-$}2.67 & \phantom{0}80.6 & \phantom{$-$0}1.7 & \phantom{$-$}17.7 & \phantom{$-$0}3.9 & \phantom{0}96.1 & \phantom{$-$}9.7 \\
+ & Earnings & 1,054,174 & \phantom{$-$}2.93 & \phantom{$-$}2.82 & \phantom{0}51.2 & \phantom{$-$}15.7 & \phantom{$-$}33.2 & \phantom{$-$}15.2 & \phantom{0}84.8 & \phantom{$-$}3.0 \\
+ & Revenues & \phantom{,0}432,552 & \phantom{$-$}1.32 & \phantom{$-$}2.32 & \phantom{0}18.1 & \phantom{$-$}35.3 & \phantom{$-$}46.7 & \phantom{$-$}32.1 & \phantom{0}67.9 & \phantom{$-$}1.3 \\
+ & Technical analysis & \phantom{,0}431,954 & $-$0.19 & \phantom{$-$}0.50 & \phantom{0}42.3 & \phantom{$-$}21.1 & \phantom{$-$}36.5 & \phantom{$-$}32.6 & \phantom{0}67.4 & $-$0.0 \\
+ & Analyst ratings & \phantom{,0}390,015 & \phantom{$-$}5.03 & \phantom{$-$}3.88 & 113.3 & \phantom{$-$0}5.6 & $-$18.9 & \phantom{$-$0}4.8 & \phantom{0}95.2 & \phantom{$-$}3.7 \\
+ & Investor relations & \phantom{,0}333,417 & $-$1.16 & \phantom{$-$}0.70 &  &  &  &  &  & \phantom{$-$}0.5 \\
+ & Price targets & \phantom{,0}251,315 & \phantom{$-$}1.29 & \phantom{$-$}1.01 & 110.0 & \phantom{$-$}13.3 & $-$23.3 & \phantom{$-$0}0.3 & \phantom{0}99.7 & \phantom{$-$}0.4 \\
+ & Labor issues & \phantom{,0}197,779 & \phantom{$-$}2.47 & \phantom{$-$}2.38 & \phantom{0}54.0 & \phantom{$-$0}6.9 & \phantom{$-$}39.1 & \phantom{$-$}10.1 & \phantom{0}89.9 & \phantom{$-$}1.6 \\
+ & Stock prices & \phantom{,0}188,260 & $-$0.60 & \phantom{$-$}2.02 & \phantom{0}29.8 & \phantom{$-$}17.7 & \phantom{$-$}52.5 & \phantom{$-$}37.2 & \phantom{0}62.8 & \phantom{$-$}0.6 \\
+ & Products services & \phantom{,0}149,780 & \phantom{$-$}1.75 & \phantom{$-$}0.85 & \phantom{0}82.0 & \phantom{$-$}35.6 & $-$17.6 & \phantom{$-$}61.3 & \phantom{0}38.7 & \phantom{$-$}0.7 \\
+ & Order imbalances & \phantom{,0}130,025 & \phantom{$-$}1.59 & \phantom{$-$}0.80 &  &  &  &  &  & $-$0.2 \\
+ & Equity actions & \phantom{,0}129,964 & \phantom{$-$}4.50 & \phantom{$-$}4.57 & \phantom{0}77.9 & \phantom{$-$}19.7 & \phantom{$-$0}2.4 & \phantom{$-$}20.3 & \phantom{0}79.7 & \phantom{$-$}2.5 \\
+ & Dividends & \phantom{,0}111,626 & \phantom{$-$}3.32 & \phantom{$-$}1.82 & \phantom{0}68.7 & $-$12.3 & \phantom{$-$}43.7 & $-$12.7 & 112.7 & \phantom{$-$}0.9 \\
+ & Credit ratings & \phantom{,0}103,535 & \phantom{$-$}3.21 & \phantom{$-$}2.28 & \phantom{0}86.5 & \phantom{$-$}20.4 & \phantom{0}$-$6.9 & \phantom{$-$}24.0 & \phantom{0}76.0 & \phantom{$-$}0.4 \\
+ & Acquisitions mergers & \phantom{,00}57,905 & $-$0.59 & \phantom{$-$}0.29 &  &  &  &  &  & \phantom{$-$}1.2 \\
+\midrule
+Llama-2 & Insider trading & 1,395,779 & \phantom{$-$}3.42 & \phantom{$-$}2.86 & \phantom{0}90.6 & \phantom{$-$0}1.6 & \phantom{$-$0}7.8 & \phantom{$-$0}1.2 & \phantom{0}98.8 & \phantom{$-$}6.7 \\
+ & Earnings & 1,054,174 & \phantom{$-$}2.93 & \phantom{$-$}3.37 & \phantom{0}36.2 & \phantom{$-$}24.8 & \phantom{$-$}39.1 & \phantom{$-$}26.8 & \phantom{0}73.2 & \phantom{$-$}5.6 \\
+ & Revenues & \phantom{,0}432,552 & \phantom{$-$}1.32 & \phantom{$-$}3.58 & \phantom{00}7.9 & \phantom{$-$}43.7 & \phantom{$-$}48.3 & \phantom{$-$}44.3 & \phantom{0}55.7 & \phantom{$-$}2.4 \\
+ & Technical analysis & \phantom{,0}431,954 & $-$0.19 & \phantom{$-$}0.58 &  &  &  &  &  & $-$0.2 \\
+ & Analyst ratings & \phantom{,0}390,015 & \phantom{$-$}5.03 & \phantom{$-$}3.93 & 101.6 & \phantom{$-$0}9.5 & $-$11.1 & \phantom{$-$}10.9 & \phantom{0}89.1 & \phantom{$-$}3.8 \\
+ & Investor relations & \phantom{,0}333,417 & $-$1.16 & \phantom{$-$}0.65 &  &  &  &  &  & \phantom{$-$}0.4 \\
+ & Price targets & \phantom{,0}251,315 & \phantom{$-$}1.29 & \phantom{$-$}1.27 &  &  &  &  &  & \phantom{$-$}0.2 \\
+ & Labor issues & \phantom{,0}197,779 & \phantom{$-$}2.47 & \phantom{$-$}2.66 & \phantom{0}45.3 & \phantom{$-$}24.7 & \phantom{$-$}30.0 & \phantom{$-$}28.0 & \phantom{0}72.0 & \phantom{$-$}1.4 \\
+ & Stock prices & \phantom{,0}188,260 & $-$0.60 & \phantom{$-$}2.94 & \phantom{0}13.3 & \phantom{$-$}25.6 & \phantom{$-$}61.1 & \phantom{$-$}43.0 & \phantom{0}57.0 & \phantom{$-$}0.8 \\
+ & Products services & \phantom{,0}149,780 & \phantom{$-$}1.75 & \phantom{$-$}2.19 & \phantom{0}31.0 & \phantom{$-$}34.0 & \phantom{$-$}35.0 & \phantom{$-$}45.5 & \phantom{0}54.5 & \phantom{$-$}1.6 \\
+ & Order imbalances & \phantom{,0}130,025 & \phantom{$-$}1.59 & \phantom{$-$}1.89 & \phantom{0}14.5 & \phantom{$-$}75.2 & \phantom{$-$}10.3 & \phantom{$-$}96.0 & \phantom{00}4.0 & $-$0.1 \\
+ & Equity actions & \phantom{,0}129,964 & \phantom{$-$}4.50 & \phantom{$-$}5.18 & \phantom{0}67.0 & \phantom{$-$}30.5 & \phantom{$-$0}2.5 & \phantom{$-$}31.6 & \phantom{0}68.4 & \phantom{$-$}3.3 \\
+ & Dividends & \phantom{,0}111,626 & \phantom{$-$}3.32 & \phantom{$-$}3.27 & \phantom{0}39.9 & \phantom{$-$}16.5 & \phantom{$-$}43.6 & \phantom{$-$}16.4 & \phantom{0}83.6 & \phantom{$-$}1.1 \\
+ & Credit ratings & \phantom{,0}103,535 & \phantom{$-$}3.21 & \phantom{$-$}1.59 & \phantom{0}73.0 & \phantom{$-$}68.5 & $-$41.5 & \phantom{$-$}82.6 & \phantom{0}17.4 & \phantom{$-$}0.4 \\
+ & Acquisitions mergers & \phantom{,00}57,905 & $-$0.59 & $-$0.44 &  &  &  &  &  & \phantom{$-$}1.5 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

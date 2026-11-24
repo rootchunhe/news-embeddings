@@ -1,0 +1,40 @@
+\begin{table}[htbp]
+\centering
+\caption{Firm Networks and Industry Classifications}
+\label{tab:tab5}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports adjusted $R^2$, in percent, from pooled regressions of year-end firm characteristics on their mean over each firm's peers, with year fixed effects, 2004--2025. Industry peers share the firm's SIC-3, NAICS-4, or GICS-6 code. Embedding peers are the ten most similar firms under each signal, where similarity is cosine similarity minus the mean of the two firms' median cosine similarities with all other firms. Signals use the headlines of the up to six calendar years ending at each year end: the two-way category--firm projection gives firm identity $F$; $C^{\mathrm{mix}}$ is the firm's mean category component and $E^{\mathrm{avg}}$ its average embedding. Two-signal rows use two peer means: the ten most similar firms and the next ten for $E^{\mathrm{avg}}$, and each signal's ten for $F$, $C^{\mathrm{mix}}$. OI is operating income before depreciation; $\Delta$Sales is one-year sales growth; market $\beta$ is 60-month CAPM beta; asset $\beta$ is market $\beta$ times the ratio of market equity to market equity plus debt. For each characteristic, all rows use the same firm-years. Overlap is the percentage of a firm's peers in its own industry.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.75\textheight}
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{5}{c}{Firm characteristics} & \multicolumn{3}{c}{Overlap} \\
+\cmidrule(lr){2-6} \cmidrule(lr){7-9}
+Signal & OI/Sales & OI/Assets & $\Delta$Sales & Market $\beta$ & Asset $\beta$ & SIC-3 & NAICS-4 & GICS-6 \\
+\midrule
+\multicolumn{9}{l}{\textit{Panel A: Industry classifications}} \\
+SIC-3 & 10.63 & 33.94 & 6.71 & 26.39 & 32.18 &  & 78.3 & 62.3 \\
+NAICS-4 & 10.50 & 33.83 & 6.91 & 25.71 & 32.15 & 76.3 &  & 59.2 \\
+GICS-6 & 13.67 & 38.29 & 7.68 & 30.79 & 37.93 & 44.7 & 43.9 &  \\
+\midrule
+\multicolumn{9}{l}{\textit{Panel B: RoBERTa}} \\
+$E^{\mathrm{avg}}$ & 10.65 & 41.23 & 4.64 & 22.65 & 28.08 & 24.6 & 26.7 & 26.8 \\
+$F$ & \phantom{0}9.78 & 32.84 & 3.90 & 18.23 & 24.57 & 24.4 & 26.5 & 27.1 \\
+$C^{\mathrm{mix}}$ & 12.82 & 45.17 & 4.00 & 19.22 & 24.28 & 13.9 & 14.7 & 13.8 \\
+$E^{\mathrm{avg}}$, $E^{\mathrm{avg}}$ & 13.80 & 42.52 & 5.46 & 24.22 & 29.82 & 22.6 & 24.8 & 24.1 \\
+$F$, $C^{\mathrm{mix}}$ & 15.31 & 49.07 & 5.25 & 25.87 & 31.61 & 18.9 & 20.4 & 20.2 \\
+\midrule
+\multicolumn{9}{l}{\textit{Panel C: Llama-2}} \\
+$E^{\mathrm{avg}}$ & 13.55 & 50.63 & 5.44 & 34.17 & 39.02 & 34.7 & 36.3 & 39.5 \\
+$F$ & 12.17 & 47.72 & 5.00 & 33.16 & 38.95 & 38.2 & 39.6 & 44.4 \\
+$C^{\mathrm{mix}}$ & 13.37 & 44.73 & 3.83 & 18.04 & 22.77 & 13.4 & 14.1 & 13.3 \\
+$E^{\mathrm{avg}}$, $E^{\mathrm{avg}}$ & 16.52 & 51.18 & 6.41 & 35.56 & 40.40 & 31.0 & 32.7 & 34.9 \\
+$F$, $C^{\mathrm{mix}}$ & 16.53 & 54.13 & 6.03 & 35.45 & 40.62 & 25.5 & 26.6 & 28.4 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

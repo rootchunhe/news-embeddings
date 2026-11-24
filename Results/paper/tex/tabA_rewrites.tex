@@ -1,0 +1,52 @@
+\begin{table}[htbp]
+\centering
+\caption{Forecast and Embedding Changes under Headline Rewrites}
+\label{tab:tabA_rewrites}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports embedding and forecast changes under rewrites of earnings headlines, with the ridge coefficients fixed, 2004--2025. Rewrites multiply or divide reported numbers by ten, reverse an unambiguous directional expression, swap the firm name for that of the firm closest in capitalization in the same six-digit GICS industry, or remove the name and ticker. Forecast changes are in standard deviations of the test year's headline-level forecasts. Signed changes are positive when the forecast moves in the direction the rewrite implies, and Correct sign is the percentage moving that way. Both use only magnitude rewrites and direction flips of headlines whose wording has an unambiguous direction; Absolute forecast changes use all rewrites of each variant. Rank changes are the mean percentile-point change of the firm-day forecast (Absolute) and the percentage switching deciles (Decile). Cosine compares original and rewritten embeddings. In subspace is the squared projection of the normalized mean embedding change onto the leading 32 directions of the training-window category centroids or firm effects, the two magnitude rewrites sharing one pooled direction; random-direction benchmarks are 3.1\% for RoBERTa-large and 0.6\% for Llama-2 (13B).
+\end{minipage}
+\medskip
+
+{\footnotesize
+\textit{Panel A: Forecast and embedding changes}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.34\textheight}
+\begin{tabular}{lccccccccc}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{3}{c}{Forecast change (sd)} & \multicolumn{2}{c}{Rank change} &  & \multicolumn{2}{c}{In subspace (\%)} \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-7} \cmidrule(lr){9-10}
+Rewrite & Rewrites & Signed & Absolute & Correct sign (\%) & Absolute & Decile (\%) & Cosine & Category & Firm \\
+\midrule
+\multicolumn{10}{l}{\textit{RoBERTa}} \\
+magnitude x10 & 539,436 & 0.13 & 0.30 & 66.9 & \phantom{0}1.7 & 16.9 & 0.999 & 19.7 & 13.9 \\
+magnitude /10 & 539,436 & 0.23 & 0.36 & 73.0 & \phantom{0}2.2 & 20.5 & 0.999 & 19.7 & 13.9 \\
+direction flipped & 466,798 & 1.79 & 1.77 & 99.8 & 10.5 & 71.5 & 0.999 & 74.4 & 16.9 \\
+name swapped & 540,649 &  & 0.53 &  & \phantom{0}3.1 & 28.1 & 0.998 & 25.2 & 18.4 \\
+name removed & 541,008 &  & 0.64 &  & \phantom{0}3.7 & 32.5 & 0.998 & 33.3 & 17.2 \\
+\midrule
+\multicolumn{10}{l}{\textit{Llama-2}} \\
+magnitude x10 & 539,436 & 0.00 & 0.14 & 51.2 & \phantom{0}0.7 & \phantom{0}6.6 & 0.993 & 11.1 & \phantom{0}8.0 \\
+magnitude /10 & 539,436 & 0.09 & 0.16 & 71.4 & \phantom{0}0.8 & \phantom{0}7.3 & 0.992 & 11.1 & \phantom{0}8.0 \\
+direction flipped & 466,798 & 2.03 & 2.03 & 99.7 & 10.4 & 64.8 & 0.959 & 74.5 & 17.6 \\
+name swapped & 540,649 &  & 0.74 &  & \phantom{0}3.5 & 29.3 & 0.916 & 38.0 & 39.6 \\
+name removed & 541,008 &  & 0.77 &  & \phantom{0}3.4 & 28.7 & 0.874 & 38.4 & 46.9 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel B: Examples}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.21\textheight}
+\begin{tabular}{lcc}
+\toprule
+Rewrite & Profit headline & Loss headline \\
+\midrule
+original & Microsoft 2Q EPS 14c \textgreater{}MSFT & Tesla 4Q Loss/Shr 69c \textgreater{}TSLA \\
+magnitude x10 & Microsoft 2Q EPS 140c \textgreater{}MSFT & Tesla 4Q Loss/Shr 690c \textgreater{}TSLA \\
+magnitude /10 & Microsoft 2Q EPS 1.4c \textgreater{}MSFT & Tesla 4Q Loss/Shr 6.9c \textgreater{}TSLA \\
+direction flipped & Microsoft 2Q Loss/Shr 14c \textgreater{}MSFT & Tesla 4Q EPS 69c \textgreater{}TSLA \\
+name swapped & Oracle 2Q EPS 14c & Ford 4Q Loss/Shr 69c \\
+name removed & 2Q EPS 14c & 4Q Loss/Shr 69c \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

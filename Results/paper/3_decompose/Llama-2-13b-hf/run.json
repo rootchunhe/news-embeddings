@@ -1,0 +1,403 @@
+{
+ "script": "3_decompose.py",
+ "args": {
+  "model": "Llama-2-13b-hf"
+ },
+ "sample": "single-company stories with a RavenPack event category, CKX 5-day text de-duplication, next o2o return available (daily samples; firm-months need none), cap >= NYSE 5th percentile",
+ "universe_pct": 5,
+ "spec": {
+  "ridge": {
+   "ridge_grid": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0,
+    10000.0,
+    100000.0,
+    1000000.0,
+    10000000.0,
+    100000000.0
+   ],
+   "penalty": "c / dimension per observation",
+   "standardize": false,
+   "y_clip": 0.5,
+   "first_year": 2000,
+   "train_years": 6,
+   "val_years": 2,
+   "min_names": 20
+  },
+  "monthly": {
+   "ridge_target_clip": [
+    -0.9,
+    5
+   ],
+   "min_month_stocks": 50,
+   "msrr_grid": [
+    0.01,
+    0.03162277660168379,
+    0.1,
+    0.31622776601683794,
+    1.0,
+    3.1622776601683795,
+    10.0,
+    31.622776601683793,
+    100.0,
+    316.22776601683796,
+    1000.0,
+    3162.2776601683795,
+    10000.0
+   ],
+   "msrr_init": 12
+  },
+  "paper": {
+   "test_years": [
+    2004,
+    2025
+   ],
+   "category_mean_shrinkage": 200,
+   "history_days": 20,
+   "projection_years": 6,
+   "firm_effect_min": [
+    10,
+    2
+   ],
+   "taus": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    11,
+    17,
+    23,
+    35
+   ],
+   "taus_fig": [
+    0,
+    35
+   ],
+   "s_lag": 36,
+   "nw_lags": [
+    5,
+    6
+   ],
+   "bands": [
+    [
+     1,
+     8
+    ],
+    [
+     9,
+     32
+    ],
+    [
+     33,
+     128
+    ],
+    [
+     129,
+     512
+    ],
+    [
+     513,
+     100000
+    ]
+   ],
+   "subspace": 32,
+   "min_names": 20,
+   "min_month_stocks": 50,
+   "min_group_stories": 50000,
+   "level_window": 12,
+   "horizon": 10,
+   "drift_min_stories": [
+    5000,
+    20000
+   ],
+   "surprise": {
+    "eval": [
+     2008,
+     2025
+    ],
+    "min_train": 5000
+   },
+   "pretrain_cutoff": {
+    "roberta-large": "2019-07",
+    "Llama-2-13b-hf": "2022-09"
+   },
+   "surprise_dummy_stories": 100,
+   "surprise_rank_prior": 500,
+   "group_min_incidence": 0.01
+  }
+ },
+ "finished": "2026-11-22 20:25",
+ "stories": 5557103,
+ "max_rebuild_error": 2.344784402178541e-06,
+ "level_share": 0.9952561613488179,
+ "two_way": {
+  "2004": {
+   "components": 1,
+   "normal_residual_categories": 1.7803574569031143e-16,
+   "normal_residual_firms": 2.3851678848462775e-17,
+   "centering_residual": 1.7963269095874613e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 732,
+   "stories_without_F": 0.013761998834693185,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.05655558471092452
+  },
+  "2005": {
+   "components": 1,
+   "normal_residual_categories": 1.16422609359033e-16,
+   "normal_residual_firms": 1.50433708722346e-17,
+   "centering_residual": 3.2388756630415335e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 798,
+   "stories_without_F": 0.015342257126094303,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.08511920390129685
+  },
+  "2006": {
+   "components": 1,
+   "normal_residual_categories": 2.8168905595187987e-16,
+   "normal_residual_firms": 1.0705522316460993e-17,
+   "centering_residual": 7.108325984828318e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 791,
+   "stories_without_F": 0.011566768565617561,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.07241574923317118
+  },
+  "2007": {
+   "components": 1,
+   "normal_residual_categories": 2.073413666812718e-16,
+   "normal_residual_firms": 1.0465179390852834e-17,
+   "centering_residual": 5.271630505384227e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 645,
+   "stories_without_F": 0.011719272913929723,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.08176902610380216
+  },
+  "2008": {
+   "components": 1,
+   "normal_residual_categories": 3.1430359749114996e-16,
+   "normal_residual_firms": 1.0009788787242167e-17,
+   "centering_residual": 1.7140882469206186e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 552,
+   "stories_without_F": 0.009360988465619332,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.06892404202509265
+  },
+  "2009": {
+   "components": 1,
+   "normal_residual_categories": 2.4044818618709147e-16,
+   "normal_residual_firms": 6.635877548727564e-18,
+   "centering_residual": 6.220135435547858e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 488,
+   "stories_without_F": 0.00654794404155187,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.04376524411249983
+  },
+  "2010": {
+   "components": 1,
+   "normal_residual_categories": 1.485370667527165e-16,
+   "normal_residual_firms": 8.280812083775136e-18,
+   "centering_residual": 2.5663108424861624e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 481,
+   "stories_without_F": 0.006685222795267081,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.037506988608568034
+  },
+  "2011": {
+   "components": 1,
+   "normal_residual_categories": 1.4146841214948186e-16,
+   "normal_residual_firms": 1.0029476980746847e-17,
+   "centering_residual": 5.058418884138659e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 501,
+   "stories_without_F": 0.009537223785170955,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.044527355576623136
+  },
+  "2012": {
+   "components": 1,
+   "normal_residual_categories": 1.2970465950765802e-16,
+   "normal_residual_firms": 1.3120808548719883e-17,
+   "centering_residual": 3.505103097058634e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 511,
+   "stories_without_F": 0.008086021939837169,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.051516887986459134
+  },
+  "2013": {
+   "components": 1,
+   "normal_residual_categories": 1.2650049404861932e-16,
+   "normal_residual_firms": 9.64143794096705e-18,
+   "centering_residual": 2.9052603904146037e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 523,
+   "stories_without_F": 0.010813388772830168,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.05477871156392266
+  },
+  "2014": {
+   "components": 1,
+   "normal_residual_categories": 9.575541489340104e-17,
+   "normal_residual_firms": 8.247458154213136e-18,
+   "centering_residual": 4.737760374484455e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 513,
+   "stories_without_F": 0.00924214296663029,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.06732499251902441
+  },
+  "2015": {
+   "components": 1,
+   "normal_residual_categories": 1.0649819688021824e-16,
+   "normal_residual_firms": 1.0098966945537936e-17,
+   "centering_residual": 2.327248711222611e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 571,
+   "stories_without_F": 0.008542234568861402,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.07287041215950617
+  },
+  "2016": {
+   "components": 1,
+   "normal_residual_categories": 1.3336089353563338e-16,
+   "normal_residual_firms": 8.390254891314682e-18,
+   "centering_residual": 4.30376972112592e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 510,
+   "stories_without_F": 0.00818928214525716,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.055692366676743175
+  },
+  "2017": {
+   "components": 1,
+   "normal_residual_categories": 1.8336431806403042e-16,
+   "normal_residual_firms": 9.065202241367795e-18,
+   "centering_residual": 6.004426230595787e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 443,
+   "stories_without_F": 0.006880724246065331,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.04779818718264864
+  },
+  "2018": {
+   "components": 1,
+   "normal_residual_categories": 1.6089257881968064e-16,
+   "normal_residual_firms": 5.645353642795812e-18,
+   "centering_residual": 2.543919741421577e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 428,
+   "stories_without_F": 0.007708064638494803,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.06635818698075507
+  },
+  "2019": {
+   "components": 1,
+   "normal_residual_categories": 9.95666166364691e-17,
+   "normal_residual_firms": 5.706504595284199e-18,
+   "centering_residual": 3.780684408312824e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 429,
+   "stories_without_F": 0.008337330872331841,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.07835258663987946
+  },
+  "2020": {
+   "components": 1,
+   "normal_residual_categories": 1.50732608010619e-16,
+   "normal_residual_firms": 1.028014376884017e-17,
+   "centering_residual": 4.886151737364066e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 444,
+   "stories_without_F": 0.008826718645067238,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.09367505937878887
+  },
+  "2021": {
+   "components": 1,
+   "normal_residual_categories": 1.906836953359474e-16,
+   "normal_residual_firms": 1.1772288441415275e-17,
+   "centering_residual": 4.173510927502857e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 582,
+   "stories_without_F": 0.010033060661095078,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.1072994754821109
+  },
+  "2022": {
+   "components": 1,
+   "normal_residual_categories": 1.3257293742471646e-16,
+   "normal_residual_firms": 8.54420178828734e-18,
+   "centering_residual": 3.7326702160713926e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 734,
+   "stories_without_F": 0.014161899843886138,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.08045603590262772
+  },
+  "2023": {
+   "components": 1,
+   "normal_residual_categories": 1.0928199559298739e-16,
+   "normal_residual_firms": 1.1172600188420437e-17,
+   "centering_residual": 1.6139836142270987e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 631,
+   "stories_without_F": 0.008437035642620548,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.05330764525545841
+  },
+  "2024": {
+   "components": 1,
+   "normal_residual_categories": 1.147771850731223e-16,
+   "normal_residual_firms": 1.1262407770522825e-17,
+   "centering_residual": 1.1373966650752538e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 551,
+   "stories_without_F": 0.007311812931487924,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.03694588465212604
+  },
+  "2025": {
+   "components": 1,
+   "normal_residual_categories": 1.4030014256597545e-16,
+   "normal_residual_firms": 7.915766798469432e-18,
+   "centering_residual": 2.0432411014916431e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 548,
+   "stories_without_F": 0.007413936922045556,
+   "applied_stories_outside_largest": 0.0,
+   "applied_stories_without_F": 0.043808110926690264
+  }
+ }
+}

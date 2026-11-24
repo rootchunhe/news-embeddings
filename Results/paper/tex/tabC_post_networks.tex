@@ -1,0 +1,41 @@
+\begin{table}[htbp]
+\centering
+\caption{Firm Networks after the Pretraining Cutoffs}
+\label{tab:tabC_post_networks}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports adjusted $R^2$, in percent, from pooled regressions with year fixed effects of year-end firm characteristics on their mean over each firm's peers: the firms sharing its industry code, or the ten firms most similar in firm identity $F$, mean category component $C^{\mathrm{mix}}$, or average embedding $E^{\mathrm{avg}}$. Construction as in Table~\ref{tab:tab5}, except that news windows start no earlier than the January after each model's pretraining cutoff: Panel A uses RoBERTa-large for year ends in 2020--2025, and Panel B uses Llama-2 (13B) for year ends in 2023--2025.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.75\textheight}
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{5}{c}{Firm characteristics} & \multicolumn{3}{c}{Overlap} \\
+\cmidrule(lr){2-6} \cmidrule(lr){7-9}
+Signal & OI/Sales & OI/Assets & $\Delta$Sales & Market $\beta$ & Asset $\beta$ & SIC-3 & NAICS-4 & GICS-6 \\
+\midrule
+\multicolumn{9}{l}{\textit{Panel A: RoBERTa, windows from 2020}} \\
+SIC-3 & \phantom{0}8.35 & 37.89 & 5.95 & 17.31 & 16.37 &  & 79.5 & 63.4 \\
+NAICS-4 & \phantom{0}8.19 & 37.61 & 6.28 & 17.15 & 16.04 & 80.6 &  & 61.1 \\
+GICS-6 & 11.45 & 41.69 & 6.29 & 23.02 & 20.37 & 47.8 & 46.0 &  \\
+$E^{\mathrm{avg}}$ & \phantom{0}8.68 & 46.75 & 3.00 & 16.30 & 17.13 & 29.1 & 29.6 & 29.8 \\
+$F$ & \phantom{0}8.01 & 37.34 & 2.79 & 13.60 & 13.61 & 28.9 & 29.6 & 30.1 \\
+$C^{\mathrm{mix}}$ & \phantom{0}9.40 & 48.04 & 2.65 & 10.25 & 11.84 & 17.7 & 17.2 & 16.4 \\
+$E^{\mathrm{avg}}$, $E^{\mathrm{avg}}$ & 10.89 & 47.80 & 3.71 & 17.37 & 18.72 & 27.2 & 27.8 & 27.3 \\
+$F$, $C^{\mathrm{mix}}$ & 12.16 & 52.59 & 3.96 & 18.67 & 18.35 & 23.1 & 23.2 & 23.0 \\
+\midrule
+\multicolumn{9}{l}{\textit{Panel B: Llama-2, windows from 2023}} \\
+SIC-3 & \phantom{0}7.50 & 35.76 & 3.51 & 14.83 & 13.91 &  & 79.7 & 63.1 \\
+NAICS-4 & \phantom{0}7.77 & 35.43 & 4.21 & 14.93 & 13.67 & 80.9 &  & 61.9 \\
+GICS-6 & 12.27 & 40.34 & 3.62 & 20.83 & 18.12 & 46.2 & 44.2 &  \\
+$E^{\mathrm{avg}}$ & 10.85 & 52.96 & 1.64 & 25.94 & 27.16 & 33.6 & 32.8 & 39.3 \\
+$F$ & \phantom{0}9.63 & 50.70 & 2.00 & 29.29 & 28.43 & 37.7 & 36.6 & 44.9 \\
+$C^{\mathrm{mix}}$ & 10.67 & 38.86 & 1.50 & \phantom{0}7.36 & \phantom{0}9.99 & 13.7 & 12.9 & 13.8 \\
+$E^{\mathrm{avg}}$, $E^{\mathrm{avg}}$ & 13.31 & 53.69 & 2.80 & 27.18 & 28.42 & 30.5 & 29.7 & 34.7 \\
+$F$, $C^{\mathrm{mix}}$ & 14.50 & 55.49 & 2.82 & 30.17 & 29.59 & 25.5 & 24.5 & 29.0 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

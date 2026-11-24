@@ -1,0 +1,3 @@
+period,row_model,col_model,DM_stat,n_days,strategy_corr_EW,strategy_corr_VW
+paper,roberta-large,Llama-2-13b-hf,0.20790252833624354,3899,0.6446911547748215,0.4572806312436216
+extended,roberta-large,Llama-2-13b-hf,0.1843530658352199,5535,0.6690400403732865,0.38261326731339995

@@ -1,0 +1,208 @@
+{
+ "script": "2_networks.py",
+ "args": {
+  "encoders": "roberta-large",
+  "first": 2020,
+  "years": ""
+ },
+ "sample": "single-company stories with a RavenPack event category, CKX 5-day text de-duplication, next o2o return available (daily samples; firm-months need none), cap >= NYSE 5th percentile",
+ "universe_pct": 5,
+ "spec": {
+  "ridge": {
+   "ridge_grid": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0,
+    10000.0,
+    100000.0,
+    1000000.0,
+    10000000.0,
+    100000000.0
+   ],
+   "penalty": "c / dimension per observation",
+   "standardize": false,
+   "y_clip": 0.5,
+   "first_year": 2000,
+   "train_years": 6,
+   "val_years": 2,
+   "min_names": 20
+  },
+  "monthly": {
+   "ridge_target_clip": [
+    -0.9,
+    5
+   ],
+   "min_month_stocks": 50,
+   "msrr_grid": [
+    0.01,
+    0.03162277660168379,
+    0.1,
+    0.31622776601683794,
+    1.0,
+    3.1622776601683795,
+    10.0,
+    31.622776601683793,
+    100.0,
+    316.22776601683796,
+    1000.0,
+    3162.2776601683795,
+    10000.0
+   ],
+   "msrr_init": 12
+  },
+  "paper": {
+   "test_years": [
+    2004,
+    2025
+   ],
+   "category_mean_shrinkage": 200,
+   "history_days": 20,
+   "projection_years": 6,
+   "firm_effect_min": [
+    10,
+    2
+   ],
+   "taus": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    11,
+    17,
+    23,
+    35
+   ],
+   "taus_fig": [
+    0,
+    35
+   ],
+   "s_lag": 36,
+   "nw_lags": [
+    5,
+    6
+   ],
+   "bands": [
+    [
+     1,
+     8
+    ],
+    [
+     9,
+     32
+    ],
+    [
+     33,
+     128
+    ],
+    [
+     129,
+     512
+    ],
+    [
+     513,
+     100000
+    ]
+   ],
+   "subspace": 32,
+   "min_names": 20,
+   "min_month_stocks": 50,
+   "min_group_stories": 50000,
+   "level_window": 12,
+   "horizon": 10,
+   "drift_min_stories": [
+    5000,
+    20000
+   ],
+   "surprise": {
+    "eval": [
+     2008,
+     2025
+    ],
+    "min_train": 5000
+   },
+   "pretrain_cutoff": {
+    "roberta-large": "2019-07",
+    "Llama-2-13b-hf": "2022-09"
+   },
+   "surprise_dummy_stories": 100,
+   "surprise_rank_prior": 500,
+   "group_min_incidence": 0.01
+  }
+ },
+ "finished": "2026-11-22 20:15",
+ "decembers": 6,
+ "firm_decembers": 10973,
+ "two_way": {
+  "roberta-large-2020": {
+   "components": 1,
+   "normal_residual_categories": 1.0049585789941594e-16,
+   "normal_residual_firms": 4.819586121114373e-18,
+   "centering_residual": 2.489044633941409e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 200,
+   "stories_without_F": 0.0034373600462397655
+  },
+  "roberta-large-2021": {
+   "components": 1,
+   "normal_residual_categories": 9.269354108214518e-17,
+   "normal_residual_firms": 9.10255470289941e-18,
+   "centering_residual": 2.3519323865202746e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 715,
+   "stories_without_F": 0.03784958051305662
+  },
+  "roberta-large-2022": {
+   "components": 1,
+   "normal_residual_categories": 1.0802221932395502e-16,
+   "normal_residual_firms": 7.459879951851615e-18,
+   "centering_residual": 1.824547874984067e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 600,
+   "stories_without_F": 0.015393061860195472
+  },
+  "roberta-large-2023": {
+   "components": 1,
+   "normal_residual_categories": 1.3836587133218542e-16,
+   "normal_residual_firms": 7.911878280962731e-18,
+   "centering_residual": 2.1482254714878359e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 521,
+   "stories_without_F": 0.009652441898958588
+  },
+  "roberta-large-2024": {
+   "components": 1,
+   "normal_residual_categories": 9.299941945310311e-17,
+   "normal_residual_firms": 5.577206984822783e-18,
+   "centering_residual": 2.582702217056547e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 535,
+   "stories_without_F": 0.008310336884797955
+  },
+  "roberta-large-2025": {
+   "components": 1,
+   "normal_residual_categories": 6.169032465718578e-17,
+   "normal_residual_firms": 5.240561922898307e-18,
+   "centering_residual": 3.103220999583435e-16,
+   "stories_outside_largest": 0.0,
+   "firms_outside_largest": 0,
+   "firms_without_F": 567,
+   "stories_without_F": 0.007232805376439471
+  }
+ },
+ "zero_vector_firms": {
+  "2020": 0,
+  "2021": 0,
+  "2022": 0,
+  "2023": 0,
+  "2024": 0,
+  "2025": 0
+ }
+}

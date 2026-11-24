@@ -1,0 +1,61 @@
+\begin{table}[htbp]
+\centering
+\caption{Variance and Predictive Covariance by Principal-Component Band}
+\label{tab:tabA_spectrum}
+\begin{minipage}{\linewidth}\footnotesize
+This table decomposes embedding variance and the forecast's covariance with next open-to-open returns across principal-component bands, ordered by decreasing training eigenvalue, 2004--2025. The first columns give each band's percentage of the total. $\bar\phi$ averages the ridge shrinkage factor $\lambda_k/(\lambda_k+\lambda)$ within the band, where $\lambda_k$ is the $k$th training eigenvalue and $\lambda$ the ridge penalty. Band-share columns give each component's percentage of the band's variance or covariance; PC $k$ contributes its ridge coefficient $w_k$ times the covariance of the component's coordinate with returns. Panel A uses category ($C$), firm ($F$), and idiosyncratic ($I$) components from a two-way projection on the ridge training window, $T-8$ through $T-3$. Panel B separates cells of RavenPack event group by headline direction into group centroids (Group), deviations of cell centroids from them (Direction), and within-cell residuals (Within cell). Variance and shrinkage average test years; covariance pools firm-days after removing day means.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\textit{Panel A: Content decomposition}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.28\textheight}
+\begin{tabular}{llccccccccc}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{Share of total (\%)} &  & \multicolumn{3}{c}{\shortstack{Share of band \\ variance (\%)}} & \multicolumn{3}{c}{\shortstack{Share of band \\ covariance (\%)}} \\
+\cmidrule(lr){3-4} \cmidrule(lr){6-8} \cmidrule(lr){9-11}
+Model & PCs & Variance & Covariance & $\bar\phi$ & $C$ & $F$ & $I$ & $C$ & $F$ & $I$ \\
+\midrule
+RoBERTa & 1--8 & \phantom{0}42.4 & \phantom{00}2.6 & 0.98 & 77.8 & \phantom{0}2.4 & 19.2 & 187.8 & \phantom{0}$-$1.6 & $-$86.2 \\
+ & 9--32 & \phantom{0}22.1 & \phantom{0}35.3 & 0.90 & 34.3 & 17.5 & 47.6 & \phantom{0}88.6 & \phantom{$-$0}1.5 & \phantom{$-$0}9.9 \\
+ & 33--128 & \phantom{0}21.4 & \phantom{0}40.5 & 0.70 & 13.3 & 26.8 & 59.9 & \phantom{0}72.7 & \phantom{$-$0}7.6 & \phantom{$-$}19.7 \\
+ & 129--512 & \phantom{0}11.5 & \phantom{0}19.9 & 0.32 & \phantom{0}6.4 & 20.6 & 73.1 & \phantom{0}70.0 & \phantom{$-$0}1.7 & \phantom{$-$}28.2 \\
+ & 513--1024 & \phantom{00}2.6 & \phantom{00}1.7 & 0.11 & \phantom{0}2.1 & 15.3 & 82.6 & \phantom{0}40.9 & \phantom{$-$}16.6 & \phantom{$-$}42.5 \\
+ & Total & 100.0 & 100.0 & 0.27 & 44.3 & 13.4 & 42.0 & \phantom{0}80.2 & \phantom{$-$0}4.2 & \phantom{$-$}15.6 \\
+\midrule
+Llama-2 & 1--8 & \phantom{0}45.0 & \phantom{00}5.9 & 0.98 & 76.3 & \phantom{0}2.7 & 20.6 & 102.0 & \phantom{$-$0}2.1 & \phantom{0}$-$4.1 \\
+ & 9--32 & \phantom{0}16.7 & \phantom{0}27.9 & 0.90 & 42.8 & 14.5 & 41.2 & \phantom{0}60.3 & \phantom{$-$}14.1 & \phantom{$-$}25.6 \\
+ & 33--128 & \phantom{0}12.4 & \phantom{0}46.1 & 0.67 & 20.0 & 22.7 & 57.4 & \phantom{0}75.0 & \phantom{$-$}13.8 & \phantom{$-$}11.2 \\
+ & 129--512 & \phantom{0}10.8 & \phantom{0}14.3 & 0.34 & \phantom{0}6.2 & 31.6 & 62.3 & \phantom{0}52.5 & \phantom{$-$}11.7 & \phantom{$-$}35.8 \\
+ & 513--5120 & \phantom{0}15.0 & \phantom{00}5.7 & 0.06 & \phantom{0}1.5 & 22.9 & 75.6 & \phantom{0}31.9 & \phantom{$-$}17.7 & \phantom{$-$}50.4 \\
+ & Total & 100.0 & 100.0 & 0.10 & 45.0 & 13.3 & 41.3 & \phantom{0}66.8 & \phantom{$-$}13.1 & \phantom{$-$}20.0 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel B: Group $\times$ direction cells}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.28\textheight}
+\begin{tabular}{llccccccccc}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{Share of total (\%)} &  & \multicolumn{3}{c}{\shortstack{Share of band \\ variance (\%)}} & \multicolumn{3}{c}{\shortstack{Share of band \\ covariance (\%)}} \\
+\cmidrule(lr){3-4} \cmidrule(lr){6-8} \cmidrule(lr){9-11}
+Model & PCs & Variance & Covariance & $\bar\phi$ & Group & Direction & Within cell & Group & Direction & Within cell \\
+\midrule
+RoBERTa & 1--8 & \phantom{0}42.4 & \phantom{00}2.6 & 0.98 & 63.8 & 3.4 & 32.8 & 60.7 & 88.5 & $-$49.2 \\
+ & 9--32 & \phantom{0}22.1 & \phantom{0}35.3 & 0.90 & 15.1 & 5.7 & 79.2 & 14.6 & 62.2 & \phantom{$-$}23.1 \\
+ & 33--128 & \phantom{0}21.4 & \phantom{0}40.5 & 0.70 & \phantom{0}3.9 & 2.4 & 93.7 & \phantom{0}5.5 & 53.0 & \phantom{$-$}41.6 \\
+ & 129--512 & \phantom{0}11.5 & \phantom{0}19.9 & 0.32 & \phantom{0}1.1 & 1.1 & 97.8 & \phantom{0}3.6 & 68.1 & \phantom{$-$}28.3 \\
+ & 513--1024 & \phantom{00}2.6 & \phantom{00}1.7 & 0.11 & \phantom{0}0.2 & 0.3 & 99.5 & \phantom{0}0.1 & 48.6 & \phantom{$-$}51.4 \\
+ & Total & 100.0 & 100.0 & 0.27 & 31.4 & 3.3 & 65.2 & \phantom{0}9.7 & 60.1 & \phantom{$-$}30.2 \\
+\midrule
+Llama-2 & 1--8 & \phantom{0}45.0 & \phantom{00}5.9 & 0.98 & 60.8 & 3.6 & 35.6 & 52.8 & 17.8 & \phantom{$-$}29.4 \\
+ & 9--32 & \phantom{0}16.7 & \phantom{0}27.9 & 0.90 & 21.9 & 6.1 & 71.9 & 12.6 & 38.6 & \phantom{$-$}48.8 \\
+ & 33--128 & \phantom{0}12.4 & \phantom{0}46.1 & 0.67 & \phantom{0}5.2 & 4.4 & 90.4 & \phantom{0}4.5 & 55.0 & \phantom{$-$}40.5 \\
+ & 129--512 & \phantom{0}10.8 & \phantom{0}14.3 & 0.34 & \phantom{0}0.7 & 1.1 & 98.2 & \phantom{0}0.7 & 61.9 & \phantom{$-$}37.5 \\
+ & 513--5120 & \phantom{0}15.0 & \phantom{00}5.7 & 0.06 & \phantom{0}0.1 & 0.2 & 99.7 & \phantom{0}1.7 & 22.6 & \phantom{$-$}75.7 \\
+ & Total & 100.0 & 100.0 & 0.10 & 31.9 & 3.3 & 64.7 & \phantom{0}8.9 & 47.4 & \phantom{$-$}43.7 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

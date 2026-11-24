@@ -1,0 +1,60 @@
+\begin{table}[htbp]
+\centering
+\caption{CKX Replication: Return Prediction Correlations}
+\label{tab:tabR1_ckx_corr}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports forecast-return correlations in the CKX replication, multiplied by 100: the mean daily Pearson correlation, the pooled firm-day correlation, the mean daily correlation among stocks at or above the NYSE median capitalization, and the mean daily correlation by year. Panels cover 2004--2019H1 and 2004--2025; the latter lists the years from 2019. Headlines name one company with relevance 100. Data begin in 2000, so 2004--2007 have two to five training years. Headline-level ridge forecasts from RoBERTa-large and Llama-2 (13B) embeddings of Dow Jones RavenPack headlines with an event category are averaged within firm-days. Stocks are US common shares at or above the NYSE 5th capitalization percentile on the previous day.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\textit{Panel A: 2004--2019H1}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.35\textheight}
+\begin{tabular}{lcc}
+\toprule
+ & LLaMA2 & RoBERTa \\
+\midrule
+Mean & 2.92 & 2.56 \\
+Pooled & 2.44 & 2.14 \\
+Over NYSE Median & 2.01 & 1.64 \\
+2004 & 2.65 & 2.35 \\
+2005 & 3.00 & 2.54 \\
+2006 & 2.76 & 2.25 \\
+2007 & 2.74 & 2.60 \\
+2008 & 3.63 & 2.95 \\
+2009 & 3.47 & 3.04 \\
+2010 & 4.13 & 3.77 \\
+2011 & 3.75 & 2.81 \\
+2012 & 2.96 & 2.80 \\
+2013 & 2.11 & 2.44 \\
+2014 & 2.45 & 2.46 \\
+2015 & 2.59 & 2.24 \\
+2016 & 2.66 & 2.23 \\
+2017 & 2.12 & 2.25 \\
+2018 & 3.39 & 2.15 \\
+2019 & 1.55 & 1.55 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\medskip
+\textit{Panel B: 2004--2025}\\[2pt]
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.20\textheight}
+\begin{tabular}{lcc}
+\toprule
+ & LLaMA2 & RoBERTa \\
+\midrule
+Mean & 2.83 & 2.55 \\
+Pooled & 2.16 & 1.91 \\
+Over NYSE Median & 1.83 & 1.54 \\
+2019 & 2.70 & 2.54 \\
+2020 & 2.61 & 2.44 \\
+2021 & 3.64 & 3.22 \\
+2022 & 2.11 & 2.42 \\
+2023 & 2.67 & 2.59 \\
+2024 & 2.06 & 1.86 \\
+2025 & 2.08 & 2.10 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

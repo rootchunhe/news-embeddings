@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering
+\caption{CKX Replication: Sharpe Ratios after Trading Costs}
+\label{tab:tabR4_ckx_costs}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports net annualized Sharpe ratios of equal-weighted quintile long-short portfolios in the CKX replication, 2004--2019H1 and 2004--2025. Each day, $\gamma$ of the gap between drifted holdings and the target portfolio is traded. Costs per 100\% turnover are 10 basis points for stocks at or above the NYSE 20th capitalization percentile and 20 basis points below it. Headline-level ridge forecasts from RoBERTa-large and Llama-2 (13B) embeddings of Dow Jones RavenPack headlines with an event category are averaged within firm-days. Stocks are US common shares at or above the NYSE 5th capitalization percentile on the previous day.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.75\textheight}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{2004--2019H1} & \multicolumn{2}{c}{2004--2025} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+$\gamma$ & LLaMA2 & RoBERTa & LLaMA2 & RoBERTa \\
+\midrule
+0.10 & \phantom{$-$}1.07 & \phantom{$-$}0.75 & 0.80 & \phantom{$-$}0.55 \\
+0.20 & \phantom{$-$}1.10 & \phantom{$-$}0.78 & 0.86 & \phantom{$-$}0.64 \\
+0.30 & \phantom{$-$}1.01 & \phantom{$-$}0.66 & 0.83 & \phantom{$-$}0.61 \\
+0.40 & \phantom{$-$}0.87 & \phantom{$-$}0.47 & 0.76 & \phantom{$-$}0.53 \\
+0.50 & \phantom{$-$}0.70 & \phantom{$-$}0.25 & 0.67 & \phantom{$-$}0.41 \\
+0.60 & \phantom{$-$}0.52 & \phantom{$-$}0.02 & 0.56 & \phantom{$-$}0.28 \\
+0.70 & \phantom{$-$}0.34 & $-$0.20 & 0.43 & \phantom{$-$}0.14 \\
+0.80 & \phantom{$-$}0.17 & $-$0.42 & 0.30 & $-$0.01 \\
+0.90 & $-$0.01 & $-$0.63 & 0.16 & $-$0.17 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

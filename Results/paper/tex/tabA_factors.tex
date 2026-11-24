@@ -1,0 +1,39 @@
+\begin{table}[htbp]
+\centering
+\caption{Factor Alphas of Forecast-Component Portfolios}
+\label{tab:tabA_factors}
+\begin{minipage}{\linewidth}\footnotesize
+This table regresses daily equal- and value-weighted decile long-short returns on the Fama--French five factors and the momentum, short-term reversal, and long-term reversal factors, 2004--2025. Portfolios are sorted on the daily ridge forecast, on its category, firm, or idiosyncratic component from a two-way category--firm projection, or on its historical level $\hat y_L$ or deviation $\hat y_D$. The historical level is the mean of the firm's monthly average forecast over its news months in the preceding 12 months, computed with the current coefficients. Without such months it is the forecast from the projection's firm effect, or zero when the firm has $F=0$. The deviation is the remainder. Following CKX, portfolios keep the open-to-open trading rule but are valued at the close to match factor timing. $\alpha$ is annualized in percent; RMW and HML are profitability and value loadings. Newey--West $t$-statistics use 5 lags.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.75\textheight}
+\begin{tabular}{lllcccccccccc}
+\toprule
+\multicolumn{3}{c}{} & \multicolumn{5}{c}{Equal-weighted} & \multicolumn{5}{c}{Value-weighted} \\
+\cmidrule(lr){4-8} \cmidrule(lr){9-13}
+Model & \multicolumn{2}{l}{Decomposition} & $\alpha$ & $t$ & $R^2$ & RMW & HML & $\alpha$ & $t$ & $R^2$ & RMW & HML \\
+\midrule
+RoBERTa & Content & Event category $\hat y^C$ & 79.2 & 25.31 & 0.01 & \phantom{$-$}0.12 & \phantom{$-$}0.04 & \phantom{$-$}30.7 & \phantom{$-$}9.48 & 0.03 & \phantom{$-$}0.16 & $-$0.03 \\
+ &  & Firm identity $\hat y^F$ & \phantom{0}5.0 & \phantom{0}1.73 & 0.24 & \phantom{$-$}0.64 & \phantom{$-$}0.44 & \phantom{0}$-$6.2 & $-$1.93 & 0.10 & \phantom{$-$}0.31 & \phantom{$-$}0.35 \\
+ &  & Idiosyncratic $\hat y^I$ & 15.0 & \phantom{0}6.09 & 0.02 & \phantom{$-$}0.08 & \phantom{$-$}0.07 & \phantom{$-$0}5.8 & \phantom{$-$}1.80 & 0.00 & $-$0.05 & \phantom{$-$}0.01 \\
+\cmidrule(lr){2-13}
+ & Timing & Level $\hat y_L$ & \phantom{0}4.1 & \phantom{0}1.29 & 0.26 & \phantom{$-$}0.79 & \phantom{$-$}0.46 & \phantom{0}$-$2.7 & $-$0.68 & 0.13 & \phantom{$-$}0.55 & \phantom{$-$}0.11 \\
+ &  & Deviation $\hat y_D$ & 71.0 & 24.06 & 0.01 & $-$0.07 & $-$0.01 & \phantom{$-$}20.8 & \phantom{$-$}6.28 & 0.00 & $-$0.02 & \phantom{$-$}0.00 \\
+\cmidrule(lr){2-13}
+ &  & Total forecast $\hat y$ & 67.3 & 22.29 & 0.10 & \phantom{$-$}0.39 & \phantom{$-$}0.27 & \phantom{$-$}20.2 & \phantom{$-$}5.87 & 0.04 & \phantom{$-$}0.24 & \phantom{$-$}0.13 \\
+\midrule
+Llama-2 & Content & Event category $\hat y^C$ & 79.1 & 24.70 & 0.01 & \phantom{$-$}0.05 & $-$0.03 & \phantom{$-$}28.6 & \phantom{$-$}8.81 & 0.02 & \phantom{$-$}0.17 & $-$0.08 \\
+ &  & Firm identity $\hat y^F$ & 12.8 & \phantom{0}4.12 & 0.16 & \phantom{$-$}0.54 & \phantom{$-$}0.20 & \phantom{$-$}14.6 & \phantom{$-$}4.09 & 0.08 & \phantom{$-$}0.06 & $-$0.15 \\
+ &  & Idiosyncratic $\hat y^I$ & 18.4 & \phantom{0}6.53 & 0.02 & \phantom{$-$}0.07 & \phantom{$-$}0.08 & \phantom{$-$}14.0 & \phantom{$-$}3.78 & 0.01 & $-$0.14 & \phantom{$-$}0.05 \\
+\cmidrule(lr){2-13}
+ & Timing & Level $\hat y_L$ & 16.4 & \phantom{0}4.86 & 0.21 & \phantom{$-$}0.74 & \phantom{$-$}0.26 & \phantom{$-$}11.2 & \phantom{$-$}2.76 & 0.12 & \phantom{$-$}0.38 & $-$0.29 \\
+ &  & Deviation $\hat y_D$ & 72.3 & 23.67 & 0.01 & $-$0.09 & $-$0.03 & \phantom{$-$}28.7 & \phantom{$-$}7.87 & 0.01 & $-$0.06 & \phantom{$-$}0.05 \\
+\cmidrule(lr){2-13}
+ &  & Total forecast $\hat y$ & 76.3 & 22.76 & 0.09 & \phantom{$-$}0.43 & \phantom{$-$}0.17 & \phantom{$-$}34.4 & \phantom{$-$}9.29 & 0.04 & \phantom{$-$}0.17 & $-$0.06 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

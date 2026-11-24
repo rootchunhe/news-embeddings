@@ -1,0 +1,37 @@
+\begin{table}[htbp]
+\centering
+\caption{MSRR Strategy Sharpe Ratios under Alternative Inputs}
+\label{tab:tabA_constructions}
+\begin{minipage}{\linewidth}\footnotesize
+This table reports annualized Sharpe ratios of monthly maximum Sharpe ratio regression (MSRR) strategies fitted to alternative text inputs, for signal years 2004--2025. Inputs are the embedding, its historical level and deviation, and the level and firm identity lagged 36 months, where $\tau$ is the signal month. The historical level is the mean of the firm's monthly average embedding over its news months in the preceding 12 months; the deviation is the remainder. Lagged firm identity is the firm effect of the two-way category--firm projection of headline embeddings three test years earlier. Inputs are residualized each month on JKP characteristics; rows with an industry control also include GICS-4 industry indicators in the residualization. The level, the lagged level, and lagged firm identity are traded only on the firm-months where they exist. MSRR is fitted separately for each input and horizon on signal months from 2004, the first 12 months initializing it. News is assigned by arrival month, and $h$ denotes the $h$-th subsequent return month.
+\end{minipage}
+\medskip
+
+{\footnotesize
+\begin{adjustbox}{max width=\linewidth, max totalheight=0.75\textheight}
+\begin{tabular}{llccccccc}
+\toprule
+Model & Input & $h=1$ & $h=2$ & $h=4$ & $h=6$ & $h=12$ & $h=18$ & $h=24$ \\
+\midrule
+RoBERTa & Embedding $E$ & 1.53 & 1.01 & \phantom{$-$}0.42 & 0.55 & \phantom{$-$}0.48 & \phantom{$-$}0.06 & 0.55 \\
+ & Level $E_L$ & 1.57 & 1.26 & \phantom{$-$}0.91 & 0.64 & \phantom{$-$}0.26 & $-$0.04 & 0.20 \\
+ & Deviation $E_D$ & 0.83 & 0.42 & $-$0.05 & 0.29 & \phantom{$-$}0.20 & $-$0.07 & 0.42 \\
+ & Level 36 months earlier, $E_{L,\,\tau-36}$ & 0.43 & 0.49 & \phantom{$-$}0.44 & 0.11 & \phantom{$-$}0.22 & \phantom{$-$}0.13 & 0.35 \\
+ & Firm identity 36 months earlier, $F_{\tau-36}$ & 0.75 & 0.90 & \phantom{$-$}0.58 & 0.19 & $-$0.01 & $-$0.05 & 0.37 \\
+ & Embedding $E$, industry control & 1.52 & 1.10 & \phantom{$-$}0.39 & 0.57 & \phantom{$-$}0.79 & \phantom{$-$}0.20 & 0.68 \\
+ & Level $E_L$, industry control & 1.67 & 1.33 & \phantom{$-$}0.92 & 0.71 & \phantom{$-$}0.23 & $-$0.14 & 0.38 \\
+ & Firm identity 36 months earlier, $F_{\tau-36}$, industry control & 0.84 & 0.88 & \phantom{$-$}0.62 & 0.17 & $-$0.19 & $-$0.16 & 0.28 \\
+\midrule
+Llama-2 & Embedding $E$ & 3.18 & 2.51 & \phantom{$-$}2.16 & 2.01 & \phantom{$-$}1.76 & \phantom{$-$}0.67 & 1.51 \\
+ & Level $E_L$ & 3.51 & 3.21 & \phantom{$-$}3.04 & 2.69 & \phantom{$-$}1.48 & \phantom{$-$}1.09 & 0.75 \\
+ & Deviation $E_D$ & 0.82 & 0.35 & $-$0.23 & 0.28 & \phantom{$-$}0.39 & $-$0.17 & 0.41 \\
+ & Level 36 months earlier, $E_{L,\,\tau-36}$ & 1.96 & 1.78 & \phantom{$-$}1.89 & 1.44 & \phantom{$-$}0.99 & \phantom{$-$}1.02 & 0.81 \\
+ & Firm identity 36 months earlier, $F_{\tau-36}$ & 2.36 & 2.30 & \phantom{$-$}2.20 & 1.85 & \phantom{$-$}1.20 & \phantom{$-$}1.20 & 0.88 \\
+ & Embedding $E$, industry control & 3.31 & 2.88 & \phantom{$-$}2.24 & 2.28 & \phantom{$-$}2.01 & \phantom{$-$}0.84 & 1.72 \\
+ & Level $E_L$, industry control & 3.77 & 3.45 & \phantom{$-$}3.46 & 2.93 & \phantom{$-$}1.85 & \phantom{$-$}1.24 & 0.80 \\
+ & Firm identity 36 months earlier, $F_{\tau-36}$, industry control & 2.65 & 2.50 & \phantom{$-$}2.43 & 2.08 & \phantom{$-$}1.48 & \phantom{$-$}1.36 & 1.07 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{table}

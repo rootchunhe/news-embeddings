@@ -1,0 +1,65 @@
+characteristic,encoder,row,adj_R2,firm_decembers
+ebitda_sale,,SIC-3,0.07500051821507836,5031
+ebitda_sale,,NAICS-4,0.07774630051683584,5031
+ebitda_sale,,GICS-6,0.12265922817301944,5031
+ebitda_sale,Llama-2-13b-hf,average,0.10847340611792422,5031
+ebitda_sale,Llama-2-13b-hf,F,0.09632442391487639,5031
+ebitda_sale,Llama-2-13b-hf,category mix,0.10665846992216965,5031
+ebitda_sale,Llama-2-13b-hf,"average, average",0.13311515814755182,5031
+ebitda_sale,Llama-2-13b-hf,"F, category mix",0.1450230961092268,5031
+ebitda_at,,SIC-3,0.35762387176647303,5280
+ebitda_at,,NAICS-4,0.35426615401559014,5280
+ebitda_at,,GICS-6,0.403358522264186,5280
+ebitda_at,Llama-2-13b-hf,average,0.5295828047553095,5280
+ebitda_at,Llama-2-13b-hf,F,0.5070325986720592,5280
+ebitda_at,Llama-2-13b-hf,category mix,0.3885726192936315,5280
+ebitda_at,Llama-2-13b-hf,"average, average",0.5368666492052896,5280
+ebitda_at,Llama-2-13b-hf,"F, category mix",0.5549107346938775,5280
+sale_gr1,,SIC-3,0.035050367136809646,4986
+sale_gr1,,NAICS-4,0.042100785728225176,4986
+sale_gr1,,GICS-6,0.036175204842111564,4986
+sale_gr1,Llama-2-13b-hf,average,0.0163598205521166,4986
+sale_gr1,Llama-2-13b-hf,F,0.01999121789871061,4986
+sale_gr1,Llama-2-13b-hf,category mix,0.015000071692690908,4986
+sale_gr1,Llama-2-13b-hf,"average, average",0.02803630708224547,4986
+sale_gr1,Llama-2-13b-hf,"F, category mix",0.02822094576447809,4986
+beta_60m,,SIC-3,0.14830924506901433,5280
+beta_60m,,NAICS-4,0.14933730084173114,5280
+beta_60m,,GICS-6,0.20826008438963783,5280
+beta_60m,Llama-2-13b-hf,average,0.2594056894438732,5280
+beta_60m,Llama-2-13b-hf,F,0.29289796361595466,5280
+beta_60m,Llama-2-13b-hf,category mix,0.07358853036901813,5280
+beta_60m,Llama-2-13b-hf,"average, average",0.2717631789203152,5280
+beta_60m,Llama-2-13b-hf,"F, category mix",0.3017380621061746,5280
+asset_beta,,SIC-3,0.1390882737971525,5280
+asset_beta,,NAICS-4,0.1367352537925337,5280
+asset_beta,,GICS-6,0.1811500680788264,5280
+asset_beta,Llama-2-13b-hf,average,0.27164236975151124,5280
+asset_beta,Llama-2-13b-hf,F,0.2843471917273179,5280
+asset_beta,Llama-2-13b-hf,category mix,0.09988689145808693,5280
+asset_beta,Llama-2-13b-hf,"average, average",0.28416707664743635,5280
+asset_beta,Llama-2-13b-hf,"F, category mix",0.2958743257926969,5280
+log_pb,,SIC-3,0.10494292823211371,5280
+log_pb,,NAICS-4,0.10799013737515695,5280
+log_pb,,GICS-6,0.15670014375704233,5280
+log_pb,Llama-2-13b-hf,average,0.1885985133004583,5280
+log_pb,Llama-2-13b-hf,F,0.15127392178190935,5280
+log_pb,Llama-2-13b-hf,category mix,0.14592728339501404,5280
+log_pb,Llama-2-13b-hf,"average, average",0.2071145651824633,5280
+log_pb,Llama-2-13b-hf,"F, category mix",0.21191842693380658,5280
+log_pe,,SIC-3,0.2300939945543815,3205
+log_pe,,NAICS-4,0.22756744733602952,3205
+log_pe,,GICS-6,0.21490509970224503,3205
+log_pe,Llama-2-13b-hf,average,0.1759010559788876,3205
+log_pe,Llama-2-13b-hf,F,0.1864171064939163,3205
+log_pe,Llama-2-13b-hf,category mix,0.07238952641635243,3205
+log_pe,Llama-2-13b-hf,"average, average",0.2009935427703743,3205
+log_pe,Llama-2-13b-hf,"F, category mix",0.20423354764740775,3205
+ltg,,SIC-3,0.039322212420437874,1263
+ltg,,NAICS-4,0.04157296233654484,1263
+ltg,,GICS-6,0.05296549107035531,1263
+ltg,Llama-2-13b-hf,average,0.06547272739199028,1263
+ltg,Llama-2-13b-hf,F,0.05614636986970545,1263
+ltg,Llama-2-13b-hf,category mix,0.01228435366627112,1263
+ltg,Llama-2-13b-hf,"average, average",0.07492893047340687,1263
+ltg,Llama-2-13b-hf,"F, category mix",0.06258418814743538,1263
